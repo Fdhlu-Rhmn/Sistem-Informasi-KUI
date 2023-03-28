@@ -26,6 +26,11 @@
           <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Confirm Password</label>
         </div>
+
+        <div class="form-floating mb-5 pt-1 pb-1">
+          <input type="file" class="form-control">
+          <label for="floatingPassword">Upload Foto</label>
+        </div>
     </div>
     <button type="button" type="submit" class="btn btn-primary">Ubah Profil</button>
   </div>

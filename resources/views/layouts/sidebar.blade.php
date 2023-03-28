@@ -43,14 +43,14 @@
                     </a>
                 </li>
                 <li class="nav-item disabled mb-4">
-                    <a href="/profilAdmin" data-bs-toggle ="collapse" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
+                    <a href="/profilAdmin" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
                         <i class="fa-solid fa-user"></i>
                         <span class="ms-2">Profil Admin</span>
                     </a>
                 </li>
 
                 <li class="logout">
-                    <a href="/" data-bs-toggle ="collapse" class="nav-link-active text-black text-decoration-none fw-bold fs-6" aria-current="page">
+                    <a href="/" class="nav-link-active text-black text-decoration-none fw-bold fs-6" aria-current="page">
                         <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i>
                         <span class="ms-2">Log Out</span>
                     </a>
