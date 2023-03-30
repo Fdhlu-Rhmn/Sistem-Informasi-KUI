@@ -52,7 +52,7 @@ class PostController extends Controller
     {
         $mahasiswa = Post::findOrFail($id);
 
-        return view('mahasiswa.edit', compact('mahasiswa'));    }
+        return view('edit', compact('mahasiswa'));    } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
 
     /**
      * Update the specified resource in storage.
