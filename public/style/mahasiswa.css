@@ -31,3 +31,7 @@
   height: 2px;
   background:linear-gradient(to right, #2C74B3, #868282)
 }
+
+.searchBar{
+  display: flex;
+}

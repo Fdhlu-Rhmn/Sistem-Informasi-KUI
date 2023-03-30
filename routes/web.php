@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,30 +15,40 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('login');
 });
 
 // Route::get('/mahasiswa', function () {
 //     return view('mahasiswa');
 // });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-
-Route::get('/mahasiswa{extension}', function () {
+Route::get('/mahasiswa', function () {
     return view('mahasiswa');
-})->where('extension', '(?:.html)?');
+})->name('mahasiswa');
 
-Route::get('/dataMahasiswa{extension}', function () {
+
+Route::get('/dataMahasiswa', function () {
     return view('tambah_data');
-})->where('extension', '(?:.html)?');
+})->name('tambah_data');
 
-Route::get('/editdataMahasiswa{extension}', function () {
-    return view('edit_data');
-})->where('extension', '(?:.html)?');
+// Route::get('/editdataMahasiswa', function () {
+//     return view('edit_data');
+// })->name('edit_data');
 
-Route::get('/artikel{extension}', function () {
+
+Route::get('/artikel', function () {
     return view('artikel');
+})->name('artikel');
+
+Route::get('/tambah_artikel', function () {
+    return view('tambah_artikel');
+})->name('tambah_artikel');
+
+Route::get('/profil{extension}', function () {
+    return view('profil');
 })->where('extension', '(?:.html)?');
 
-Route::get('/editArtikel{extension}', function () {
-    return view('edit_artikel');
-})->where('extension', '(?:.html)?');
+Route::resource('mahasiswa', PostController::class);
