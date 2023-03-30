@@ -63,7 +63,7 @@ class PostController extends Controller
 
         $mahasiswa->update($request->all());
 
-        return redirect()->route('mahasiswa.index')->with('success', 'Data updated successfully');    }
+        return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil di ubah');    }
 
     /**
      * Remove the specified resource from storage.
