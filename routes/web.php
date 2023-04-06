@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ExchangeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,7 @@ Route::get('/profil{extension}', function () {
 })->where('extension', '(?:.html)?');
 
 Route::resource('mahasiswa', PostController::class);
+
+Route::resource('inbound', InboundController::class);
+
+Route::resource('outbound', OutboundController::class);
