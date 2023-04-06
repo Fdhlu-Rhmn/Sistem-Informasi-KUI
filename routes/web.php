@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InboundController;
+use App\Http\Controllers\OutboundController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -52,3 +54,7 @@ Route::get('/profil{extension}', function () {
 })->where('extension', '(?:.html)?');
 
 Route::resource('mahasiswa', PostController::class);
+
+Route::get('dosen', [InboundController::class, 'index']);
+Route::resource('dosen-inbound', InboundController::class);
+Route::resource('dosen-outbound', OutboundController::class);

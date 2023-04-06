@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,13 @@
     <link rel="stylesheet" href="/style/sidebar.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
-    @yield('css')
-    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
+@yield('css')
+<title>Admin Panel</title>
+</head>
+
 <body>
     <nav class="top_navBar">
         <div class="navBar">
@@ -59,13 +62,13 @@
                         </ul>
                     </li>
                     <li class="nav-item disabled mb-4">
-                        <a href="#submenu2"  data-bs-toggle="collapse"  class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
+                        <a href="/dosen"  data-bs-toggle="collapse"  class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
                             <i class="fa-solid fa-user-tie"></i>
                             <span class="ms-2">Dosen</span>
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100 py-3 ">
-                                <a href="#" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
+                            {{-- <li class="w-100 py-3 ">
+                                <a href="/inbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Inbound</span>
                                 </a>
@@ -75,7 +78,7 @@
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Outbound</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </li>
                     <li class="nav-item disabled mb-4">
@@ -100,4 +103,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     @yield('js')
 </body>
+
 </html>
