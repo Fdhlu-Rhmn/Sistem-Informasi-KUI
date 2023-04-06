@@ -8,7 +8,7 @@
         </div>
         <div class="card_body">
 
-            <form action="{{ route('dosen-inbound.update', $outbound->id) }}" method="POST">
+            <form action="{{ route('dosen-outbound.update', $outbound->id) }}" method="POST">
                 @method('PUT')
                 @csrf
                 <div class="row mb-3">
