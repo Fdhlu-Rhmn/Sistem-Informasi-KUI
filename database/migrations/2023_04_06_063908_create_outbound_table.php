@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('outbound', function (Blueprint $table) {
             $table->id();
+            $table->string('Nama');
+            $table->string('NIM');
+            $table->string('Fakultas_Prodi');
+            $table->float('IPK');
+            $table->string('BIPA');
+            $table->string('Jenjang');
+            $table->string('Status');
+            $table->integer('Angkatan');
+            $table->string('Gender');
+            $table->string('Alamat');
+            $table->string('No_Hp');
+            $table->string('Negara_Asal');
+            $table->string('Pendamping_Akademik');
+
+
             $table->timestamps();
         });
     }

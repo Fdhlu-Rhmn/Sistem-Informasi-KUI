@@ -51,25 +51,25 @@
                   </tr>
                 </thead>
                 @if($posts-> count() > 0)
-                  @foreach($posts as $mahasiswa)
+                  @foreach($posts as $outbound)
                   <tr>
                     <td class="text-center">{{ $loop-> iteration }}</td>
-                    <td> {{ $mahasiswa-> Nama }}</td>
-                    <td class="text-center">{{ $mahasiswa-> NIM }}</td>
-                    <td>{{ $mahasiswa-> Fakultas_Prodi }}</td>
-                    <td class="text-center">{{ $mahasiswa-> IPK }}</td>
-                    <td class="text-center">{{ $mahasiswa-> BIPA }}</td>
-                    <td class="text-center">{{ $mahasiswa-> Jenjang }}</td>
-                    <td class="text-center">{{ $mahasiswa-> Status }}</td>
-                    <td>{{ $mahasiswa-> Gender }}</td>
-                    <td>{{ $mahasiswa-> Alamat }}</td>
-                    <td class="text-center">{{ $mahasiswa-> No_Hp }}</td>
-                    <td>{{ $mahasiswa-> Negara_Asal }}</td>
-                    <td>{{ $mahasiswa-> Pendamping_Akademik }}</td>
+                    <td> {{ $outbound-> Nama }}</td>
+                    <td class="text-center">{{ $outbound-> NIM }}</td>
+                    <td>{{ $outbound-> Fakultas_Prodi }}</td>
+                    <td class="text-center">{{ $outbound-> IPK }}</td>
+                    <td class="text-center">{{ $outbound-> BIPA }}</td>
+                    <td class="text-center">{{ $outbound-> Jenjang }}</td>
+                    <td class="text-center">{{ $outbound-> Status }}</td>
+                    <td>{{ $outbound-> Gender }}</td>
+                    <td>{{ $outbound-> Alamat }}</td>
+                    <td class="text-center">{{ $outbound-> No_Hp }}</td>
+                    <td>{{ $outbound-> Negara_Asal }}</td>
+                    <td>{{ $outbound-> Pendamping_Akademik }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                      <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary">Edit</a>
-                      <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                      <a  href="{{ route('outbound.edit', $outbound->id)}}" type="button" class="btn btn-primary">Edit</a>
+                      <form action="{{ route('outbound.destroy', $outbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger m-0">Delete</button>
