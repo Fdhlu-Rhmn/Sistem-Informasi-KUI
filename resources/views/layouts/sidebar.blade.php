@@ -40,13 +40,13 @@
                     </a>
                 </li>
                 <li class="nav-item mb-4">
-                    <a href="#" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-rotate"></i>
                         <span class="ms-2">Student Exchange</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="buttons.html">Inbound</a>
-                            <a class="dropdown-item" href="cards.html">Outbound</a>
+                            <a class="dropdown-item" href="/inbound">Inbound</a>
+                            <a class="dropdown-item" href="/outbound">Outbound</a>
                     </div>
                 </li>
                 <li class="nav-item disabled mb-4">

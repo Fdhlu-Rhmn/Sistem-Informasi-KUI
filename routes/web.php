@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\InboundController;
+use App\Http\Controllers\OutboundController;
 use App\Http\Controllers\ExchangeController;
 
 /*

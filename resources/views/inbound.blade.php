@@ -7,7 +7,7 @@
 @section('main')
         <div class="cards">
             <div class="cards_head">
-                <h1>Data Pengguna</h1>
+                <h1>Data Mahasiswa Inbound</h1>
                 <span class="divider divider--color"></span>
             </div>
             <div class="cards_body">
