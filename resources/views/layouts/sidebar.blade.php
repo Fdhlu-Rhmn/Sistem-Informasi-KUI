@@ -29,28 +29,38 @@
         <div class="d-fle sticky-top flex-column justify-content-between col-auto bg-white min vh-100 ">
             <div>
                 <ul class="nav nav-pills d-flex flex-column ms-3 mt-3">
-                    <li class="nav-item disabled mb-4">
+                    <li class="nav-item disabled mb-3">
                         <a href="/dashboard" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 "
                             aria-current="page">
                             <i class="fa-solid fa-list"></i>
                             <span class="ms-2">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item disabled mb-4">
-                        <a href="/dosen-inbound"
-                            class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2"
-                            aria-current="page">
+                    <li class="nav-item disabled mb-3">
+                        <button
+                            class="btn btn-toggle align-items-center rounded collapsed text-black text-decoration-none fw-bold fs-6 p-2"
+                            data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
                             <i class="fa-solid fa-users"></i>
-                            <span class="ms-2">Dosen Inbound</span>
-                        </a>
-                    </li>
-                    <li class="nav-item disabled mb-4">
-                        <a href="/dosen-outbound"
-                            class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2"
-                            aria-current="page">
-                            <i class="fa-solid fa-users"></i>
-                            <span class="ms-2">Dosen Outbound</span>
-                        </a>
+                            <span class="ms-2">Dosen</span>
+                        </button>
+                        <div class="collapse" id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal small mt-2 ms-3">
+                                <li class="nav-item disabled mb-2">
+                                    <a href="/dosen-inbound"
+                                        class="link-dark rounded text-black text-decoration-none fw-bold fs-6 p-2"
+                                        aria-current="page">
+                                        <span class="ms-2">Inbound</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item disabled mb-2">
+                                    <a href="/dosen-outbound"
+                                        class="link-dark rounded text-black text-decoration-none fw-bold fs-6 p-2"
+                                        aria-current="page">
+                                        <span class="ms-2">Outbound</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item disabled mb-4">
                         <a href="/mahasiswa" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2"
