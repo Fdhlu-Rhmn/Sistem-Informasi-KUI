@@ -14,10 +14,8 @@ class InboundController extends Controller
     public function index()
     {
         $inbounds = Inbound::all();
-        $outbounds = Outbound::all();
-        return view('dosen', [
+        return view('inbound.index', [
             'inbounds' => $inbounds,
-            'outbounds' => $outbounds,
         ]);
     }
 

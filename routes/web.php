@@ -55,6 +55,5 @@ Route::get('/profil{extension}', function () {
 
 Route::resource('mahasiswa', PostController::class);
 
-Route::get('dosen', [InboundController::class, 'index']);
 Route::resource('dosen-inbound', InboundController::class);
 Route::resource('dosen-outbound', OutboundController::class);

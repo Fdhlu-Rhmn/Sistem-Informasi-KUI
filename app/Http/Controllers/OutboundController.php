@@ -12,7 +12,10 @@ class OutboundController extends Controller
      */
     public function index()
     {
-        //
+        $outbounds = Outbound::all();
+        return view('outbound.index', [
+            'outbounds' => $outbounds,
+        ]);
     }
 
     /**
@@ -29,7 +32,7 @@ class OutboundController extends Controller
     public function store(Request $request)
     {
         Outbound::create($request->all());
-        return redirect()->route('dosen-inbound.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('dosen-outbound.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -58,7 +61,7 @@ class OutboundController extends Controller
         $outbound = Outbound::findOrFail($outboundId);
 
         $outbound->update($request->all());
-        return redirect()->route('dosen-inbound.index')->with('success', 'Data Berhasil diupdate');
+        return redirect()->route('dosen-outbound.index')->with('success', 'Data Berhasil diupdate');
     }
 
     /**
@@ -68,8 +71,7 @@ class OutboundController extends Controller
     {
 
         $outbound = Outbound::findOrFail($outboundId);
-        return redirect()->route('dosen-inbound.index')->with('success', 'Data Berhasil salah', $outbound);
         $outbound->delete();
-        return redirect()->route('dosen-inbound.index')->with('success', 'Data Berhasil dihapus');
+        return redirect()->route('dosen-outbound.index')->with('success', 'Data Berhasil dihapus');
     }
 }

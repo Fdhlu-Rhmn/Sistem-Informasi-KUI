@@ -37,10 +37,19 @@
                         </a>
                     </li>
                     <li class="nav-item disabled mb-4">
-                        <a href="/dosen" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2"
+                        <a href="/dosen-inbound"
+                            class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2"
                             aria-current="page">
                             <i class="fa-solid fa-users"></i>
-                            <span class="ms-2">Dosen</span>
+                            <span class="ms-2">Dosen Inbound</span>
+                        </a>
+                    </li>
+                    <li class="nav-item disabled mb-4">
+                        <a href="/dosen-outbound"
+                            class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2"
+                            aria-current="page">
+                            <i class="fa-solid fa-users"></i>
+                            <span class="ms-2">Dosen Outbound</span>
                         </a>
                     </li>
                     <li class="nav-item disabled mb-4">
