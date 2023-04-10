@@ -39,7 +39,7 @@ body {
 }
 
 .logout{
-  margin-top: 370px;
+  margin-top: 330px;
 }
 
 .dashboard__container {
@@ -67,12 +67,8 @@ body {
 
 .divider{
   display: flex;
-  width: 190px;
+  width: 210px;
   height: 2px;
   background:linear-gradient(to right, #2C74B3, #868282)
-}
-
-.divider--width{
-  width: 240px;
 }
 

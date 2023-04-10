@@ -1,18 +1,19 @@
 @extends('layouts.sidebar')
 
 @section('css')
-<link rel="stylesheet" href="style/mahasiswa.css">
+{{-- <link rel="stylesheet" href="style/mahasiswa.css"> --}}
 @endsection
 
 @section('main')
-        <div class="cards">
+        <div class="card p-3">
             <div class="cards_head">
-                <h1>Data Pengguna</h1>
-                <span class="divider divider--color"></span>
+                <h1>Foreign Students</h1>
+                <span class="divider"></span>
+                {{-- <span class="divider"></span> --}}
             </div>
             <div class="cards_body">
                 <form
-                class="d-inline-block mb-3 navbar-search ">
+                class="d-inline-block mb-3 navbar-search">
                 <div class="input-group d-flex">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                         aria-label="Search" aria-describedby="basic-addon2">
@@ -29,7 +30,7 @@
               {{Session::get('success')}}
             </div>
             @endif
-            <div class="table-responsive">
+            <div class="table-responsive ">
               <table id="example" class="table table-striped table-hover ">
                 <thead class="table-primary">
                   <tr >
@@ -86,7 +87,8 @@
                 </tbody>
               </table>
             </div>
-                  <a class="btn btn-primary" href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
+            <div class="p-3">
+              <a class="btn btn-primary " href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
@@ -97,7 +99,7 @@
                   <li class="page-item"><a class="page-link" href="#">2</a></li>
                   <li class="page-item"><a class="page-link" href="#">3</a></li>
                   <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                    <a class="page-link " href="#">Next</a>
                   </li>
                 </ul>
               </nav>

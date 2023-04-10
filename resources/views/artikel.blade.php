@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('main')
-        <div class="cards">
+        <div class="card p-3">
             <div class="cards_head">
                 <h1>Data Artikel</h1>
                 <span class="divider divider--color"></span>
