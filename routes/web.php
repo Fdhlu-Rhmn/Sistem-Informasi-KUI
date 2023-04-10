@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\InboundController;
+use App\Http\Controllers\OutboundController;
+use App\Http\Controllers\ExchangeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +37,14 @@ Route::get('/dataMahasiswa', function () {
     return view('tambah_data');
 })->name('tambah_data');
 
+Route::get('/dataInbound', function () {
+    return view('tambah_inbound');
+})->name('tambah_inbound');
+
+Route::get('/dataOutbound', function () {
+    return view('tambah_outbound');
+})->name('tambah_outbound');
+
 // Route::get('/editdataMahasiswa', function () {
 //     return view('edit_data');
 // })->name('edit_data');
@@ -52,3 +63,7 @@ Route::get('/profil{extension}', function () {
 })->where('extension', '(?:.html)?');
 
 Route::resource('mahasiswa', PostController::class);
+
+Route::resource('inbound', InboundController::class);
+
+Route::resource('outbound', OutboundController::class);
