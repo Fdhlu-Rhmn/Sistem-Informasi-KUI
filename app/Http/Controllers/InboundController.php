@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Inbound;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\PostDec;
@@ -15,8 +15,8 @@ class InboundController extends Controller
    */
   public function index()
   {
-    $posts = Post::orderBy('created_at', 'DESC')->get();
-    return view('inbound', compact('posts'));
+    $dataInbound = Inbound::orderBy('created_at', 'DESC')->get();
+    return view('inbound', compact('dataInbound'));
   }
 
   /**
@@ -33,7 +33,7 @@ class InboundController extends Controller
   public function store(Request $request)
   {
     // dd($request->all());
-    Post::create($request->all());
+    Inbound::create($request->all());
     return redirect()->route('inbound.index')->with('success', 'Data berhasil di tambahkan');
   }
 
@@ -50,7 +50,7 @@ class InboundController extends Controller
    */
   public function edit(string $id)
   {
-    $inbound = Post::findOrFail($id);
+    $inbound = Inbound::findOrFail($id);
 
     return view('edit', compact('inbound'));
   } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
@@ -60,7 +60,7 @@ class InboundController extends Controller
    */
   public function update(Request $request, string $id)
   {
-    $inbound = Post::findOrFail($id);
+    $inbound = Inbound::findOrFail($id);
 
     $inbound->update($request->all());
 
@@ -72,7 +72,7 @@ class InboundController extends Controller
    */
   public function destroy(string $id)
   {
-    $inbound = Post::findOrFail($id);
+    $inbound = Inbound::findOrFail($id);
 
     $inbound->delete();
 

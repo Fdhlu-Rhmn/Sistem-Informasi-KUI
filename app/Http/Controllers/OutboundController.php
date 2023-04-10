@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Outbound;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\PostDec;
@@ -15,7 +15,7 @@ class OutboundController extends Controller
    */
   public function index()
   {
-    $posts = Post::orderBy('created_at', 'DESC')->get();
+    $posts = Outbound::orderBy('created_at', 'DESC')->get();
     return view('outbound', compact('posts'));
   }
 
@@ -33,7 +33,7 @@ class OutboundController extends Controller
   public function store(Request $request)
   {
     // dd($request->all());
-    Post::create($request->all());
+    Outbound::create($request->all());
     return redirect()->route('outbound.index')->with('success', 'Data berhasil di tambahkan');
   }
 
@@ -50,7 +50,7 @@ class OutboundController extends Controller
    */
   public function edit(string $id)
   {
-    $outbound = Post::findOrFail($id);
+    $outbound = Outbound::findOrFail($id);
 
     return view('edit', compact('outbound'));
   } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
@@ -60,7 +60,7 @@ class OutboundController extends Controller
    */
   public function update(Request $request, string $id)
   {
-    $outbound = Post::findOrFail($id);
+    $outbound = Outbound::findOrFail($id);
 
     $outbound->update($request->all());
 
@@ -72,7 +72,7 @@ class OutboundController extends Controller
    */
   public function destroy(string $id)
   {
-    $outbound = Post::findOrFail($id);
+    $outbound = Outbound::findOrFail($id);
 
     $outbound->delete();
 

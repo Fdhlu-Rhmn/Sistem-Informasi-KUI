@@ -37,6 +37,14 @@ Route::get('/dataMahasiswa', function () {
     return view('tambah_data');
 })->name('tambah_data');
 
+Route::get('/dataInbound', function () {
+    return view('tambah_inbound');
+})->name('tambah_inbound');
+
+Route::get('/dataOutbound', function () {
+    return view('tambah_outbound');
+})->name('tambah_outbound');
+
 // Route::get('/editdataMahasiswa', function () {
 //     return view('edit_data');
 // })->name('edit_data');

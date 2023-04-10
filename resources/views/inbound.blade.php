@@ -35,37 +35,29 @@
                   <tr >
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Fakultas/Prodi</th>
-                    <th scope="col">IPK</th>
-                    <th scope="col">BIPA</th>
-                    <th scope="col">Jenjang</th>
-                    <th scope="col">Angkatan</th>
-                    <th scope="col">J/K</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No Hp</th>
+                    <th scope="col">Institusi Asal</th>
+                    <th scope="col">Fakultas</th>
+                    <th scope="col">Prodi</th>
                     <th scope="col">Negara Asal</th>
-                    <th scope="col">Pendamping Akademik</th>
-                    <th scope="col">Action</th>
-
+                    <th scope="col">Nama Program</th>
+                    <th scope="col">Durasi Program</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">PIC</th>
                   </tr>
                 </thead>
-                @if($posts-> count() > 0)
-                  @foreach($posts as $inbound)
+                @if($dataInbound -> count() > 0)
+                  @foreach($dataInbound as $inbound)
                   <tr>
                     <td class="text-center">{{ $loop-> iteration }}</td>
                     <td> {{ $inbound-> Nama }}</td>
-                    <td class="text-center">{{ $inbound-> NIM }}</td>
-                    <td>{{ $inbound-> Fakultas_Prodi }}</td>
-                    <td class="text-center">{{ $inbound-> IPK }}</td>
-                    <td class="text-center">{{ $inbound-> BIPA }}</td>
-                    <td class="text-center">{{ $inbound-> Jenjang }}</td>
-                    <td class="text-center">{{ $inbound-> Status }}</td>
-                    <td>{{ $inbound-> Gender }}</td>
-                    <td>{{ $inbound-> Alamat }}</td>
-                    <td class="text-center">{{ $inbound-> No_Hp }}</td>
-                    <td>{{ $inbound-> Negara_Asal }}</td>
-                    <td>{{ $inbound-> Pendamping_Akademik }}</td>
+                    <td class="text-center">{{ $inbound-> Institusi_Asal }}</td>
+                    <td>{{ $inbound-> Fakultas }}</td>
+                    <td class="text-center">{{ $inbound-> Prodi }}</td>
+                    <td class="text-center">{{ $inbound-> Negara_Asal }}</td>
+                    <td class="text-center">{{ $inbound-> Nama_Program }}</td>
+                    <td class="text-center">{{ $inbound-> Durasi_Program }}</td>
+                    <td>{{ $inbound-> Email }}</td>
+                    <td>{{ $inbound-> PIC }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
                       <a  href="{{ route('inbound.edit', $inbound->id)}}" type="button" class="btn btn-primary">Edit</a>
@@ -86,7 +78,7 @@
                 </tbody>
               </table>
             </div>
-                  <a class="btn btn-primary" href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
+                  <a class="btn btn-primary" href="{{route('tambah_inbound')}}" role="button">Tambah Mahasiswa</a>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">

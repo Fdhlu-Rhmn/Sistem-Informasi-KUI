@@ -35,18 +35,13 @@
                   <tr >
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Fakultas/Prodi</th>
-                    <th scope="col">IPK</th>
-                    <th scope="col">BIPA</th>
-                    <th scope="col">Jenjang</th>
-                    <th scope="col">Angkatan</th>
-                    <th scope="col">J/K</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No Hp</th>
-                    <th scope="col">Negara Asal</th>
-                    <th scope="col">Pendamping Akademik</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Negara Tujuan</th>
+                    <th scope="col">Institusi Tujuan</th>
+                    <th scope="col">Nama Program</th>
+                    <th scope="col">Durasi Pertukaran</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Prodi</th>
+                    <th scope="col">Fakultas</th>
 
                   </tr>
                 </thead>
@@ -55,17 +50,13 @@
                   <tr>
                     <td class="text-center">{{ $loop-> iteration }}</td>
                     <td> {{ $outbound-> Nama }}</td>
-                    <td class="text-center">{{ $outbound-> NIM }}</td>
-                    <td>{{ $outbound-> Fakultas_Prodi }}</td>
-                    <td class="text-center">{{ $outbound-> IPK }}</td>
-                    <td class="text-center">{{ $outbound-> BIPA }}</td>
-                    <td class="text-center">{{ $outbound-> Jenjang }}</td>
-                    <td class="text-center">{{ $outbound-> Status }}</td>
-                    <td>{{ $outbound-> Gender }}</td>
-                    <td>{{ $outbound-> Alamat }}</td>
-                    <td class="text-center">{{ $outbound-> No_Hp }}</td>
-                    <td>{{ $outbound-> Negara_Asal }}</td>
-                    <td>{{ $outbound-> Pendamping_Akademik }}</td>
+                    <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
+                    <td>{{ $outbound-> Institusi_Tujuan }}</td>
+                    <td class="text-center">{{ $outbound-> Nama_Program }}</td>
+                    <td class="text-center">{{ $outbound-> Durasi }}</td>
+                    <td class="text-center">{{ $outbound-> Email }}</td>
+                    <td class="text-center">{{ $outbound-> Prodi }}</td>
+                    <td>{{ $outbound-> Fakultas }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
                       <a  href="{{ route('outbound.edit', $outbound->id)}}" type="button" class="btn btn-primary">Edit</a>
@@ -86,7 +77,7 @@
                 </tbody>
               </table>
             </div>
-                  <a class="btn btn-primary" href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
+                  <a class="btn btn-primary" href="{{route('tambah_outbound')}}" role="button">Tambah Mahasiswa</a>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
