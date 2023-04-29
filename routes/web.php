@@ -32,13 +32,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/mahasiswa', function () {
-    return view('mahasiswa');
-})->name('mahasiswa');
+// Route::get('/mahasiswa', function () {
+//     return view('mahasiswa');
+// })->name('mahasiswa');
 
-Route::get('/dataMahasiswa', function () {
-    return view('tambah_data');
-})->name('tambah_data');
+// Route::get('/dataMahasiswa', function () {
+//     return view('tambah_data');
+// })->name('pagesforeign.tambah_data');
 
 Route::get('/dataInbound', function () {
     return view('tambah_inbound');

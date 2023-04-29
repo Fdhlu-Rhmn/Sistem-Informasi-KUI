@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'DESC') -> get();
-        return view('mahasiswa', compact('posts'));
+        return view('pagesforeign.mahasiswa', compact('posts'));
         
     }
 
@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create');    
+        return view('pagesforeign.create');    
     }
 
     /**
@@ -53,7 +53,7 @@ class PostController extends Controller
     {
         $mahasiswa = Post::findOrFail($id);
 
-        return view('edit', compact('mahasiswa'));    } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
+        return view('pagesforeign.edit', compact('mahasiswa'));    } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
 
     /**
      * Update the specified resource in storage.

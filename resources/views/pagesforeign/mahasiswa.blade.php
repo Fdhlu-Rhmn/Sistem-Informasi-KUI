@@ -89,7 +89,7 @@
               </table>
             </div>
             <div class="p-3">
-              <a class="btn btn-primary " href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
+              <a class="btn btn-primary " href="{{route('mahasiswa.create')}}" role="button">Tambah Mahasiswa</a>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
