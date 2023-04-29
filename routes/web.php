@@ -1,9 +1,14 @@
 <?php
 
-use App\Http\Controllers\InboundController;
-use App\Http\Controllers\OutboundController;
+// use App\Http\Controllers\InboundController;
+// use App\Http\Controllers\OutboundController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\InboundController;
+use App\Http\Controllers\OutboundController;
+use App\Http\Controllers\ExchangeController;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +36,17 @@ Route::get('/mahasiswa', function () {
     return view('mahasiswa');
 })->name('mahasiswa');
 
-
 Route::get('/dataMahasiswa', function () {
     return view('tambah_data');
 })->name('tambah_data');
+
+Route::get('/dataInbound', function () {
+    return view('tambah_inbound');
+})->name('tambah_inbound');
+
+Route::get('/dataOutbound', function () {
+    return view('tambah_outbound');
+})->name('tambah_outbound');
 
 // Route::get('/editdataMahasiswa', function () {
 //     return view('edit_data');
@@ -55,6 +67,8 @@ Route::get('/profil{extension}', function () {
 
 Route::resource('mahasiswa', PostController::class);
 
-Route::get('dosen', [InboundController::class, 'index']);
-Route::resource('dosen-inbound', InboundController::class);
-Route::resource('dosen-outbound', OutboundController::class);
+Route::resource('inbound', InboundController::class);
+
+Route::resource('outbound', OutboundController::class);
+
+Route::resource('dashboard', DashboardController::class);

@@ -1,20 +1,18 @@
 @extends('layouts.sidebar')
 
 @section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="style/mahasiswa.css">
 @endsection
 
 @section('main')
         <div class="card p-3">
             <div class="cards_head">
-                <h1>Foreign Students</h1>
-                <span class="divider"></span>
-                {{-- <span class="divider"></span> --}}
+                <h1>Students Exchange Outbound</h1>
+                <span class=" dividers dividers--width-studentsOutbound"></span>
             </div>
             <div class="cards_body">
                 <form
-                class="d-inline-block mb-3 navbar-search">
+                class="d-inline-block mb-3 navbar-search ">
                 <div class="input-group d-flex">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                         aria-label="Search" aria-describedby="basic-addon2">
@@ -31,47 +29,41 @@
               {{Session::get('success')}}
             </div>
             @endif
-            <div class="table-responsive ">
-              <table id="example" class="table table-striped table-hover " style="width:100%">
+
+            <div class="table-responsive">
+              <table id="example" class="table table-striped table-hover ">
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Fakultas/Prodi</th>
-                    <th scope="col">IPK</th>
-                    <th scope="col">BIPA</th>
-                    <th scope="col">Jenjang</th>
-                    <th scope="col">Angkatan</th>
-                    <th scope="col">J/K</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No Hp</th>
-                    <th scope="col">Negara Asal</th>
-                    <th scope="col">Pendamping Akademik</th>
+                    <th scope="col">Negara Tujuan</th>
+                    <th scope="col">Institusi Tujuan</th>
+                    <th scope="col">Nama Program</th>
+                    <th scope="col">Durasi Pertukaran</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Prodi</th>
+                    <th scope="col">Fakultas</th>
                     <th scope="col">Action</th>
+
 
                   </tr>
                 </thead>
-                @if($posts-> count() > 0)
-                  @foreach($posts as $mahasiswa)
+                @if($dataOutbound-> count() > 0)
+                  @foreach($dataOutbound as $outbound)
                   <tr>
                     <td class="text-center">{{ $loop-> iteration }}</td>
-                    <td> {{ $mahasiswa-> Nama }}</td>
-                    <td class="text-center">{{ $mahasiswa-> NIM }}</td>
-                    <td>{{ $mahasiswa-> Fakultas_Prodi }}</td>
-                    <td class="text-center">{{ $mahasiswa-> IPK }}</td>
-                    <td class="text-center">{{ $mahasiswa-> BIPA }}</td>
-                    <td class="text-center">{{ $mahasiswa-> Jenjang }}</td>
-                    <td class="text-center">{{ $mahasiswa-> Status }}</td>
-                    <td>{{ $mahasiswa-> Gender }}</td>
-                    <td>{{ $mahasiswa-> Alamat }}</td>
-                    <td class="text-center">{{ $mahasiswa-> No_Hp }}</td>
-                    <td>{{ $mahasiswa-> Negara_Asal }}</td>
-                    <td>{{ $mahasiswa-> Pendamping_Akademik }}</td>
+                    <td> {{ $outbound-> Nama }}</td>
+                    <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
+                    <td>{{ $outbound-> Institusi_Tujuan }}</td>
+                    <td class="text-center">{{ $outbound-> Nama_Program }}</td>
+                    <td class="text-center">{{ $outbound-> Durasi }}</td>
+                    <td class="text-center">{{ $outbound-> Email }}</td>
+                    <td class="text-center">{{ $outbound-> Prodi }}</td>
+                    <td>{{ $outbound-> Fakultas }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                      <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary">Edit</a>
-                      <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                      <a  href="{{ route('outbound.edit', $outbound->id)}}" type="button" class="btn btn-primary">Edit</a>
+                      <form action="{{ route('outbound.destroy', $outbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger m-0">Delete</button>
@@ -88,8 +80,9 @@
                 </tbody>
               </table>
             </div>
-            <div class="p-3">
-              <a class="btn btn-primary " href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
+            
+            <div>
+                  <a class="btn btn-primary" href="{{route('tambah_outbound')}}" role="button">Tambah Mahasiswa</a>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
@@ -100,7 +93,7 @@
                   <li class="page-item"><a class="page-link" href="#">2</a></li>
                   <li class="page-item"><a class="page-link" href="#">3</a></li>
                   <li class="page-item">
-                    <a class="page-link " href="#">Next</a>
+                    <a class="page-link" href="#">Next</a>
                   </li>
                 </ul>
               </nav>
