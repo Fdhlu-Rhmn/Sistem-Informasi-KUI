@@ -30,7 +30,7 @@
                     </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/">
                                 <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i>
                                 Log Out
                             </a>

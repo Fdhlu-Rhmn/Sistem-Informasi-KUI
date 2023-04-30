@@ -24,7 +24,7 @@
           <input type="password" required>
           <label>Password</label>
         </div>
-        <button type="submit">Login</button>
+        <a class="buttons" href="/dashboard" role="button">Login</a>  
       </form>
     </div>
   </div>

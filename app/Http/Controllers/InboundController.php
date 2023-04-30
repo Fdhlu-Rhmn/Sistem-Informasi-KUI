@@ -16,7 +16,7 @@ class InboundController extends Controller
   public function index()
   {
     $dataInbound = Inbound::orderBy('created_at', 'DESC')->get();
-    return view('inbound', compact('dataInbound'));
+    return view('pagesStudentIn.inbound', compact('dataInbound'));
   }
 
   /**
@@ -24,7 +24,7 @@ class InboundController extends Controller
    */
   public function create()
   {
-    return view('inbound.create');
+    return view('pagesStudentIn.create');
   }
 
   /**
@@ -52,7 +52,7 @@ class InboundController extends Controller
   {
     $inbound = Inbound::findOrFail($id);
 
-    return view('edit', compact('inbound'));
+    return view('pagesStudentIn.edit', compact('inbound'));
   } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
 
   /**

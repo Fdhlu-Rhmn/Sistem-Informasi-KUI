@@ -16,7 +16,7 @@ class OutboundController extends Controller
   public function index()
   {
     $dataOutbound = Outbound::orderBy('created_at', 'DESC')->get();
-    return view('outbound', compact('dataOutbound'));
+    return view('StudentOutbound.outbound', compact('dataOutbound'));
   }
 
   /**
@@ -24,7 +24,7 @@ class OutboundController extends Controller
    */
   public function create()
   {
-    return view('outbound.create');
+    return view('StudentOutbound.create');
   }
 
   /**
@@ -52,7 +52,7 @@ class OutboundController extends Controller
   {
     $outbound = Outbound::findOrFail($id);
 
-    return view('outbound.edit', compact('outbound'));
+    return view('StudentOutbound.edit', compact('outbound'));
   } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
 
   /**
