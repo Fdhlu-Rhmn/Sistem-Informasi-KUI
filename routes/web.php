@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\InboundController;
+use App\Http\Controllers\OutboundController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentInboundController;
@@ -37,3 +39,6 @@ Route::resource('inbound', StudentInboundController::class);
 Route::resource('outbound', StudentOutboundController::class);
 
 Route::resource('dashboard', DashboardController::class);
+
+Route::resource('dosen-inbound', InboundController::class);
+Route::resource('dosen-outbound', OutboundController::class);

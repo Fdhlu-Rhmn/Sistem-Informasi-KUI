@@ -23,6 +23,6 @@ class StudentOutbound extends Model
     'Prodi',
     'Fakultas',
   ];
-  protected $table = 'StudentOutbound';
+  protected $table = 'StudentOutbounds';
 
 }

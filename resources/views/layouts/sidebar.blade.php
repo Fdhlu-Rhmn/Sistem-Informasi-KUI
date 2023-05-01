@@ -81,13 +81,13 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100 py-3 ">
-                                <a href="/inbounds" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
+                                <a href="/dosen-inbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Inbound</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/outbounds" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 ">
+                                <a href="/dosen-outbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 ">
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Outbound</span>
                                 </a>
@@ -114,4 +114,6 @@
     @yield('js')
 </body>
 
+
 </html>
+

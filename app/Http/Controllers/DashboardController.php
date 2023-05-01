@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use PhpParser\Node\Expr\PostDec;
 use Illuminate\View\View;
 use App\Models\Outbound;
+use App\Models\StudentInbound;
+use App\Models\StudentOutbound;
 
 class DashboardController extends Controller
 {
@@ -18,13 +20,17 @@ class DashboardController extends Controller
     public function index()
     {
         $posts = Post::all();
-        $dataInbound = Inbound::all();
-        $dataOutbound = Outbound::all();
+        $dataInbound = StudentInbound::all();
+        $dataOutbound = StudentOutbound::all();
+        $inbounds = Inbound::all();
+        $outbounds = Outbound::all();
 
         return view('dashboard', [
             'posts' => $posts,
             'dataInbound' => $dataInbound,
-            'dataOutbound' => $dataOutbound
+            'dataOutbound' => $dataOutbound,
+            'inbounds' => $inbounds,
+            'outbounds' => $outbounds
         ]);
     }
 

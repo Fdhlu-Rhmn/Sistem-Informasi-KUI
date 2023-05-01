@@ -322,16 +322,114 @@
                 <h1>Lecturer Inbound</h1>
                 <span class="dividers dividers--width-lecturerInbound"></span>
             </div>
-            <Table>               
-            </Table>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-hover ">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Institusi Asal</th>
+                            <th scope="col">Negara Asal</th>
+                            <th scope="col">Fakultas Kegiatan</th>
+                            <th scope="col">Prodi Kegiatan</th>
+                            <th scope="col">Nama Program</th>
+                            <th scope="col">Durasi</th>
+                            <th scope="col">PIC</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    @if ($inbounds->count() > 0)
+                        @foreach ($inbounds as $inbound)
+                            <tr>
+                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td>{{ $inbound->name }}</td>
+                                <td>{{ $inbound->email }}</td>
+                                <td>{{ $inbound->institusi_asal }}</td>
+                                <td>{{ $inbound->negara_asal }}</td>
+                                <td>{{ $inbound->fakultas }}</td>
+                                <td>{{ $inbound->prodi }}</td>
+                                <td>{{ $inbound->program }}</td>
+                                <td>{{ $inbound->durasi_program }}</td>
+                                <td>{{ $inbound->PIC }}</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="{{ route('dosen-inbound.edit', $inbound->id) }}" type="button"
+                                            class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('dosen-inbound.destroy', $inbound->id) }}"
+                                            method="POST" type="button" class="btn btn-danger p-0"
+                                            onsubmit="return confirm('Delete?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger m-0">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td class="text-center" colspan="14">Tidak ada data inbound</td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="card border-left-primary shadow h-100 py-2 mx-2 mb-5">
             <div class="cards_head">
                 <h1>Lecturer Outbound</h1>
                 <span class="dividers dividers--width-lecturerOutbound"></span>
             </div>
-            <Table>               
-            </Table>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-hover ">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Institusi Tujuan</th>
+                            <th scope="col">Negara Tujuan</th>
+                            <th scope="col">Fakultas</th>
+                            <th scope="col">Prodi</th>
+                            <th scope="col">Program</th>
+                            <th scope="col">Durasi</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    @if ($outbounds->count() > 0)
+                        @foreach ($outbounds as $outbound)
+                            <tr>
+                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td>{{ $outbound->name }}</td>
+                                <td>{{ $outbound->email }}</td>
+                                <td>{{ $outbound->institusi_tujuan }}</td>
+                                <td>{{ $outbound->negara_tujuan }}</td>
+                                <td>{{ $outbound->fakultas }}</td>
+                                <td>{{ $outbound->prodi }}</td>
+                                <td>{{ $outbound->program }}</td>
+                                <td>{{ $outbound->durasi_program }}</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="{{ route('dosen-outbound.edit', $outbound->id) }}" type="button"
+                                            class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('dosen-outbound.destroy', $outbound->id) }}"
+                                            method="POST" type="button" class="btn btn-danger p-0"
+                                            onsubmit="return confirm('Delete?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger m-0">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td class="text-center" colspan="14">Tidak ada data inbound</td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
+            </div>
         </div>  
 @endsection
 
