@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('studentoutbounds', function (Blueprint $table) {
+        Schema::create('outbounds', function (Blueprint $table) {
             $table->id();
-            $table->string('Nama');
-            $table->string('Institusi_Tujuan');
-            $table->string('Fakultas');
-            $table->string('Prodi');
-            $table->string('Negara_Tujuan');
-            $table->string('Nama_Program');
-            $table->string('Durasi');
-            $table->string('Email');
-
+            $table->string('name');
+            $table->string('institusi_tujuan');
+            $table->string('fakultas');
+            $table->string('prodi');
+            $table->string('negara_tujuan');
+            $table->string('program');
+            $table->string('durasi_program');
+            $table->string('email');
             $table->timestamps();
         });
     }

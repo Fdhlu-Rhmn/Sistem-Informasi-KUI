@@ -3,79 +3,77 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inbound;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Outbound;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\PostDec;
-use Illuminate\View\View;
 
 class InboundController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
-  public function index()
-  {
-    $dataInbound = Inbound::orderBy('created_at', 'DESC')->get();
-    return view('inbound', compact('dataInbound'));
-  }
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $inbounds = Inbound::all();
+        return view('inbound.index', [
+            'inbounds' => $inbounds,
+        ]);
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   */
-  public function create()
-  {
-    return view('inbound.create');
-  }
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('inbound.tambah');
+    }
 
-  /**
-   * Store a newly created resource in storage.
-   */
-  public function store(Request $request)
-  {
-    // dd($request->all());
-    Inbound::create($request->all());
-    return redirect()->route('inbound.index')->with('success', 'Data berhasil di tambahkan');
-  }
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        Inbound::create($request->all());
+        return redirect()->route('dosen-inbound.index')->with('success', 'Data berhasil di tambahkan');
+    }
 
-  /**
-   * Display the specified resource.
-   */
-  public function show(string $id)
-  {
-    //
-  }
+    /**
+     * Display the specified resource.
+     */
+    public function show(Inbound $inbound)
+    {
+        //
+    }
 
-  /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(string $id)
-  {
-    $inbound = Inbound::findOrFail($id);
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($inboundId)
+    {
+        $inbound = Inbound::findOrFail($inboundId);
 
-    return view('edit', compact('inbound'));
-  } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
+        return view('inbound.edit', [
+            'inbound' => $inbound
+        ]);
+    }
 
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(Request $request, string $id)
-  {
-    $inbound = Inbound::findOrFail($id);
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $inboundId)
+    {
+        $inbound = Inbound::findOrFail($inboundId);
 
-    $inbound->update($request->all());
+        $inbound->update($request->all());
+        return redirect()->route('dosen-inbound.index')->with('success', 'Data Berhasil diupdate');
+    }
 
-    return redirect()->route('inbound.index')->with('success', 'Data berhasil di ubah');
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   */
-  public function destroy(string $id)
-  {
-    $inbound = Inbound::findOrFail($id);
-
-    $inbound->delete();
-
-    return redirect()->route('inbound.index')->with('success', 'Data Berhasil di hapus');
-  }
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($inboundId)
+    {
+        $inbound = Inbound::findOrFail($inboundId);
+        $inbound->delete();
+        return redirect()->route('dosen-inbound.index')->with('success', 'Data Berhasil dihapus');
+    }
 }

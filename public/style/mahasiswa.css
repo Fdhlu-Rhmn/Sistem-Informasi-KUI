@@ -1,0 +1,25 @@
+.dividers {
+    display: flex;
+    width: 205px;
+    height: 2px;
+    background: linear-gradient(to right, #2c74b3, #868282);
+}
+.dividers--width-students {
+    width: 340px;
+    height: 2px;
+}
+
+.dividers--width-studentsOutbound {
+    width: 360px;
+    height: 2px;
+}
+
+.dividers--width-lecturerInbound{
+    width: 210px;
+    height: 2px;
+}
+
+.dividers--width-lecturerOutbound{
+    width: 230px;
+    height: 2px;
+}

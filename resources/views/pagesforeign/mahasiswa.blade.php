@@ -1,7 +1,8 @@
 @extends('layouts.sidebar')
 
 @section('css')
-{{-- <link rel="stylesheet" href="style/mahasiswa.css"> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 @endsection
 
 @section('main')
@@ -31,7 +32,7 @@
             </div>
             @endif
             <div class="table-responsive ">
-              <table id="example" class="table table-striped table-hover ">
+              <table id="example" class="table table-striped table-hover " style="width:100%">
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">#</th>
@@ -88,7 +89,7 @@
               </table>
             </div>
             <div class="p-3">
-              <a class="btn btn-primary " href="{{route('tambah_data')}}" role="button">Tambah Mahasiswa</a>
+              <a class="btn btn-primary " href="{{route('mahasiswa.create')}}" role="button">Tambah Mahasiswa</a>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">

@@ -88,7 +88,9 @@ body {
   line-height: 57px;
 }
 
-button {
+.buttons {
+  display: flex;
+  text-align: center;
   width: 100%;
   height: 45px;
   background: black;
@@ -99,4 +101,10 @@ button {
   font-size: 1em;
   color: white;
   font-weight: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+a{
+  text-decoration: none;
 }
