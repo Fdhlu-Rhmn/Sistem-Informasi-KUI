@@ -1,8 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\InboundController;
-use App\Http\Controllers\OutboundController;
+use App\Http\Controllers\StudentInboundController;
+use App\Http\Controllers\StudentOutboundController;
 use App\Http\Controllers\ExchangeController;
 use App\Http\Controllers\DashboardController;
 
@@ -32,8 +32,8 @@ Route::get('/profil{extension}', function () {
 
 Route::resource('mahasiswa', PostController::class);
 
-Route::resource('inbound', InboundController::class);
+Route::resource('inbound', StudentInboundController::class);
 
-Route::resource('outbound', OutboundController::class);
+Route::resource('outbound', StudentOutboundController::class);
 
 Route::resource('dashboard', DashboardController::class);

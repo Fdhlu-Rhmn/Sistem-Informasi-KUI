@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Inbound extends Model
+class StudentOutbound extends Model
 {
   use HasFactory;
   /**
@@ -15,13 +15,14 @@ class Inbound extends Model
    */
   protected $fillable = [
     'Nama',
-    'Institusi_Asal',
-    'Fakultas',
-    'Prodi',
-    'Negara_Asal',
+    'Negara_Tujuan',
+    'Institusi_Tujuan',
     'Nama_Program',
-    'Durasi_Program',
+    'Durasi',
     'Email',
-    'PIC',
+    'Prodi',
+    'Fakultas',
   ];
+  protected $table = 'StudentOutbound';
+
 }

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Outbound;
+use App\Models\StudentInbound;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\PostDec;
 use Illuminate\View\View;
 
-class OutboundController extends Controller
+class StudentInboundController extends Controller
 {
   /**
    * Display a listing of the resource.
    */
   public function index()
   {
-    $dataOutbound = Outbound::orderBy('created_at', 'DESC')->get();
-    return view('StudentOutbound.outbound', compact('dataOutbound'));
+    $dataInbound = StudentInbound::orderBy('created_at', 'DESC')->get();
+    return view('pagesStudentIn.inbound', compact('dataInbound'));
   }
 
   /**
@@ -24,7 +24,7 @@ class OutboundController extends Controller
    */
   public function create()
   {
-    return view('StudentOutbound.create');
+    return view('pagesStudentIn.create');
   }
 
   /**
@@ -33,8 +33,8 @@ class OutboundController extends Controller
   public function store(Request $request)
   {
     // dd($request->all());
-    Outbound::create($request->all());
-    return redirect()->route('outbound.index')->with('success', 'Data berhasil di tambahkan');
+    StudentInbound::create($request->all());
+    return redirect()->route('inbound.index')->with('success', 'Data berhasil di tambahkan');
   }
 
   /**
@@ -50,9 +50,9 @@ class OutboundController extends Controller
    */
   public function edit(string $id)
   {
-    $outbound = Outbound::findOrFail($id);
+    $inbound = StudentInbound::findOrFail($id);
 
-    return view('StudentOutbound.edit', compact('outbound'));
+    return view('pagesStudentIn.edit', compact('inbound'));
   } //untuk view jika menggunakan mahasiswa.edit sebenarnya mencari lokasi namaFolder.file
 
   /**
@@ -60,11 +60,11 @@ class OutboundController extends Controller
    */
   public function update(Request $request, string $id)
   {
-    $outbound = Outbound::findOrFail($id);
+    $inbound = StudentInbound::findOrFail($id);
 
-    $outbound->update($request->all());
+    $inbound->update($request->all());
 
-    return redirect()->route('outbound.index')->with('success', 'Data berhasil di ubah');
+    return redirect()->route('inbound.index')->with('success', 'Data berhasil di ubah');
   }
 
   /**
@@ -72,10 +72,10 @@ class OutboundController extends Controller
    */
   public function destroy(string $id)
   {
-    $outbound = Outbound::findOrFail($id);
+    $inbound = StudentInbound::findOrFail($id);
 
-    $outbound->delete();
+    $inbound->delete();
 
-    return redirect()->route('outbound.index')->with('success', 'Data Berhasil di hapus');
+    return redirect()->route('inbound.index')->with('success', 'Data Berhasil di hapus');
   }
 }
