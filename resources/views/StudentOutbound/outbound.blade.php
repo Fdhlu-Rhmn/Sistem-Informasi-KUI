@@ -11,18 +11,28 @@
                 <span class=" dividers dividers--width-studentsOutbound"></span>
             </div>
             <div class="cards_body">
-                <form
-                class="d-inline-block mb-3 navbar-search ">
-                <div class="input-group d-flex">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                        aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+              <div class="d-inline-block mb-3 navbar-search">
+                <form action="/outbound" method="GET" >
+                  <div class="input-group d-flex">
+                      <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for...">
+                      <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+                  </div>
+                </form>
+              </div>
+
+            <form action="{{ route('importStudentOutbound') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="form-group mb-4">
+                  <div class="custom-file text-left">
+                    <label for="file">File:</label>
+                    <input id="file" type="file" name="file" class="form-control">
+                  </div>
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-primary">Import Users</button>
+                <a class="btn btn-success px-2" href="{{ route('exportStudentOutbound') }}">Export Users</a>
+              </div>
+          </form>
 
             @if (Session::has('success'))
             <div class="alert alert-success" role="alert">
@@ -34,7 +44,7 @@
               <table id="example" class="table table-striped table-hover ">
                 <thead class="table-primary">
                   <tr >
-                    <th scope="col">#</th>
+                    <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Negara Tujuan</th>
                     <th scope="col">Institusi Tujuan</th>
@@ -49,9 +59,9 @@
                   </tr>
                 </thead>
                 @if($dataOutbound-> count() > 0)
-                  @foreach($dataOutbound as $outbound)
+                  @foreach($dataOutbound as $index => $outbound)
                   <tr>
-                    <td class="text-center">{{ $loop-> iteration }}</td>
+                    <td class="text-center">{{ $index + $dataOutbound -> firstItem()}}</td>
                     <td> {{ $outbound-> Nama }}</td>
                     <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
                     <td>{{ $outbound-> Institusi_Tujuan }}</td>
@@ -83,19 +93,9 @@
             
             <div>
                   <a class="btn btn-primary" href="{{route('outbound.create')}}" role="button">Tambah Mahasiswa</a>
+                  {{-- {{$dataOutbound->links()}} --}}
+                  {!! $dataOutbound->appends(Request::except('page'))->render()!!}
+
             </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-end">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
         </div>
  @endsection   

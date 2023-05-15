@@ -4,18 +4,47 @@ namespace App\Http\Controllers;
 
 use App\Models\Outbound;
 use Illuminate\Http\Request;
+use App\Exports\ExportOutbound;
+use App\Imports\ImportOutbound;
 
 class OutboundController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $outbounds = Outbound::all();
+        // $outbounds = Outbound::paginate(5);
+        if ($request->has('search')) {
+            $outbounds = Outbound::where('name', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('email', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('institusi_asal', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('negara_asal', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('fakultas', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('prodi', 'LIKE', '%'.$request->search.'%')
+                ->paginate(5);
+        }else{
+            $outbounds = Outbound::paginate(5);
+        }
         return view('outbound.index', [
             'outbounds' => $outbounds,
         ]);
+    }
+    public function importExportOutbound()
+    {
+       return view('Outbound.index');
+    }
+  
+    public function exportOutbound() 
+    {
+        return 'Excel'::download(new ExportOutbound, 'LecturerOutbound.xlsx');
+    }
+  
+    public function importOutbound() 
+    {
+        'Excel'::import(new ImportOutbound, request()->file('file'));
+            
+        return back();
     }
 
     /**

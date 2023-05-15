@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,19 +12,19 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('Nama');
-            $table->string('NIM');
-            $table->string('Fakultas_Prodi');
-            $table->float('IPK');
-            $table->string('BIPA');
-            $table->string('Jenjang');
-            $table->string('Status');
-            $table->integer('Angkatan');
-            $table->string('Gender');
-            $table->string('Alamat');
-            $table->string('No_Hp');
-            $table->string('Negara_Asal');
-            $table->string('Pendamping_Akademik');
+            $table->string('Nama')->nullable();
+            $table->string('NIM')->nullable();
+            $table->string('Fakultas_Prodi')->nullable();
+            $table->float('IPK')->nullable();
+            $table->string('BIPA')->nullable();
+            $table->string('Jenjang')->nullable();
+            $table->string('Status')->nullable();
+            $table->integer('Angkatan')->nullable();
+            $table->string('Gender')->nullable();
+            $table->string('Alamat')->nullable();
+            $table->string('No_Hp')->nullable();
+            $table->string('Negara_Asal')->nullable();
+            $table->string('Pendamping_Akademik')->nullable();
 
 
             $table->timestamps();
