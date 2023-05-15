@@ -15,14 +15,37 @@
         <div class="col">
             <div class="cards_head">
                 <h1>Outbound Dosen</h1>
-                <span class="divider divider--color"></span>
+                <span class="dividers dividers--width-lecturerOutbound"></span>
             </div>
+
+            <div class="d-inline-block mb-3 navbar-search">
+                <form action="/dosen-outbound" method="GET" >
+                  <div class="input-group d-flex">
+                      <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for...">
+                      <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
+                  </div>
+                </form>
+            </div>
+            <form action="{{ route('importOutbound') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group mb-4">
+                    <div class="custom-file text-left">
+                      <label for="file">File:</label>
+                      <input id="file" type="file" name="file" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary">Import Users</button>
+                  <a class="btn btn-success px-2" href="{{ route('exportOutbound') }}">Export Users</a>
+                </div>
+            </form>
+
             <div class="cards_body">
                 <div class="table-responsive">
                     <table id="example" class="table table-striped table-hover ">
                         <thead class="table-primary">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">No</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Institusi Tujuan</th>
@@ -34,42 +57,46 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        @if ($outbounds->count() > 0)
-                            @foreach ($outbounds as $outbound)
+                        <tbody>
+                            @if ($outbounds->count() > 0)
+                                @foreach ($outbounds as $index => $outbound)
+                                    <tr>
+                                        <td class="text-center">{{ $index + $outbounds -> firstItem()}}</td>
+                                        <td>{{ $outbound->name }}</td>
+                                        <td>{{ $outbound->email }}</td>
+                                        <td>{{ $outbound->institusi_tujuan }}</td>
+                                        <td>{{ $outbound->negara_tujuan }}</td>
+                                        <td>{{ $outbound->fakultas }}</td>
+                                        <td>{{ $outbound->prodi }}</td>
+                                        <td>{{ $outbound->program }}</td>
+                                        <td>{{ $outbound->durasi_program }}</td>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <a href="{{ route('dosen-outbound.edit', $outbound->id) }}" type="button"
+                                                    class="btn btn-primary">Edit</a>
+                                                <form action="{{ route('dosen-outbound.destroy', $outbound->id) }}"
+                                                    method="POST" type="button" class="btn btn-danger p-0"
+                                                    onsubmit="return confirm('Delete?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger m-0">Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $outbound->name }}</td>
-                                    <td>{{ $outbound->email }}</td>
-                                    <td>{{ $outbound->institusi_tujuan }}</td>
-                                    <td>{{ $outbound->negara_tujuan }}</td>
-                                    <td>{{ $outbound->fakultas }}</td>
-                                    <td>{{ $outbound->prodi }}</td>
-                                    <td>{{ $outbound->program }}</td>
-                                    <td>{{ $outbound->durasi_program }}</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <a href="{{ route('dosen-outbound.edit', $outbound->id) }}" type="button"
-                                                class="btn btn-primary">Edit</a>
-                                            <form action="{{ route('dosen-outbound.destroy', $outbound->id) }}"
-                                                method="POST" type="button" class="btn btn-danger p-0"
-                                                onsubmit="return confirm('Delete?')">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-danger m-0">Delete</button>
-                                        </div>
-                                    </td>
+                                    <td class="text-center" colspan="14">Tidak ada data inbound</td>
                                 </tr>
-                            @endforeach
-                        @else
-                            <tr>
-                                <td class="text-center" colspan="14">Tidak ada data inbound</td>
-                            </tr>
-                        @endif
+                            @endif
                         </tbody>
                     </table>
                 </div>
-                <a class="btn btn-primary" href="{{ route('dosen-outbound.create') }}" role="button">Tambah Outbound
-                    Dosen</a>
+                <a class="btn btn-primary" href="{{ route('dosen-outbound.create') }}" role="button">Tambah Outbound Dosen</a>
+                {{-- {{$outbounds->links()}} --}}
+                {!! $outbounds->appends(Request::except('page'))->render()!!}
+
+
             </div>
         </div>
     </div>

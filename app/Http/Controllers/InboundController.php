@@ -5,18 +5,47 @@ namespace App\Http\Controllers;
 use App\Models\Inbound;
 use App\Models\Outbound;
 use Illuminate\Http\Request;
+use App\Exports\ExportInbound;
+use App\Imports\ImportInbound;
 
 class InboundController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $inbounds = Inbound::all();
+        if ($request->has('search')) {
+            $inbounds = Inbound::where('name', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('email', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('institusi_asal', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('negara_asal', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('fakultas', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('prodi', 'LIKE', '%'.$request->search.'%')
+                ->paginate(5);
+        }else{
+            $inbounds = Inbound::paginate(5);
+        }
+        // $inbounds = Inbound::paginate(5);
         return view('inbound.index', [
             'inbounds' => $inbounds,
         ]);
+    }
+    public function importExportInbound()
+    {
+       return view('inbound.index');
+    }
+  
+    public function exportInbound() 
+    {
+        return 'Excel'::download(new ExportInbound, 'LecturerInbound.xlsx');
+    }
+  
+    public function importInbound() 
+    {
+        'Excel'::import(new ImportInbound, request()->file('file'));
+            
+        return back();
     }
 
     /**

@@ -7,16 +7,47 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\PostDec;
 use Illuminate\View\View;
+use App\Exports\ExportStudentOutbound;
+use App\Imports\ImportStudentOutbound;
 
 class StudentOutboundController extends Controller
 {
   /**
    * Display a listing of the resource.
    */
-  public function index()
+  public function index(Request $request)
   {
-    $dataOutbound = StudentOutbound::orderBy('created_at', 'DESC')->get();
+      if ($request->has('search')) {
+        $dataOutbound = StudentOutbound::where('Nama', 'LIKE', '%'.$request->search.'%')
+              ->orWhere('Email', 'LIKE', '%'.$request->search.'%')
+              ->orWhere('Institusi_Tujuan', 'LIKE', '%'.$request->search.'%')
+              ->orWhere('Negara_Tujuan', 'LIKE', '%'.$request->search.'%')
+              ->orWhere('Fakultas', 'LIKE', '%'.$request->search.'%')
+              ->orWhere('Prodi', 'LIKE', '%'.$request->search.'%')
+              ->orWhere('Email', 'LIKE', '%'.$request->search.'%')
+              ->paginate(5);
+      }else{
+        $dataOutbound = StudentOutbound::paginate(5);
+      }
+    // $dataOutbound = StudentOutbound::paginate(5);
     return view('StudentOutbound.outbound', compact('dataOutbound'));
+  }
+
+  public function importExportStudentOutbound()
+  {
+     return view('outbound');
+  }
+
+  public function exportStudentOutbound() 
+  {
+      return 'Excel'::download(new ExportStudentOutbound, 'StudentOutbound.xlsx');
+  }
+
+  public function importStudentOutbound() 
+  {
+      'Excel'::import(new ImportStudentOutbound, request()->file('file'));
+          
+      return back();
   }
 
   /**
