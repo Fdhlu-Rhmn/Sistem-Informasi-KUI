@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Register extends Model
 {
     use HasFactory, HasApiTokens, Notifiable;
 
@@ -20,5 +20,4 @@ class User extends Authenticatable
         'username',
         'password',
     ];
-    // protected $guarded = ['user_id'];
 }
