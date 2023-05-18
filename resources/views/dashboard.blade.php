@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="style/mahasiswa.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 @endsection
 
 @section('main')
@@ -99,6 +100,7 @@
                                 <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
                                    Angkatan</div>
                             </div>
+                            <div id="piechart-angkatan"></div>
                         </div>
                     </div>
                 </div>
@@ -112,11 +114,13 @@
                                 <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
                                    Country</div>
                             </div>
+                            <div id="piechart-country"></div>
+
                         </div>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-4 col-md-5 mb-4">
                 <div class="card border-left-success shadow h-100 py-2">
@@ -126,6 +130,8 @@
                                 <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
                                     Fakultas</div>
                             </div>
+                            <div id="piechart-fakultas"></div>
+
                         </div>
                     </div>
                 </div>
@@ -154,7 +160,7 @@
                         <th scope="col">Alamat</th>
                         <th scope="col">No Hp</th>
                         <th scope="col">Negara Asal</th>
-                        <th scope="col">Pendamping Akademik</th>  
+                        <th scope="col">Pendamping Akademik</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -253,7 +259,7 @@
                         <th scope="col">Durasi Pertukaran</th>
                         <th scope="col">Email</th>
                         <th scope="col">Prodi</th>
-                        <th scope="col">Fakultas</th>  
+                        <th scope="col">Fakultas</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -375,9 +381,62 @@
                     </tbody>
                 </table>
             </div>
-        </div>  
+        </div>
 @endsection
 
 @section('js')
+<script>
+    let angkatan = [['Angkatan', "Value"]];
+    @foreach ($angkatan as $key => $item)
+        angkatan.push(["{{ $key }}", {{ $item->count() }}]);
+    @endforeach
 
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChartAngkatan);
+
+    function drawChartAngkatan() {
+            var data = google.visualization.arrayToDataTable(angkatan);
+        var options = {
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart-angkatan'));
+        chart.draw(data, options);
+    }
+
+
+    let country = [['Country', "Value"]];
+    @foreach ($country as $key => $item)
+        country.push(["{{ $key }}", {{ $item->count() }}]);
+    @endforeach
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChartCountry);
+    function drawChartCountry() {
+        var data = google.visualization.arrayToDataTable(country);
+        var options = {
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart-country'));
+        chart.draw(data, options);
+    }
+
+    let fakultas = [['Fakultas', "Value"]];
+    @foreach ($fakultas as $key => $item)
+        fakultas.push(["{{ $key }}", {{ $item->count() }}]);
+    @endforeach
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChartFakultas);
+    function drawChartFakultas() {
+        var data = google.visualization.arrayToDataTable(fakultas);
+        var options = {
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart-fakultas'));
+        chart.draw(data, options);
+    }
+</script>
 @endsection
