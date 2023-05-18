@@ -31,9 +31,7 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+
 
 Route::get('/dashboard/adminProfil{extension}', function () {
     return view('profil');
@@ -76,8 +74,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('/dashboard/dosen-outbound', OutboundController::class);
 });
 
-Route::resource('/dashboard', DashboardController::class)->middleware('auth');
+Route::get('/dashboard', DashboardController::class)->middleware('auth');
 
 Route::get('logout', [UserController::class, 'logout']);
 
-Route::resource('/dashboard/form', UserFormController::class)->except('show')->middleware('non-admin');
+Route::get('/dashboard/form', [UserFormController::class, 'index'])->middleware(['auth', 'non-admin']);
+
+Route::redirect('/', 'login');
