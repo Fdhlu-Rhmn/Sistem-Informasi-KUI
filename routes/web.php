@@ -51,6 +51,35 @@ Route::get('/dashboard/adminProfil{extension}', function () {
 // Route::resource('dosen-outbound', OutboundController::class)->middleware('auth', 'admin');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::controller(PostController::class)->group(function () {
+        Route::get('importExport', 'importExport');
+        Route::post('import', 'import')->name('import');
+        Route::get('export', 'export')->name('export');
+    });
+
+    Route::controller(StudentInboundController::class)->group(function () {
+        Route::get('import_exportStudentInbound', 'importExportStudentInbound');
+        Route::post('importStudentInbound', 'importStudentInbound')->name('importStudentInbound');
+        Route::get('exportStudentInbound', 'exportStudentInbound')->name('exportStudentInbound');
+    });
+
+    Route::controller(StudentoutboundController::class)->group(function () {
+        Route::get('import_exportStudentOutbound', 'importExportStudentOutbound');
+        Route::post('importStudentOutbound', 'importStudentOutbound')->name('importStudentOutbound');
+        Route::get('exportStudentOutbound', 'exportStudentOutbound')->name('exportStudentOutbound');
+    });
+
+    Route::controller(InboundController::class)->group(function () {
+        Route::get('import_exportInbound', 'importExportInbound');
+        Route::post('importInbound', 'importInbound')->name('importInbound');
+        Route::get('exportInbound', 'exportInbound')->name('exportInbound');
+    });
+
+    Route::controller(OutboundController::class)->group(function () {
+        Route::get('import_exportOutbound', 'importExportOutbound');
+        Route::post('importOutbound', 'importOutbound')->name('importOutbound');
+        Route::get('exportOutbound', 'exportOutbound')->name('exportOutbound');
+    });
     Route::resource('/dashboard/mahasiswa', PostController::class);
     Route::resource('/dashboard/inbound', StudentInboundController::class);
     Route::resource('/dashboard/outbound', StudentOutboundController::class);
