@@ -22,11 +22,11 @@
                 <img src="/assets/akmal.jpg" alt="admin photo">
                 <div class="dropdown">
                     <a class=" btn  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        M. Akmal Jaya
+                        {{ auth()->user()->name }}
                     </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="/">
+                            <a class="dropdown-item" href="/logout">
                                 <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i>
                                 Log Out
                             </a>
@@ -37,6 +37,7 @@
         </nav>
         <div class="row">
             <div class=" navbars col-12 col-sm-3 col-xl-2 px-sm-2 px-0 ">
+                @can('admin')
                 <ul class="nav nav-pills d-flex flex-column ms-3 mt-3">
                     <li class="nav-item disabled mb-4">
                         <a href="/dashboard" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
@@ -45,7 +46,7 @@
                         </a>
                     </li>
                     <li class="nav-item disabled mb-4">
-                        <a href="/mahasiswa" class= "align-middle nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
+                        <a href="/dashboard/mahasiswa" class= "align-middle nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
                             <i class="fa-solid fa-users"></i>
                             <span class="ms-2">Foreign Students</span>
                         </a>
@@ -57,13 +58,13 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100 py-3" >
-                                <a href="/inbound" class="align-middle nav-link-active text-black text-decoration-none fs-6  p-2 pb-4"> 
+                                <a href="/dashboard/inbound" class="align-middle nav-link-active text-black text-decoration-none fs-6  p-2 pb-4"> 
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Inbound</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/outbound" class="align-middle nav-link-active text-black text-decoration-none   p-2 pb-4 fs-6 ">
+                                <a href="/dashboard/outbound" class="align-middle nav-link-active text-black text-decoration-none   p-2 pb-4 fs-6 ">
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Outbound</span>
                                 </a>
@@ -77,13 +78,13 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100 py-3 ">
-                                <a href="/dosen-inbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
+                                <a href="/dashboard/dosen-inbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Inbound</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/dosen-outbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 ">
+                                <a href="/dashboard/dosen-outbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 ">
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Outbound</span>
                                 </a>
@@ -91,12 +92,36 @@
                         </ul>
                     </li>
                     <li class="nav-item disabled mb-4">
-                        <a href="/profil" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
+                        <a href="/dashboard/adminProfil" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
                             <i class="fa-solid fa-user"></i>
                             <span class="ms-2">Admin Profile</span>
                         </a>
                     </li>
                 </ul>
+                @endcan
+
+                @can('non-admin')
+                <ul class="nav nav-pills d-flex flex-column ms-3 mt-3">
+                    <li class="nav-item disabled mb-4">
+                        <a href="/dashboard" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
+                            <i class="fa-solid fa-list"></i>
+                            <span class="ms-2">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item disabled mb-4">
+                        <a href="/dashboard/form" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
+                            <i class="fa-solid fa-list"></i>
+                            <span class="ms-2">Form</span>
+                        </a>
+                    </li>
+                    <li class="nav-item disabled mb-4">
+                        <a href="/dashboard/profile" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
+                            <i class="fa-solid fa-list"></i>
+                            <span class="ms-2">Edit Profile</span>
+                        </a>
+                    </li>
+                </ul>
+                @endcan
             </div>
 
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
