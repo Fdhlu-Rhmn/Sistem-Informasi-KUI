@@ -30,8 +30,8 @@
                   </div>
               </div>
               <div class="mb-3">
-                <button class="btn btn-primary">Import Users</button>
-                <a class="btn btn-success px-2" href="{{ route('export') }}">Export Users</a>
+                <button class="btn btn-primary">Import Foreign Student</button>
+                <a class="btn btn-success px-2" href="{{ route('export') }}">Export Foreign Student</a>
               </div>
           </form>
 
@@ -61,7 +61,6 @@
               <table id="example" class="table table-striped table-hover " style="width:100%">
                 <thead class="table-primary">
                   <tr >
-                    <th scope="col">ID</th>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">NIM</th>
