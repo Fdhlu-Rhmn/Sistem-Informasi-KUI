@@ -25,19 +25,12 @@ class DashboardController extends Controller
         $inbounds = Inbound::all();
         $outbounds = Outbound::all();
 
-        $angkatan = $posts->groupBy("Angkatan");
-        $country = $posts->groupBy("Negara_Asal");
-        $fakultas = $posts->groupBy("Fakultas_Prodi");
-
         return view('dashboard', [
             'posts' => $posts,
             'dataInbound' => $dataInbound,
             'dataOutbound' => $dataOutbound,
             'inbounds' => $inbounds,
-            'outbounds' => $outbounds,
-            'angkatan' => $angkatan,
-            'country' => $country,
-            'fakultas' => $fakultas
+            'outbounds' => $outbounds
         ]);
     }
 
