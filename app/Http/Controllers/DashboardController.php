@@ -20,10 +20,10 @@ class DashboardController extends Controller
     public function index()
     {
         $posts = Post::paginate(5);
-        $dataInbound = StudentInbound::all();
-        $dataOutbound = StudentOutbound::all();
-        $inbounds = Inbound::all();
-        $outbounds = Outbound::all();
+        $dataInbound = StudentInbound::paginate(5);
+        $dataOutbound = StudentOutbound::paginate(5);
+        $inbounds = Inbound::paginate(5);
+        $outbounds = Outbound::paginate(5);
 
         return view('dashboard', [
             'posts' => $posts,
