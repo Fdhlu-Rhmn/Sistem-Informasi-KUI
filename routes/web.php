@@ -39,17 +39,6 @@ Route::get('/dashboard/adminProfil{extension}', function () {
     return view('profil');
 })->where('extension', '(?:.html)?');
 
-// Route::resource('mahasiswa', PostController::class)->middleware('auth', 'admin');
-
-// Route::resource('inbound', StudentInboundController::class)->middleware('auth', 'admin');
-
-// Route::resource('outbound', StudentOutboundController::class)->middleware('auth', 'admin');
-
-// Route::resource('dashboard', DashboardController::class)->middleware('auth', 'admin');
-
-// Route::resource('dosen-inbound', InboundController::class)->middleware('auth', 'admin');
-// Route::resource('dosen-outbound', OutboundController::class)->middleware('auth', 'admin');
-
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::controller(PostController::class)->group(function () {
         Route::get('importExport', 'importExport');

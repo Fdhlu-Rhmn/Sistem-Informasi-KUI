@@ -19,7 +19,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(5);
         $dataInbound = StudentInbound::all();
         $dataOutbound = StudentOutbound::all();
         $inbounds = Inbound::all();
