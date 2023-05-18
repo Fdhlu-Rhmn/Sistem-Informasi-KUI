@@ -29,8 +29,8 @@
                   </div>
               </div>
               <div class="mb-3">
-                <button class="btn btn-primary">Import Users</button>
-                <a class="btn btn-success px-2" href="{{ route('exportStudentInbound') }}">Export Users</a>
+                <button class="btn btn-primary">Import Inbound</button>
+                <a class="btn btn-success px-2" href="{{ route('exportStudentInbound') }}">Export Inbound</a>
               </div>
           </form>
 

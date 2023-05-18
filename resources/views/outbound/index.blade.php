@@ -14,7 +14,7 @@
         @endif
         <div class="col">
             <div class="cards_head">
-                <h1>Outbound Dosen</h1>
+                <h1>Lecturer Outbounds</h1>
                 <span class="dividers dividers--width-lecturerOutbound"></span>
             </div>
 
@@ -35,8 +35,8 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary">Import Users</button>
-                  <a class="btn btn-success px-2" href="{{ route('exportOutbound') }}">Export Users</a>
+                  <button class="btn btn-primary">Import Outbound</button>
+                  <a class="btn btn-success px-2" href="{{ route('exportOutbound') }}">Export Outbound</a>
                 </div>
             </form>
 

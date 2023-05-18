@@ -21,7 +21,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Foreign Students</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">120</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$posts->total()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-users fa-2x"></i>
@@ -39,8 +39,8 @@
                         <div class="col mr-2">
                             <div class="font-weight-bold text-success text-uppercase mb-1">
                                 Students Exchange</div>
-                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : 10</div>
-                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : 20</div>
+                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$dataInbound->total()}}</div>
+                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$dataOutbound->total()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-user-graduate fa-2x"></i>
@@ -58,8 +58,8 @@
                         <div class="col mr-2">
                             <div class="font-weight-bold text-info text-uppercase mb-1">Lecturer
                             </div>
-                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : 10</div>
-                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : 20</div>
+                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$inbounds->total()}}</div>
+                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$outbounds->total()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-user-tie fa-2x"></i>
@@ -198,7 +198,7 @@
                 <table id="example" class="table table-striped table-hover ">
                     <thead class="table-primary">
                         <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">No</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Institusi Asal</th>
                         <th scope="col">Fakultas</th>
@@ -245,7 +245,7 @@
                 <table id="example" class="table table-striped table-hover ">
                     <thead class="table-primary">
                         <tr >
-                        <th scope="col">#</th>
+                        <th scope="col">No</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Negara Tujuan</th>
                         <th scope="col">Institusi Tujuan</th>
@@ -294,7 +294,7 @@
                 <table id="example" class="table table-striped table-hover ">
                     <thead class="table-primary">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">No</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
                             <th scope="col">Institusi Asal</th>
@@ -340,7 +340,7 @@
                 <table id="example" class="table table-striped table-hover ">
                     <thead class="table-primary">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">No</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
                             <th scope="col">Institusi Tujuan</th>

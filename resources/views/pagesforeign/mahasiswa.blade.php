@@ -61,6 +61,7 @@
               <table id="example" class="table table-striped table-hover " style="width:100%">
                 <thead class="table-primary">
                   <tr >
+                    <th scope="col">ID</th>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">NIM</th>
