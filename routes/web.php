@@ -67,17 +67,21 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::post('importOutbound', 'importOutbound')->name('importOutbound');
         Route::get('exportOutbound', 'exportOutbound')->name('exportOutbound');
     });
-    Route::resource('/dashboard/mahasiswa', PostController::class);
     Route::resource('/dashboard/inbound', StudentInboundController::class);
     Route::resource('/dashboard/outbound', StudentOutboundController::class);
     Route::resource('/dashboard/dosen-inbound', InboundController::class);
     Route::resource('/dashboard/dosen-outbound', OutboundController::class);
 });
 
+Route::resource('/dashboard/mahasiswa', PostController::class);
+
+Route::post('/dashboard/form', [UserFormController::class, 'store'])->middleware(['auth', 'non-admin'])->name('users');
+Route::get('/dashboard/form', [UserFormController::class, 'index'])->middleware(['auth', 'non-admin'])->name('userDB');
+
+
 Route::get('/dashboard', DashboardController::class)->middleware('auth');
 
 Route::get('logout', [UserController::class, 'logout']);
 
-Route::get('/dashboard/form', [UserFormController::class, 'index'])->middleware(['auth', 'non-admin']);
 
 Route::redirect('/', 'login');

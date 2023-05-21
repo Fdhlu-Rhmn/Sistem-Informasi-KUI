@@ -24,7 +24,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Foreign Students</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$posts->total()}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$posts->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-users fa-2x"></i>
@@ -42,8 +42,8 @@
                         <div class="col mr-2">
                             <div class="font-weight-bold text-success text-uppercase mb-1">
                                 Students Exchange</div>
-                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$dataInbound->total()}}</div>
-                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$dataOutbound->total()}}</div>
+                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$dataInbound->count()}}</div>
+                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$dataOutbound->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-user-graduate fa-2x"></i>
@@ -61,8 +61,8 @@
                         <div class="col mr-2">
                             <div class="font-weight-bold text-info text-uppercase mb-1">Lecturer
                             </div>
-                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$inbounds->total()}}</div>
-                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$outbounds->total()}}</div>
+                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$inbounds->count()}}</div>
+                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$outbounds->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-user-tie fa-2x"></i>
@@ -150,24 +150,25 @@
                 <table id="example" class="table table-striped table-hover" >
                     <thead class="table-primary">
                         <tr class="text-xs">
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Fakultas/Prodi</th>
-                        <th scope="col">IPK</th>
-                        <th scope="col">BIPA</th>
-                        <th scope="col">Jenjang</th>
-                        <th scope="col">Angkatan</th>
-                        <th scope="col">J/K</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">No Hp</th>
-                        <th scope="col">Negara Asal</th>
-                        <th scope="col">Pendamping Akademik</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">NIM</th>
+                            <th scope="col">Fakultas/Prodi</th>
+                            <th scope="col">IPK</th>
+                            <th scope="col">BIPA</th>
+                            <th scope="col">Jenjang</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Angkatan</th>
+                            <th scope="col">J/K</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">No Hp</th>
+                            <th scope="col">Negara Asal</th>
+                            <th scope="col">Pendamping Akademik</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if($posts-> count() > 0)
-                            @foreach($posts as $mahasiswa)
+                        @if($postTable-> count() > 0)
+                            @foreach($postTable as $mahasiswa)
                             <tr >
                             <td class="text-center">{{ $loop-> iteration }}</td>
                             <td> {{ $mahasiswa-> Nama }}</td>
@@ -177,6 +178,7 @@
                             <td class="text-center">{{ $mahasiswa-> BIPA }}</td>
                             <td class="text-center">{{ $mahasiswa-> Jenjang }}</td>
                             <td class="text-center">{{ $mahasiswa-> Status }}</td>
+                            <td class="text-center">{{ $mahasiswa-> Angkatan }}</td>
                             <td>{{ $mahasiswa-> Gender }}</td>
                             <td>{{ $mahasiswa-> Alamat }}</td>
                             <td class="text-center">{{ $mahasiswa-> No_Hp }}</td>

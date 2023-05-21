@@ -37,6 +37,7 @@ class PostController extends Controller
     }
 
     // Import Export Function
+    
     public function importExport()
     {
         return view('mahasiswa');
@@ -53,7 +54,6 @@ class PostController extends Controller
 
         return back();
     }
-
     /**
      * Show the form for creating a new resource.
      */
