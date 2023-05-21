@@ -12,15 +12,15 @@ class UserFormController extends Controller
      */
     public function index()
     {
-        return view('form.index');
-    }
+        $posts = Post::all();
+        return view('form.index', compact('posts'));    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -28,7 +28,8 @@ class UserFormController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create($request->all());
+        return redirect()->route('userDB');
     }
 
     /**

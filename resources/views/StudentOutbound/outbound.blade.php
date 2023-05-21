@@ -12,7 +12,7 @@
             </div>
             <div class="cards_body">
               <div class="d-inline-block mb-3 navbar-search">
-                <form action="/outbound" method="GET" >
+                <form action="/dashboard/outbound" method="GET" >
                   <div class="input-group d-flex">
                       <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for...">
                       <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>

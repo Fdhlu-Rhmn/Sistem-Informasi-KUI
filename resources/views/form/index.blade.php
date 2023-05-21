@@ -8,7 +8,7 @@
             </div>
             <div class="card_body">
 
-              <form action="{{ route('mahasiswa.store') }}" method="POST">
+              <form action="{{ route('users') }}" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <div class="col">

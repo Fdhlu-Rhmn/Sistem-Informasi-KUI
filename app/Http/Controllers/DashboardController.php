@@ -19,18 +19,20 @@ class DashboardController extends Controller
      */
     public function __invoke()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::all();
         $dataInbound = StudentInbound::paginate(5);
         $dataOutbound = StudentOutbound::paginate(5);
         $inbounds = Inbound::paginate(5);
         $outbounds = Outbound::paginate(5);
-
+        $postTable = Post::paginate(5);
+        
         $angkatan = $posts->groupBy("Angkatan");
         $country = $posts->groupBy("Negara_Asal");
         $fakultas = $posts->groupBy("Fakultas_Prodi");
 
         return view('dashboard', [
             'posts' => $posts,
+            'postTable' => $postTable,
             'dataInbound' => $dataInbound,
             'dataOutbound' => $dataOutbound,
             'inbounds' => $inbounds,
