@@ -29,7 +29,7 @@ class UserFormController extends Controller
     public function store(Request $request)
     {
         Post::create($request->all());
-        return redirect()->route('userDB');
+        return redirect()->route('userDB')->with('success', 'Data berhasil di tambahkan');;
     }
 
     /**

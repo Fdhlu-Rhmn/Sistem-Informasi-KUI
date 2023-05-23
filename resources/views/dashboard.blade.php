@@ -13,7 +13,6 @@
         <h1 class="h3 mb-0 text-gray-800">Welcome, {{ auth()->user()->name }}</h1>
     </div>
 
-    @can('admin')
     <!-- Content Row -->
     <div class="row">
         <!-- Earnings (Monthly) Card Example -->
@@ -139,7 +138,8 @@
                 </div>
             </div>
         </div>
-
+        
+        @can('admin')
         <div class="card border-left-primary shadow h-100 py-2 mx-2 mb-5">
             <div class="cards_head">
                 <h1>Foreign Students</h1>
