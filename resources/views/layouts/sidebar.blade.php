@@ -19,7 +19,7 @@
                 <img src="/assets/intnews.png"  class="logo" alt="">
             </div>
             <div class="navBar_left">
-                <img src="/assets/akmal.jpg" alt="admin photo">
+                <img src="/assets/akmal.png" alt="admin photo">
                 <div class="dropdown">
                     <a class=" btn  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->name }}
@@ -114,12 +114,12 @@
                             <span class="ms-2">Form</span>
                         </a>
                     </li>
-                    <li class="nav-item disabled mb-4">
+                    {{-- <li class="nav-item disabled mb-4">
                         <a href="/dashboard/profile" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
                             <i class="fa-solid fa-list"></i>
                             <span class="ms-2">Edit Profile</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
                 @endcan
             </div>

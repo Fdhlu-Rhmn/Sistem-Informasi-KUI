@@ -26,8 +26,17 @@
                         <input type="text" name="IPK" class="form-control" placeholder="IPK">
                     </div>
                     <div class="col">
-                      <input type="text" name="BIPA" class="form-control" placeholder="BIPA">
-                    </div>
+                      <div class="dropdown border rounded">
+                        <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="BIPA">
+                          <option hidden> BIPA</option>
+                          <option>A</option>
+                          <option>B</option>
+                          <option>C</option>
+                          <option>D</option>
+                          <option>E</option>
+                        </select>
+                      </div>
+                    </div>        
                     <div class="col">
                       <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang">
                     </div>
@@ -38,10 +47,28 @@
 
                 <div class="row mb-3">
                   <div class="col">
-                      <input type="text" name="Angkatan" class="form-control" placeholder="Angkatan">
+                      {{-- <input type="text" name="Angkatan" class="form-control" placeholder="Angkatan"> --}}
+                      <div class="dropdown border rounded">
+                        <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="Angkatan">
+                          <option hidden> Angkatan</option>
+                          <option>2018</option>
+                          <option>2019</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                          <option>2022</option>
+                          <option>2023</option>
+                        </select>
+                      </div>
                   </div>
                   <div class="col">
-                    <input type="text" name="Gender" class="form-control" placeholder="Jenis Kelamin">
+                    {{-- <input type="text" name="Gender" class="form-control" placeholder="Jenis Kelamin"> --}}
+                    <div class="dropdown border rounded">
+                      <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="Gender">
+                        <option hidden> Gender</option>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <div class="row mb-3">

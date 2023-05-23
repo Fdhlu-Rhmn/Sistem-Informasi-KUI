@@ -15,7 +15,14 @@ class ImportOutbound implements ToModel
     public function model(array $row)
     {
         return new Outbound([
-            //
+            'name'=> $row[0],
+            'institusi_tujuan'=> $row[1],
+            'fakultas'=> $row[2],
+            'prodi'=> $row[3],
+            'negara_tujuan'=> $row[4],
+            'program'=> $row[5],
+            'durasi_program'=> $row[6],
+            'email'=> $row[7],
         ]);
     }
 }

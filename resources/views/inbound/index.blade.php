@@ -47,13 +47,13 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Email</th>
                                 <th scope="col">Institusi Asal</th>
+                                <th scope="col">Fakultas</th>
+                                <th scope="col">Prodi</th>
                                 <th scope="col">Negara Asal</th>
-                                <th scope="col">Fakultas Kegiatan</th>
-                                <th scope="col">Prodi Kegiatan</th>
                                 <th scope="col">Nama Program</th>
-                                <th scope="col">Durasi</th>
+                                <th scope="col">Durasi Program</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">PIC</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -64,13 +64,13 @@
                                     <tr>
                                         <td class="text-center">{{$index + $inbounds -> firstItem()}}</td>
                                         <td>{{ $inbound->name }}</td>
-                                        <td>{{ $inbound->email }}</td>
                                         <td>{{ $inbound->institusi_asal }}</td>
-                                        <td>{{ $inbound->negara_asal }}</td>
                                         <td>{{ $inbound->fakultas }}</td>
                                         <td>{{ $inbound->prodi }}</td>
+                                        <td>{{ $inbound->negara_asal }}</td>
                                         <td>{{ $inbound->program }}</td>
                                         <td>{{ $inbound->durasi_program }}</td>
+                                        <td>{{ $inbound->email }}</td>
                                         <td>{{ $inbound->PIC }}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">

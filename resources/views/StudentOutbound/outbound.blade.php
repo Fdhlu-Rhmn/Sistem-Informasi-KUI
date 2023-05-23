@@ -46,13 +46,13 @@
                   <tr >
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Negara Tujuan</th>
                     <th scope="col">Institusi Tujuan</th>
-                    <th scope="col">Nama Program</th>
-                    <th scope="col">Durasi Pertukaran</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Prodi</th>
                     <th scope="col">Fakultas</th>
+                    <th scope="col">Prodi</th>
+                    <th scope="col">Negara Tujuan</th>
+                    <th scope="col">Nama Program</th>
+                    <th scope="col">Durasi Program</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Action</th>
 
 
@@ -63,13 +63,13 @@
                   <tr>
                     <td class="text-center">{{ $index + $dataOutbound -> firstItem()}}</td>
                     <td> {{ $outbound-> Nama }}</td>
-                    <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
                     <td>{{ $outbound-> Institusi_Tujuan }}</td>
                     <td class="text-center">{{ $outbound-> Nama_Program }}</td>
+                    <td>{{ $outbound-> Fakultas }}</td>
+                    <td class="text-center">{{ $outbound-> Prodi }}</td>
+                    <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
                     <td class="text-center">{{ $outbound-> Durasi }}</td>
                     <td class="text-center">{{ $outbound-> Email }}</td>
-                    <td class="text-center">{{ $outbound-> Prodi }}</td>
-                    <td>{{ $outbound-> Fakultas }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
                       <a  href="{{ route('outbound.edit', $outbound->id)}}" type="button" class="btn btn-primary">Edit</a>
