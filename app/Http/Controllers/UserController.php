@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
     public function login()
     {
         return view('/login');
@@ -36,5 +37,36 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/login');
+    }
+
+    public function update(Request $request){
+        $rules = [
+            'name' => 'required|max:255',
+            'username' => 'required|max:255',
+        ];
+
+        if($request->password != null){
+            $rules['password'] = 'required|min:8|confirmed';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        if($request->password != null){
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        }
+
+
+        $user = Auth::user();
+        $user->update($validatedData);
+
+        return redirect()->back();
+    }
+
+
+    public function index() {
+        $user = Auth::user();
+        return view('profil', [
+            'user' => $user
+        ]);
     }
 }

@@ -58,7 +58,7 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100 py-3" >
-                                <a href="/dashboard/inbound" class="align-middle nav-link-active text-black text-decoration-none fs-6  p-2 pb-4"> 
+                                <a href="/dashboard/inbound" class="align-middle nav-link-active text-black text-decoration-none fs-6  p-2 pb-4">
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Inbound</span>
                                 </a>
@@ -78,7 +78,7 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100 py-3 ">
-                                <a href="/dashboard/dosen-inbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4"> 
+                                <a href="/dashboard/dosen-inbound" class="align-middle nav-link-active text-black text-decoration-none fs-7 p-2 pb-4">
                                     <i class="fa-solid fa-caret-right"></i>
                                     <span class="d-none d-sm-inline px-2">Inbound</span>
                                 </a>
@@ -115,7 +115,7 @@
                         </a>
                     </li>
                     <li class="nav-item disabled mb-4">
-                        <a href="/dashboard/profile" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
+                        <a href="/dashboard/adminProfil" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2 " aria-current="page">
                             <i class="fa-solid fa-list"></i>
                             <span class="ms-2">Edit Profile</span>
                         </a>
