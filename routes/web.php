@@ -23,7 +23,7 @@ use App\Http\Controllers\UserFormController;
 |
 */
 
-Route::get('/login', [UserController::class, 'login'])->middleware('guest');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 Route::post('/login', [UserController::class, 'auth']);
 
@@ -31,11 +31,10 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-
-
-Route::get('/dashboard/adminProfil{extension}', function () {
-    return view('profil');
-})->where('extension', '(?:.html)?');
+Route::controller(UserController::class)->group(function () {
+    Route::get('/dashboard/adminProfil{extension}', 'index')->where('extension', '(?:.html)?');
+    Route::post('/dashboard/updateAdminProfile', 'update')->name('update-profile-admin');
+});
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::controller(PostController::class)->group(function () {
@@ -71,6 +70,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('/dashboard/outbound', StudentOutboundController::class);
     Route::resource('/dashboard/dosen-inbound', InboundController::class);
     Route::resource('/dashboard/dosen-outbound', OutboundController::class);
+
 });
 
 Route::resource('/dashboard/mahasiswa', PostController::class);
