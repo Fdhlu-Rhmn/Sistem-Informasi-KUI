@@ -15,13 +15,13 @@ class StudentOutbound extends Model
    */
   protected $fillable = [
     'Nama',
-    'Negara_Tujuan',
     'Institusi_Tujuan',
+    'Fakultas',
+    'Prodi',
+    'Negara_Tujuan',
     'Nama_Program',
     'Durasi',
     'Email',
-    'Prodi',
-    'Fakultas',
   ];
   protected $table = 'StudentOutbounds';
 

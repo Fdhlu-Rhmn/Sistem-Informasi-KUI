@@ -13,7 +13,6 @@
         <h1 class="h3 mb-0 text-gray-800">Welcome, {{ auth()->user()->name }}</h1>
     </div>
 
-    @can('admin')
     <!-- Content Row -->
     <div class="row">
         <!-- Earnings (Monthly) Card Example -->
@@ -139,7 +138,8 @@
                 </div>
             </div>
         </div>
-
+        
+        @can('admin')
         <div class="card border-left-primary shadow h-100 py-2 mx-2 mb-5">
             <div class="cards_head">
                 <h1>Foreign Students</h1>
@@ -221,8 +221,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if($dataInbound -> count() > 0)
-                            @foreach($dataInbound as $inbound)
+                        @if($dataInboundTable -> count() > 0)
+                            @foreach($dataInboundTable as $inbound)
                             <tr>
                             <td class="text-center">{{ $loop-> iteration }}</td>
                             <td> {{ $inbound-> Nama }}</td>
@@ -267,8 +267,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if($dataOutbound-> count() > 0)
-                            @foreach($dataOutbound as $outbound)
+                        @if($dataOutboundTable-> count() > 0)
+                            @foreach($dataOutboundTable as $outbound)
                             <tr>
                             <td class="text-center">{{ $loop-> iteration }}</td>
                             <td> {{ $outbound-> Nama }}</td>
@@ -317,8 +317,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($inbounds->count() > 0)
-                            @foreach ($inbounds as $inbound)
+                        @if ($inboundsTable->count() > 0)
+                            @foreach ($inboundsTable as $inbound)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $inbound->name }}</td>
@@ -362,8 +362,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($outbounds->count() > 0)
-                            @foreach ($outbounds as $outbound)
+                        @if ($outboundsTable->count() > 0)
+                            @foreach ($outboundsTable as $outbound)
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $outbound->name }}</td>

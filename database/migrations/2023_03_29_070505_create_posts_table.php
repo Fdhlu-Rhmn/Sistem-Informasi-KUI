@@ -16,11 +16,11 @@ return new class extends Migration {
             $table->string('NIM')->nullable();
             $table->string('Fakultas_Prodi')->nullable();
             $table->float('IPK')->nullable();
-            $table->string('BIPA')->nullable();
+            $table->enum('BIPA', ['A', 'B', 'C', 'D', 'E'])->nullable();
             $table->string('Jenjang')->nullable();
             $table->string('Status')->nullable();
-            $table->integer('Angkatan')->nullable();
-            $table->string('Gender')->nullable();
+            $table->enum('Angkatan', ['2018', '2019', '2020', '2021', '2022', '2023'])->nullable();
+            $table->enum('Gender', ['Laki-laki', 'Perempuan'])->nullable();
             $table->string('Alamat')->nullable();
             $table->string('No_Hp')->nullable();
             $table->string('Negara_Asal')->nullable();

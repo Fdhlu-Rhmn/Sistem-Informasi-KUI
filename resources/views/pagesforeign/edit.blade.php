@@ -27,7 +27,17 @@
                         <input type="text" name="IPK" class="form-control" placeholder="IPK" value="{{ $mahasiswa-> IPK }}">
                     </div>
                     <div class="col">
-                      <input type="text" name="BIPA" class="form-control" placeholder="BIPA" value="{{ $mahasiswa-> BIPA }}">
+                      {{-- <input type="text" name="BIPA" class="form-control" placeholder="BIPA" value="{{ $mahasiswa-> BIPA }}"> --}}
+                      <div class="dropdown border rounded">
+                        <select class="form-control btn  dropdown-toggle btn-s" name="Angkatan">
+                          <option hidden>{{ $mahasiswa-> BIPA }}</option>
+                          <option>A</option>
+                          <option>B</option>
+                          <option>C</option>
+                          <option>D</option>
+                          <option>E</option>
+                        </select>
+                      </div>
                     </div>
                     <div class="col">
                       <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang" value="{{ $mahasiswa-> Jenjang }}">
@@ -39,11 +49,25 @@
 
                 <div class="row mb-3">
                   <div class="col">
-                      <input type="text" name="Angkatan" class="form-control" placeholder="Angkatan" value="{{ $mahasiswa-> Angkatan }}">
-                  </div>
+                    <div class="dropdown border rounded">
+                      <select class="form-control btn  dropdown-toggle btn-s" name="Angkatan">
+                        <option hidden> {{ $mahasiswa-> Angkatan }}</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                      </select>
+                    </div>                  </div>
                   <div class="col">
-                    <input type="text" name="Gender" class="form-control" placeholder="Jenis Kelamin" value="{{ $mahasiswa-> Gender }}">
-                  </div>
+                    <div class="dropdown border rounded">
+                      <select class="form-control btn  dropdown-toggle btn-s" name="Gender">
+                        <option hidden>{{ $mahasiswa-> Gender }}</option>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                      </select>
+                    </div>                  </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">

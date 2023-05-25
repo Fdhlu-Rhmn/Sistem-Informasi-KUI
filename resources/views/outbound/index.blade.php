@@ -47,13 +47,13 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Email</th>
                                 <th scope="col">Institusi Tujuan</th>
-                                <th scope="col">Negara Tujuan</th>
                                 <th scope="col">Fakultas</th>
                                 <th scope="col">Prodi</th>
-                                <th scope="col">Program</th>
-                                <th scope="col">Durasi</th>
+                                <th scope="col">Negara Tujuan</th>
+                                <th scope="col">Nama Program</th>
+                                <th scope="col">Durasi Program</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -63,13 +63,13 @@
                                     <tr>
                                         <td class="text-center">{{ $index + $outbounds -> firstItem()}}</td>
                                         <td>{{ $outbound->name }}</td>
-                                        <td>{{ $outbound->email }}</td>
                                         <td>{{ $outbound->institusi_tujuan }}</td>
-                                        <td>{{ $outbound->negara_tujuan }}</td>
                                         <td>{{ $outbound->fakultas }}</td>
                                         <td>{{ $outbound->prodi }}</td>
+                                        <td>{{ $outbound->negara_tujuan }}</td>
                                         <td>{{ $outbound->program }}</td>
                                         <td>{{ $outbound->durasi_program }}</td>
+                                        <td>{{ $outbound->email }}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="{{ route('dosen-outbound.edit', $outbound->id) }}" type="button"

@@ -20,11 +20,16 @@ class DashboardController extends Controller
     public function __invoke()
     {
         $posts = Post::all();
-        $dataInbound = StudentInbound::paginate(5);
-        $dataOutbound = StudentOutbound::paginate(5);
-        $inbounds = Inbound::paginate(5);
-        $outbounds = Outbound::paginate(5);
+        $dataInbound = StudentInbound::all();
+        $dataOutbound = StudentOutbound::all();
+        $inbounds = Inbound::all();
+        $outbounds = Outbound::all();
+        
         $postTable = Post::paginate(5);
+        $dataInboundTable = StudentInbound::paginate(5);
+        $dataOutboundTable = StudentOutbound::paginate(5);
+        $inboundsTable = Inbound::paginate(5);
+        $outboundsTable = Outbound::paginate(5);
         
         $angkatan = $posts->groupBy("Angkatan");
         $country = $posts->groupBy("Negara_Asal");
@@ -32,11 +37,17 @@ class DashboardController extends Controller
 
         return view('dashboard', [
             'posts' => $posts,
-            'postTable' => $postTable,
             'dataInbound' => $dataInbound,
             'dataOutbound' => $dataOutbound,
             'inbounds' => $inbounds,
             'outbounds' => $outbounds,
+            
+            'postTable' => $postTable,
+            'dataInboundTable' => $dataInboundTable,
+            'dataOutboundTable' => $dataOutboundTable,
+            'inboundsTable' => $inboundsTable,
+            'outboundsTable' => $outboundsTable,
+            
             'angkatan' => $angkatan,
             'country' => $country,
             'fakultas' => $fakultas

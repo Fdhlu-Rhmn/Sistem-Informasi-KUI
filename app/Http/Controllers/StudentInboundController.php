@@ -18,36 +18,36 @@ class StudentInboundController extends Controller
    */
   public function index(Request $request)
   {
-      if ($request->has('search')) {
-        $dataInbound = StudentInbound::where('Nama', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Email', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Institusi_Asal', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Negara_Asal', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Fakultas', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Prodi', 'LIKE', '%'.$request->search.'%')
-              ->paginate(5);
-      }else{
-        $dataInbound = StudentInbound::paginate(5);
-      }
+    if ($request->has('search')) {
+      $dataInbound = StudentInbound::where('Nama', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Email', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Institusi_Asal', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Negara_Asal', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Fakultas', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Prodi', 'LIKE', '%' . $request->search . '%')
+        ->paginate(5);
+    } else {
+      $dataInbound = StudentInbound::paginate(5);
+    }
     // $dataInbound = StudentInbound::paginate(5);
     return view('pagesStudentIn.inbound', compact('dataInbound'));
   }
 
   public function importExportStudentInbound()
   {
-     return view('inbound');
+    return view('inbound');
   }
 
-  public function exportStudentInbound() 
+  public function exportStudentInbound()
   {
-      return 'Excel'::download(new ExportStudentInbound, 'StudentInbound.xlsx');
+    return 'Excel'::download(new ExportStudentInbound, 'StudentInbound.xlsx');
   }
 
-  public function importStudentInbound() 
+  public function importStudentInbound()
   {
-      'Excel'::import(new ImportStudentInbound, request()->file('file'));
-          
-      return back();
+    'Excel'::import(new ImportStudentInbound, request()->file('file'));
+
+    return back();
   }
 
   /**
