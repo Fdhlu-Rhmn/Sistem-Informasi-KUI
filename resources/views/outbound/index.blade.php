@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('css')
-    <link rel="stylesheet" href="style/mahasiswa.css">
+    <link rel="stylesheet" href="/style/mahasiswa.css">
 @endsection
 
 @section('main')
@@ -93,7 +93,6 @@
                     </table>
                 </div>
                 <a class="btn btn-primary" href="{{ route('dosen-outbound.create') }}" role="button">Tambah Outbound Dosen</a>
-                {{-- {{$outbounds->links()}} --}}
                 {!! $outbounds->appends(Request::except('page'))->render()!!}
 
 

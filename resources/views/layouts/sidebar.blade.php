@@ -92,6 +92,12 @@
                         </ul>
                     </li>
                     <li class="nav-item disabled mb-4">
+                        <a href="/dashboard/pending" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
+                            <i class="fas fa-comments"></i>
+                            <span class="ms-2">Pending Request</span>
+                        </a>
+                    </li>
+                    <li class="nav-item disabled mb-4">
                         <a href="/dashboard/adminProfil" class="nav-link-active text-black text-decoration-none fw-bold fs-6 p-2" aria-current="page">
                             <i class="fa-solid fa-user"></i>
                             <span class="ms-2">Admin Profile</span>

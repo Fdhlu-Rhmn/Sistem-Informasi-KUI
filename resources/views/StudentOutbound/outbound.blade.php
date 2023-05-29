@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('css')
-<link rel="stylesheet" href="style/mahasiswa.css">
+<link rel="stylesheet" href="/style/mahasiswa.css">
 @endsection
 
 @section('main')

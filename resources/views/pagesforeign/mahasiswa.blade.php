@@ -76,43 +76,41 @@
                     <th scope="col">Negara Asal</th>
                     <th scope="col">Pendamping Akademik</th>
                     <th scope="col">Action</th>
-
                   </tr>
                 </thead>
                 <tbody>
                   @if($posts-> count() > 0)
                     @foreach($posts as $index => $mahasiswa)
                     <tr>
-                      <td class="text-center">{{ $index + $posts -> firstItem() }}</td>
+                      <td >{{ $index + $posts -> firstItem() }}</td>
                       <td> {{ $mahasiswa-> Nama }}</td>
-                      <td class="text-center">{{ $mahasiswa-> NIM }}</td>
+                      <td >{{ $mahasiswa-> NIM }}</td>
                       <td>{{ $mahasiswa-> Fakultas_Prodi }}</td>
-                      <td class="text-center">{{ $mahasiswa-> IPK }}</td>
-                      <td class="text-center">{{ $mahasiswa-> BIPA }}</td>
-                      <td class="text-center">{{ $mahasiswa-> Jenjang }}</td>
-                      <td class="text-center">{{ $mahasiswa-> Status }}</td>
-                      <td class="text-center">{{ $mahasiswa-> Angkatan }}</td>
+                      <td >{{ $mahasiswa-> IPK }}</td>
+                      <td >{{ $mahasiswa-> BIPA }}</td>
+                      <td >{{ $mahasiswa-> Jenjang }}</td>
+                      <td >{{ $mahasiswa-> Status }}</td>
+                      <td >{{ $mahasiswa-> Angkatan }}</td>
                       <td>{{ $mahasiswa-> Gender }}</td>
                       <td>{{ $mahasiswa-> Alamat }}</td>
-                      <td class="text-center">{{ $mahasiswa-> No_Hp }}</td>
+                      <td >{{ $mahasiswa-> No_Hp }}</td>
                       <td>{{ $mahasiswa-> Negara_Asal }}</td>
                       <td>{{ $mahasiswa-> Pendamping_Akademik }}</td>
                       <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                        <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                            <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary">Edit</a>
+                            <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                           @csrf
                           @method('DELETE')
                           <button class="btn btn-danger m-0">Delete</button>
-
                         </div>
-                    </td>
+                      </td>
                     </tr>
                     @endforeach
                   @else
-                  <tr>
-                    <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
-                  </tr>
+                    <tr>
+                        <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                    </tr>
                   @endif
                 </tbody>
               </table>

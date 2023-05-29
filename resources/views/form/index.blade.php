@@ -26,16 +26,7 @@
                         <input type="text" name="IPK" class="form-control" placeholder="IPK">
                     </div>
                     <div class="col">
-                      <div class="dropdown border rounded">
-                        <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="BIPA">
-                          <option hidden> BIPA</option>
-                          <option>A</option>
-                          <option>B</option>
-                          <option>C</option>
-                          <option>D</option>
-                          <option>E</option>
-                        </select>
-                      </div>
+                      <input type="text" name="BIPA" class="form-control" placeholder="BIPA">
                     </div>        
                     <div class="col">
                       <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang">
@@ -63,8 +54,8 @@
                     <div class="dropdown border rounded">
                       <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="Gender">
                         <option hidden> Gender</option>
-                        <option>Laki-laki</option>
-                        <option>Perempuan</option>
+                        <option>L</option>
+                        <option>P</option>
                       </select>
                     </div>
                   </div>

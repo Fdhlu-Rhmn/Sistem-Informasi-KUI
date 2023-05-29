@@ -10,13 +10,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('pendings', function (Blueprint $table) {
             $table->id();
             $table->string('Nama')->nullable();
             $table->string('NIM')->nullable();
             $table->string('Fakultas_Prodi')->nullable();
             $table->float('IPK')->nullable();
-            $table->enum('BIPA', ['A', 'B', 'C', 'D', 'E'])->nullable();
+            $table->string('BIPA')->nullable();
             $table->string('Jenjang')->nullable();
             $table->string('Status')->nullable();
             $table->string('Angkatan')->nullable();
@@ -25,8 +25,6 @@ return new class extends Migration {
             $table->string('No_Hp')->nullable();
             $table->string('Negara_Asal')->nullable();
             $table->string('Pendamping_Akademik')->nullable();
-
-
             $table->timestamps();
         });
     }
@@ -36,6 +34,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('pendings');
     }
 };
