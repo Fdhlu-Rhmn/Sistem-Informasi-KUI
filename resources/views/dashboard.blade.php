@@ -147,7 +147,7 @@
             </div>
 
             <div class="table-responsive ">
-                <table id="example" class="table table-striped table-hover" >
+                <table id="example" class="projek__table" >
                     <thead class="table-primary">
                         <tr class="text-xs">
                             <th scope="col">No</th>
@@ -188,7 +188,7 @@
                             @endforeach
                         @else
                         <tr>
-                            <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                            <td class ="text-center"colspan="14">There is no data</td>
                         </tr>
                         @endif
                     </tbody>
@@ -205,7 +205,7 @@
                 <span class="dividers dividers--width-students"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
                         <th scope="col">No</th>
@@ -238,7 +238,7 @@
                             @endforeach
                         @else
                         <tr>
-                            <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                            <td class ="text-center"colspan="14">There is no data</td>
                         </tr>
                         @endif
                     </tbody>
@@ -252,7 +252,7 @@
                 <span class="dividers dividers--width-studentsOutbound"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr >
                             <th scope="col">No</th>
@@ -283,7 +283,7 @@
                             @endforeach
                         @else
                         <tr>
-                            <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                            <td class ="text-center"colspan="14">There is no data</td>
                         </tr>
                         @endif
                   </tbody>
@@ -301,7 +301,7 @@
                 <span class="dividers dividers--width-lecturerInbound"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
                             <th scope="col">No</th>
@@ -347,7 +347,7 @@
                 <span class="dividers dividers--width-lecturerOutbound"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
                             <th scope="col">No</th>

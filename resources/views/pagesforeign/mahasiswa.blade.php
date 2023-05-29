@@ -58,24 +58,24 @@
             </div>
             @endif
             <div class="table-responsive ">
-              <table id="example" class="table table-striped table-hover " style="width:100%">
+              <table id="example" class="projek__table">
                 <thead class="table-primary">
                   <tr >
-                    <th scope="col">No</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">NIM</th>
-                    <th scope="col">Fakultas/Prodi</th>
-                    <th scope="col">IPK</th>
-                    <th scope="col">BIPA</th>
-                    <th scope="col">Jenjang</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Angkatan</th>
-                    <th scope="col">J/K</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No Hp</th>
-                    <th scope="col">Negara Asal</th>
-                    <th scope="col">Pendamping Akademik</th>
-                    <th scope="col">Action</th>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Fakultas/Prodi</th>
+                    <th>IPK</th>
+                    <th>BIPA</th>
+                    <th>Jenjang</th>
+                    <th>Status</th>
+                    <th>Angkatan</th>
+                    <th>J/K</th>
+                    <th>Alamat</th>
+                    <th>No Hp</th>
+                    <th>Negara Asal</th>
+                    <th>Pendamping Akademik</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -98,25 +98,25 @@
                       <td>{{ $mahasiswa-> Pendamping_Akademik }}</td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary">Edit</a>
+                            <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                           @csrf
                           @method('DELETE')
-                          <button class="btn btn-danger m-0">Delete</button>
+                          <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
                         </div>
                       </td>
                     </tr>
                     @endforeach
                   @else
                     <tr>
-                        <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                        <td class ="text-center"colspan="14">There is no data</td>
                     </tr>
                   @endif
                 </tbody>
               </table>
             </div>
             <div class="p-3">
-              <a class="btn btn-primary " href="{{route('mahasiswa.create')}}" role="button">Tambah Mahasiswa</a>
+              <a class="btn btn-primary" href="{{route('mahasiswa.create')}}" role="button">Tambah Foreign Students </a>
               {!! $posts->appends(Request::except('page'))->render()!!}
             </div>
 

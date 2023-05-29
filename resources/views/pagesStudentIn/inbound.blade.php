@@ -40,7 +40,7 @@
             </div>
             @endif
             <div class="table-responsive ">
-              <table id="example" class="table table-striped table-hover ">
+              <table id="example" class="projek__table ">
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">No</th>
@@ -72,11 +72,11 @@
                       <td>{{ $inbound-> PIC }}</td>
                       <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                        <a  href="{{ route('inbound.edit', $inbound->id)}}" type="button" class="btn btn-primary">Edit</a>
+                        <a  href="{{ route('inbound.edit', $inbound->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{ route('inbound.destroy', $inbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                           @csrf
                           @method('DELETE')
-                          <button class="btn btn-danger m-0">Delete</button>
+                          <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
 
                         </div>
                     </td>
@@ -84,13 +84,13 @@
                     @endforeach
                   @else
                   <tr>
-                    <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                    <td class ="text-center"colspan="14">There is no data</td>
                   </tr>
                   @endif
                 </tbody>
               </table>
             </div>
-                  <a class="btn btn-primary" href="{{route('inbound.create')}}" role="button">Tambah Mahasiswa</a>
+                  <a class="btn btn-primary" href="{{route('inbound.create')}}" role="button">Tambah Student Inbounds</a>
                   {{-- {{$dataInbound->links()}} --}}
                   {!! $dataInbound->appends(Request::except('page'))->render()!!}
 

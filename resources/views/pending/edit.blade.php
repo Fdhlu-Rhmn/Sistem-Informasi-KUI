@@ -26,7 +26,7 @@
                         <input type="text" name="IPK" class="form-control" placeholder="IPK" value="{{ $pendings-> IPK }}">
                     </div>
                     <div class="col">
-                        <input type="text" name="BIPA" class="form-control" placeholder="BIPA">
+                        <input type="text" name="BIPA" class="form-control" placeholder="BIPA" value="{{ $pendings-> BIPA }}">
                     </div>
                     <div class="col">
                       <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang" value="{{ $pendings-> Jenjang }}">

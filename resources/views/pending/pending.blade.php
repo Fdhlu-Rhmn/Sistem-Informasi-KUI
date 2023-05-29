@@ -26,7 +26,7 @@
             </div>
             @endif
             <div class="table-responsive ">
-              <table id="example" class="table table-striped table-hover " style="width:100%">
+              <table id="example" class="projek__table " style="width:100%">
                 <thead class="table-primary">
                   <tr >
                     <tr >
@@ -67,11 +67,11 @@
                       <td>{{ $pending-> Pendamping_Akademik }}</td>
                       <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                        <a  href="{{ route('pending.edit', $pending->id)}}" type="button" class="btn btn-primary">Edit</a>
+                        <a  href="{{ route('pending.edit', $pending->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{ route('pending.destroy', $pending->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                           @csrf
                           @method('DELETE')
-                          <button class="btn btn-danger m-0">Delete</button>
+                          <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </td>
                     </tr>
