@@ -23,20 +23,22 @@
                   <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi" value="{{ $mahasiswa-> Fakultas_Prodi }}">
                 </div>
                 <div class="row mb-3">
-                    <div class="col">
-                        <input type="text" name="IPK" class="form-control" placeholder="IPK" value="{{ $mahasiswa-> IPK }}">
-                    </div>
-                    <div class="col">
-                      <input type="text" name="BIPA" class="form-control" placeholder="BIPA" value="{{ $mahasiswa-> BIPA }}">
-                    <div class="col">
-                      <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang" value="{{ $mahasiswa-> Jenjang }}">
-                    </div>
-                    <div class="col">
-                      <input type="text" name="Status" class="form-control" placeholder="Status" value="{{ $mahasiswa-> Status }}">
-                    </div>
+                  <div class="col">
+                      <input type="text" name="IPK" class="form-control" placeholder="IPK" value="{{ $mahasiswa-> IPK }}">
+                  </div>
+                  <div class="col">
+                    <input type="text" name="BIPA" class="form-control" placeholder="BIPA" value="{{ $mahasiswa-> BIPA }}">
+                  </div>        
+                  <div class="col">
+                    <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang" value="{{ $mahasiswa-> Jenjang }}">
+                  </div>
+                  <div class="col">
+                    <input type="text" name="Status" class="form-control" placeholder="Status" value="{{ $mahasiswa-> Status }}">
+                  </div>
                 </div>
-
+              
                 <div class="row mb-3">
+
                   <div class="col">
                     <div class="dropdown border rounded">
                       <select class="form-control btn  dropdown-toggle btn-s" name="Angkatan">
@@ -48,7 +50,9 @@
                         <option>2022</option>
                         <option>2023</option>
                       </select>
-                    </div>                  </div>
+                    </div>                  
+                  </div>
+
                   <div class="col">
                     <div class="dropdown border rounded">
                       <select class="form-control btn  dropdown-toggle btn-s" name="Gender">
@@ -59,6 +63,7 @@
                     </div>                  
                   </div>
                 </div>
+
                 <div class="row mb-3">
                   <div class="col">
                     <input type="text" name="Alamat" class="form-control" placeholder="Alamat di Makassar" value="{{ $mahasiswa-> Alamat }}">

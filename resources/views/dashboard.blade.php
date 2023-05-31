@@ -273,10 +273,10 @@
                             <td class="text-center">{{ $loop-> iteration }}</td>
                             <td> {{ $outbound-> Nama }}</td>
                             <td>{{ $outbound-> Institusi_Tujuan }}</td>
-                            <td class="text-center">{{ $outbound-> Nama_Program }}</td>
                             <td>{{ $outbound-> Fakultas }}</td>
                             <td class="text-center">{{ $outbound-> Prodi }}</td>
                             <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
+                            <td class="text-center">{{ $outbound-> Nama_Program }}</td>
                             <td class="text-center">{{ $outbound-> Durasi }}</td>
                             <td class="text-center">{{ $outbound-> Email }}</td>
                             </tr>

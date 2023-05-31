@@ -45,6 +45,13 @@
             </div>
             <button class="buttons mb-3" type="submit">Login</button>
           </form>
+
+          @if (Session::has('success'))
+          <div class="alert alert-success" role="alert">
+              {{ Session::get('success') }}
+          </div>
+          @endif
+
           <div class="text-center">
             <span class="d-inline">Don't have an Account? <a class="d-inline" href="/register">Sign Up
                 Here</a></span>

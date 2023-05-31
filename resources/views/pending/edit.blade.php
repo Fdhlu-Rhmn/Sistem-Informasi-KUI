@@ -48,7 +48,9 @@
                         <option>2022</option>
                         <option>2023</option>
                       </select>
-                    </div>                  </div>
+                    </div>                  
+                  </div>
+
                   <div class="col">
                     <div class="dropdown border rounded">
                       <select class="form-control btn  dropdown-toggle btn-s" name="Gender">
@@ -57,7 +59,9 @@
                         <option>P</option>
                       </select>
                     </div>                  
+                  </div>
                 </div>
+
                 <div class="row mb-3">
                   <div class="col">
                     <input type="text" name="Alamat" class="form-control" placeholder="Alamat di Makassar" value="{{ $pendings-> Alamat }}">

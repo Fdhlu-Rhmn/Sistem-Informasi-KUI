@@ -40,6 +40,7 @@ class PendingController extends Controller
     public function store(Request $request)
     {
         Post::create($request->all());
+
         return redirect()->route('pending.index')->with('success', 'Data berhasil di tambahkan');
     }
 
@@ -57,6 +58,8 @@ class PendingController extends Controller
     public function edit(string $id)
     {
         $pendings = Pending::findOrFail($id);
+
+        $pendings->delete();
 
         return view('pending.edit', compact('pendings'));
     }
@@ -78,5 +81,6 @@ class PendingController extends Controller
 
         $pendings->delete();
 
-        return redirect()->route('pending.index')->with('success', 'Data Berhasil di hapus');    }
+        return redirect()->route('pending.index')->with('success', 'Data Berhasil di hapus');
+    }
 }
