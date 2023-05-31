@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('css')
-    <link rel="stylesheet" href="style/mahasiswa.css">
+    <link rel="stylesheet" href="/style/mahasiswa.css">
 @endsection
 
 @section('main')
@@ -42,7 +42,7 @@
 
             <div class="cards_body">
                 <div class="table-responsive">
-                    <table id="example" class="table table-striped table-hover ">
+                    <table id="example" class="projek__table ">
                         <thead class="table-primary">
                             <tr>
                                 <th scope="col">No</th>
@@ -73,13 +73,13 @@
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="{{ route('dosen-outbound.edit', $outbound->id) }}" type="button"
-                                                    class="btn btn-primary">Edit</a>
+                                                    class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 <form action="{{ route('dosen-outbound.destroy', $outbound->id) }}"
                                                     method="POST" type="button" class="btn btn-danger p-0"
                                                     onsubmit="return confirm('Delete?')">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger m-0">Delete</button>
+                                                    <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -93,7 +93,6 @@
                     </table>
                 </div>
                 <a class="btn btn-primary" href="{{ route('dosen-outbound.create') }}" role="button">Tambah Outbound Dosen</a>
-                {{-- {{$outbounds->links()}} --}}
                 {!! $outbounds->appends(Request::except('page'))->render()!!}
 
 

@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('css')
-<link rel="stylesheet" href="style/mahasiswa.css">
+<link rel="stylesheet" href="/style/mahasiswa.css">
 @endsection
 
 @section('main')
@@ -41,7 +41,7 @@
             @endif
 
             <div class="table-responsive">
-              <table id="example" class="table table-striped table-hover ">
+              <table id="example" class="projek__table ">
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">No</th>
@@ -72,11 +72,11 @@
                     <td class="text-center">{{ $outbound-> Email }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                      <a  href="{{ route('outbound.edit', $outbound->id)}}" type="button" class="btn btn-primary">Edit</a>
+                      <a  href="{{ route('outbound.edit', $outbound->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                       <form action="{{ route('outbound.destroy', $outbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger m-0">Delete</button>
+                        <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
 
                       </div>
                   </td>
@@ -84,7 +84,7 @@
                   @endforeach
                 @else
                 <tr>
-                  <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                  <td class ="text-center"colspan="14">There is no data</td>
                 </tr>
                 @endif
                 </tbody>
@@ -92,7 +92,7 @@
             </div>
             
             <div>
-                  <a class="btn btn-primary" href="{{route('outbound.create')}}" role="button">Tambah Mahasiswa</a>
+                  <a class="btn btn-primary" href="{{route('outbound.create')}}" role="button">Tambah Student Outbounds</a>
                   {{-- {{$dataOutbound->links()}} --}}
                   {!! $dataOutbound->appends(Request::except('page'))->render()!!}
 

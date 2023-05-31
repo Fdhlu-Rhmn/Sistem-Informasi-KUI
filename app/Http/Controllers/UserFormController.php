@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Pending;
 use Illuminate\Http\Request;
 
 class UserFormController extends Controller
@@ -12,8 +12,9 @@ class UserFormController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('form.index', compact('posts'));    }
+        $pendings = Pending::all();
+        return view('form.index', compact('pendings'));    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -28,22 +29,22 @@ class UserFormController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
+        Pending::create($request->all());
         return redirect()->route('userDB')->with('success', 'Data berhasil di tambahkan');;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Pending $pendings)
     {
         //
     }
 
     /**
-     * Show the post for editing the specified resource.
+     * Show the pendings for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Pending $pendings)
     {
         //
     }
@@ -51,7 +52,7 @@ class UserFormController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Pending $pendings)
     {
         //
     }
@@ -59,7 +60,7 @@ class UserFormController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Pending $pendings)
     {
         //
     }

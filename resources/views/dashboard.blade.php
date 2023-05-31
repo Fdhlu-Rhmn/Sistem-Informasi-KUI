@@ -78,11 +78,11 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                User</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                Pending Requests</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pendings->count()}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fa-solid fa-user fa-2x"></i>
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
             </div>
 
             <div class="table-responsive ">
-                <table id="example" class="table table-striped table-hover" >
+                <table id="example" class="projek__table" >
                     <thead class="table-primary">
                         <tr class="text-xs">
                             <th scope="col">No</th>
@@ -188,7 +188,7 @@
                             @endforeach
                         @else
                         <tr>
-                            <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                            <td class ="text-center"colspan="14">There is no data</td>
                         </tr>
                         @endif
                     </tbody>
@@ -205,7 +205,7 @@
                 <span class="dividers dividers--width-students"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
                         <th scope="col">No</th>
@@ -238,7 +238,7 @@
                             @endforeach
                         @else
                         <tr>
-                            <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                            <td class ="text-center"colspan="14">There is no data</td>
                         </tr>
                         @endif
                     </tbody>
@@ -252,18 +252,18 @@
                 <span class="dividers dividers--width-studentsOutbound"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr >
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Negara Tujuan</th>
-                        <th scope="col">Institusi Tujuan</th>
-                        <th scope="col">Nama Program</th>
-                        <th scope="col">Durasi Pertukaran</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Prodi</th>
-                        <th scope="col">Fakultas</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Institusi Tujuan</th>
+                            <th scope="col">Fakultas</th>
+                            <th scope="col">Prodi</th>
+                            <th scope="col">Negara Tujuan</th>
+                            <th scope="col">Nama Program</th>
+                            <th scope="col">Durasi Program</th>
+                            <th scope="col">Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -272,18 +272,18 @@
                             <tr>
                             <td class="text-center">{{ $loop-> iteration }}</td>
                             <td> {{ $outbound-> Nama }}</td>
-                            <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
                             <td>{{ $outbound-> Institusi_Tujuan }}</td>
                             <td class="text-center">{{ $outbound-> Nama_Program }}</td>
+                            <td>{{ $outbound-> Fakultas }}</td>
+                            <td class="text-center">{{ $outbound-> Prodi }}</td>
+                            <td class="text-center">{{ $outbound-> Negara_Tujuan }}</td>
                             <td class="text-center">{{ $outbound-> Durasi }}</td>
                             <td class="text-center">{{ $outbound-> Email }}</td>
-                            <td class="text-center">{{ $outbound-> Prodi }}</td>
-                            <td>{{ $outbound-> Fakultas }}</td>
                             </tr>
                             @endforeach
                         @else
                         <tr>
-                            <td class ="text-center"colspan="14">Tidak ada data mahasiswa</td>
+                            <td class ="text-center"colspan="14">There is no data</td>
                         </tr>
                         @endif
                   </tbody>
@@ -301,18 +301,18 @@
                 <span class="dividers dividers--width-lecturerInbound"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Institusi Asal</th>
+                            <th scope="col">Fakultas</th>
+                            <th scope="col">Prodi</th>
                             <th scope="col">Negara Asal</th>
-                            <th scope="col">Fakultas Kegiatan</th>
-                            <th scope="col">Prodi Kegiatan</th>
                             <th scope="col">Nama Program</th>
-                            <th scope="col">Durasi</th>
+                            <th scope="col">Durasi Program</th>
+                            <th scope="col">Email</th>
                             <th scope="col">PIC</th>
                         </tr>
                     </thead>
@@ -322,13 +322,13 @@
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $inbound->name }}</td>
-                                    <td>{{ $inbound->email }}</td>
                                     <td>{{ $inbound->institusi_asal }}</td>
-                                    <td>{{ $inbound->negara_asal }}</td>
                                     <td>{{ $inbound->fakultas }}</td>
                                     <td>{{ $inbound->prodi }}</td>
+                                    <td>{{ $inbound->negara_asal }}</td>
                                     <td>{{ $inbound->program }}</td>
                                     <td>{{ $inbound->durasi_program }}</td>
+                                    <td>{{ $inbound->email }}</td>
                                     <td>{{ $inbound->PIC }}</td>
                                 </tr>
                             @endforeach
@@ -347,18 +347,18 @@
                 <span class="dividers dividers--width-lecturerOutbound"></span>
             </div>
             <div class="table-responsive">
-                <table id="example" class="table table-striped table-hover ">
+                <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Institusi Tujuan</th>
-                            <th scope="col">Negara Tujuan</th>
                             <th scope="col">Fakultas</th>
                             <th scope="col">Prodi</th>
-                            <th scope="col">Program</th>
-                            <th scope="col">Durasi</th>
+                            <th scope="col">Negara Tujuan</th>
+                            <th scope="col">Nama Program</th>
+                            <th scope="col">Durasi Program</th>
+                            <th scope="col">Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -367,13 +367,13 @@
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td>{{ $outbound->name }}</td>
-                                    <td>{{ $outbound->email }}</td>
                                     <td>{{ $outbound->institusi_tujuan }}</td>
-                                    <td>{{ $outbound->negara_tujuan }}</td>
                                     <td>{{ $outbound->fakultas }}</td>
                                     <td>{{ $outbound->prodi }}</td>
+                                    <td>{{ $outbound->negara_tujuan }}</td>
                                     <td>{{ $outbound->program }}</td>
                                     <td>{{ $outbound->durasi_program }}</td>
+                                    <td>{{ $outbound->email }}</td>
 
                                 </tr>
                             @endforeach

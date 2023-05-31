@@ -18,8 +18,8 @@ class OutboundController extends Controller
         if ($request->has('search')) {
             $outbounds = Outbound::where('name', 'LIKE', '%'.$request->search.'%')
                 ->orWhere('email', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('institusi_asal', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('negara_asal', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('institusi_tujuan', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('negara_tujuan', 'LIKE', '%'.$request->search.'%')
                 ->orWhere('fakultas', 'LIKE', '%'.$request->search.'%')
                 ->orWhere('prodi', 'LIKE', '%'.$request->search.'%')
                 ->paginate(5);

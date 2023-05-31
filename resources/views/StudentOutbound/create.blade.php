@@ -143,7 +143,7 @@
                       </div>
                     </div>
                 </div>
-                <button type="button" type="submit" class="btn btn-primary">Tambah Mahasiswa</button>
+                <button type="button" type="submit" class="btn btn-primary">Add</button>
 
               </form>
             </div> --}}

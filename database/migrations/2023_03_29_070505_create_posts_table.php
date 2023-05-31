@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->enum('BIPA', ['A', 'B', 'C', 'D', 'E'])->nullable();
             $table->string('Jenjang')->nullable();
             $table->string('Status')->nullable();
-            $table->enum('Angkatan', ['2018', '2019', '2020', '2021', '2022', '2023'])->nullable();
-            $table->enum('Gender', ['Laki-laki', 'Perempuan'])->nullable();
+            $table->string('Angkatan')->nullable();
+            $table->enum('Gender', ['L', 'P'])->nullable();
             $table->string('Alamat')->nullable();
             $table->string('No_Hp')->nullable();
             $table->string('Negara_Asal')->nullable();

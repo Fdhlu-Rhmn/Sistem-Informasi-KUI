@@ -17,37 +17,37 @@ class StudentOutboundController extends Controller
    */
   public function index(Request $request)
   {
-      if ($request->has('search')) {
-        $dataOutbound = StudentOutbound::where('Nama', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Email', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Institusi_Tujuan', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Negara_Tujuan', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Fakultas', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Prodi', 'LIKE', '%'.$request->search.'%')
-              ->orWhere('Email', 'LIKE', '%'.$request->search.'%')
-              ->paginate(5);
-      }else{
-        $dataOutbound = StudentOutbound::paginate(5);
-      }
+    if ($request->has('search')) {
+      $dataOutbound = StudentOutbound::where('Nama', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Email', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Institusi_Tujuan', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Negara_Tujuan', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Fakultas', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Prodi', 'LIKE', '%' . $request->search . '%')
+        ->orWhere('Email', 'LIKE', '%' . $request->search . '%')
+        ->paginate(5);
+    } else {
+      $dataOutbound = StudentOutbound::paginate(5);
+    }
     // $dataOutbound = StudentOutbound::paginate(5);
     return view('StudentOutbound.outbound', compact('dataOutbound'));
   }
 
   public function importExportStudentOutbound()
   {
-     return view('outbound');
+    return view('outbound');
   }
 
-  public function exportStudentOutbound() 
+  public function exportStudentOutbound()
   {
-      return 'Excel'::download(new ExportStudentOutbound, 'StudentOutbound.xlsx');
+    return 'Excel'::download(new ExportStudentOutbound, 'StudentOutbound.xlsx');
   }
 
-  public function importStudentOutbound() 
+  public function importStudentOutbound()
   {
-      'Excel'::import(new ImportStudentOutbound, request()->file('file'));
-          
-      return back();
+    'Excel'::import(new ImportStudentOutbound, request()->file('file'));
+
+    return back();
   }
 
   /**

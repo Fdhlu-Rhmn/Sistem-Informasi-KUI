@@ -11,6 +11,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserFormController;
+use App\Http\Controllers\PendingController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +76,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 });
 
 Route::resource('/dashboard/mahasiswa', PostController::class);
+Route::resource('/dashboard/pending', PendingController::class);
 
 Route::post('/dashboard/form', [UserFormController::class, 'store'])->middleware(['auth', 'non-admin'])->name('users');
 Route::get('/dashboard/form', [UserFormController::class, 'index'])->middleware(['auth', 'non-admin'])->name('userDB');
