@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('NIM')->nullable();
             $table->string('Fakultas_Prodi')->nullable();
             $table->float('IPK')->nullable();
-            $table->enum('BIPA', ['A', 'B', 'C', 'D', 'E'])->nullable();
+            $table->string('BIPA')->nullable();
             $table->string('Jenjang')->nullable();
             $table->string('Status')->nullable();
             $table->string('Angkatan')->nullable();

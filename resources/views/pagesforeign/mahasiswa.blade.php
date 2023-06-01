@@ -35,23 +35,6 @@
               </div>
           </form>
 
-            {{-- <form action="{{ route('import') }}" method="POST" name="importform"
-            enctype="multipart/form-data">
-            @csrf
-            <div class="form-group py-2">
-              <label for="file">File:</label>
-              <input id="file" type="file" name="file" class="form-control">
-            </div>
-
-            <div class="d-flex pb-3">
-              <div class="form-group">
-                <a class="btn btn-success">Import File</a>
-                <a class="btn btn-info" href="{{ route('export') }}">Export File</a>
-              </div> 
-            </div>
-
-          </form> --}}
-
             @if (Session::has('success'))
             <div class="alert alert-success" role="alert">
               {{Session::get('success')}}
@@ -98,11 +81,13 @@
                       <td>{{ $mahasiswa-> Pendamping_Akademik }}</td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <a  href="{{ route('mahasiswa.edit', $mahasiswa->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
-                          @csrf
-                          @method('DELETE')
-                          <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
+                            <a  href="{{ route('mahasiswa.edit', $mahasiswa-> id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <form action="{{ route('mahasiswa.destroy', $mahasiswa-> id)}}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete {{$mahasiswa-> Nama}}?')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+
                         </div>
                       </td>
                     </tr>
