@@ -103,6 +103,6 @@ class InboundController extends Controller
     {
         $inbound = Inbound::findOrFail($inboundId);
         $inbound->delete();
-        return redirect()->route('dosen-inbound.index')->with('success', 'Data Berhasil dihapus');
+        return redirect()->route('dosen-inbound.index')->with('delete', 'Data Berhasil di hapus');
     }
 }

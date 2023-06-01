@@ -39,6 +39,12 @@
               {{Session::get('success')}}
             </div>
             @endif
+            @if (Session::has('delete'))
+            <div class="alert alert-danger" role="alert">
+              {{Session::get('delete')}}
+            </div>
+            @endif
+
 
             <div class="table-responsive">
               <table id="example" class="projek__table ">

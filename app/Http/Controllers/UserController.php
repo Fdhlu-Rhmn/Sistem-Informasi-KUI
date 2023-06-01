@@ -57,7 +57,7 @@ class UserController extends Controller
 
 
         $user = Auth::user();
-        $user->update($validatedData);
+        $user-> update($validatedData);
 
         return redirect()->back();
     }

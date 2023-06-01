@@ -101,6 +101,6 @@ class OutboundController extends Controller
 
         $outbound = Outbound::findOrFail($outboundId);
         $outbound->delete();
-        return redirect()->route('dosen-outbound.index')->with('success', 'Data Berhasil dihapus');
+        return redirect()->route('dosen-outbound.index')->with('delete', 'Data Berhasil di hapus');
     }
 }

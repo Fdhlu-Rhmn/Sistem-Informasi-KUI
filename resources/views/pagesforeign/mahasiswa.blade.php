@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="/style/mahasiswa.css">
 @endsection
 
+
+
 @section('main')
         <div class="card p-3">
             <div class="cards_head">
@@ -38,6 +40,12 @@
             @if (Session::has('success'))
             <div class="alert alert-success" role="alert">
               {{Session::get('success')}}
+            </div>
+            @endif
+
+            @if (Session::has('delete'))
+            <div class="alert alert-danger" role="alert">
+              {{Session::get('delete')}}
             </div>
             @endif
             <div class="table-responsive ">
@@ -80,14 +88,30 @@
                       <td>{{ $mahasiswa-> Negara_Asal }}</td>
                       <td>{{ $mahasiswa-> Pendamping_Akademik }}</td>
                       <td>
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                            <a  href="{{ route('mahasiswa.edit', $mahasiswa-> id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <form action="{{ route('mahasiswa.destroy', $mahasiswa-> id)}}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete {{$mahasiswa-> Nama}}?')">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
-                            </form>
-
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                          <a  href="{{ route('mahasiswa.edit', $mahasiswa-> id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <button  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$mahasiswa -> id}}" class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
+                            <div id="exampleModal-{{$mahasiswa -> id}}" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal" tabindex="-1">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Delete Data </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$mahasiswa -> Nama}} </span>?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <form action="{{ route('mahasiswa.destroy', $mahasiswa-> id)}}" method="POST" class="btn btn-danger p-0">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-primary">Delete Data</button>
+                                    </form>             
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                       </td>
                     </tr>
@@ -104,6 +128,9 @@
               <a class="btn btn-primary" href="{{route('mahasiswa.create')}}" role="button">Tambah Foreign Students </a>
               {!! $posts->appends(Request::except('page'))->render()!!}
             </div>
-
         </div>
- @endsection   
+ @endsection
+ 
+@section('js')
+<link rel="script" href="/js/modal.js">
+@endsection

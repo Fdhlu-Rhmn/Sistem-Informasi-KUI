@@ -107,6 +107,6 @@ class StudentOutboundController extends Controller
 
     $outbound->delete();
 
-    return redirect()->route('outbound.index')->with('success', 'Data Berhasil di hapus');
+    return redirect()->route('outbound.index')->with('delete', 'Data Berhasil di hapus');
   }
 }
