@@ -39,6 +39,12 @@
               {{Session::get('success')}}
             </div>
             @endif
+            
+            @if (Session::has('delete'))
+            <div class="alert alert-danger" role="alert">
+              {{Session::get('delete')}}
+            </div>
+            @endif
             <div class="table-responsive ">
               <table id="example" class="projek__table ">
                 <thead class="table-primary">
@@ -72,14 +78,31 @@
                       <td>{{ $inbound-> PIC }}</td>
                       <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                        <a  href="{{ route('inbound.edit', $inbound->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <form action="{{ route('inbound.destroy', $inbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
-                          @csrf
-                          @method('DELETE')
-                          <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
-
+                          <a  href="{{ route('inbound.edit', $inbound-> id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <button  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$inbound -> id}}" class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
+                            <div id="exampleModal-{{$inbound -> id}}" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal" tabindex="-1">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Delete Data </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$inbound -> Nama}} </span>?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <form action="{{ route('inbound.destroy', $inbound-> id)}}" method="POST" class="btn btn-danger p-0">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-primary">Delete Data</button>
+                                    </form>             
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
-                    </td>
+                      </td>
                     </tr>
                     @endforeach
                   @else

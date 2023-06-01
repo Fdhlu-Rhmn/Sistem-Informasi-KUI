@@ -37,7 +37,7 @@ class PostController extends Controller
     }
 
     // Import Export Function
-    
+
     public function importExport()
     {
         return view('mahasiswa');
@@ -111,6 +111,6 @@ class PostController extends Controller
 
         $mahasiswa->delete();
 
-        return redirect()->route('mahasiswa.index')->with('success', 'Data Berhasil di hapus');
+        return redirect()->route('mahasiswa.index')->with('delete', 'Data Berhasil di hapus');
     }
 }
