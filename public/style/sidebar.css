@@ -18,7 +18,10 @@
 
 .navBar_left{
   display: flex;
+  /* position: absolute; */
   padding: 20px;
+  /* right: 10px; */
+  /* top: 10px; */
 }
 
 .navBar img{

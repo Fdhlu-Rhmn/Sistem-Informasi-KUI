@@ -16,18 +16,12 @@
 </head>
 
 <body>
-  <section class="login__wrapper d-flex">
-    <div class="login__left w-50 h-100 bg-img">
-      <div class="vh-100 form-box row justify-content-center login align-items-center">
-        <div class="col-6">
-          <!-- <h1>Gambar</h1> -->
-        </div>
-      </div>
-    </div>
+  <section class="login__wrapper d-flex row">
+    <div class="login__left col-lg-6 d-none d-lg-block bg-img"></div>
 
-    <div class="login__right w-50 vh-100">
-      <div class="vh-100 form-box row justify-content-center login align-items-center">
-        <div class="col-6">
+    <div class="login__right col-lg-6">
+      <div class="p-5 vh-100 form-box row justify-content-center login align-items-center">
+        <div class="col-lg-6">
           <h2 class="text-center">Kantor Urusan Internasional</h2>
           <form id="login" action="/login" method="POST">
             @csrf
@@ -45,13 +39,6 @@
             </div>
             <button class="buttons mb-3" type="submit">Login</button>
           </form>
-
-          @if (Session::has('success'))
-          <div class="alert alert-success" role="alert">
-              {{ Session::get('success') }}
-          </div>
-          @endif
-
           <div class="text-center">
             <span class="d-inline">Don't have an Account? <a class="d-inline" href="/register">Sign Up
                 Here</a></span>

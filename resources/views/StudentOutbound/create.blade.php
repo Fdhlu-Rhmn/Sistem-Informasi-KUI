@@ -3,8 +3,8 @@
 @section('main')
         <div class="cards">
             <div class="cards_head">
-                <h1>Data Mahasiswa Outbound</h1>
-                <span class="divider"></span>
+              <h1>Students Exchange Outbound</h1>
+              <span class=" dividers dividers--width-studentsOutbound"></span>
             </div>
             <div class="card_body">
 
@@ -15,11 +15,16 @@
                         <input type="text" name="Nama" class="form-control" placeholder="Nama">
                     </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Negara_Tujuan" class="form-control" placeholder="Negara Tujuan">
+
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="Negara_Tujuan" class="form-control" placeholder="Negara Tujuan">
+                  </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Institusi_Tujuan" class="form-control" placeholder="Institusi Tujuan">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="Institusi_Tujuan" class="form-control" placeholder="Institusi Tujuan">
+                  </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">

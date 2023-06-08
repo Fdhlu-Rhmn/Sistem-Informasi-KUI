@@ -1,11 +1,13 @@
 @extends('layouts.sidebar')
 
+ 
+
 @section('main')
         <div class="cards">
-            <div class="cards_head">
-                <h1>Data Mahasiswa Inbound</h1>
-                <span class="divider"></span>
-            </div>
+          <div class="cards_head">
+            <h1>Students Exchange Inbound</h1>
+            <span class="dividers dividers--width-students"></span>
+        </div>
             <div class="card_body">
 
               <form action="{{ route('inbound.store') }}" method="POST">
@@ -15,12 +17,16 @@
                         <input type="text" name="Nama" class="form-control" placeholder="Nama">
                     </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Institusi_Asal" class="form-control" placeholder="Institusi Asal">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="Institusi_Asal" class="form-control" placeholder="Institusi Asal">
+                  </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Fakultas" class="form-control" placeholder="Fakultas">
-                </div>
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="Fakultas" class="form-control" placeholder="Fakultas">
+                  </div>
+                </div>  
                 <div class="row mb-3">
                     <div class="col">
                         <input type="text" name="Prodi" class="form-control" placeholder="Prodi">

@@ -1,17 +1,10 @@
 @extends('layouts.sidebar')
 
-@section('css')
-<link rel="stylesheet" href="/style/mahasiswa.css">
-@endsection
-
-
-
 @section('main')
         <div class="card p-3">
             <div class="cards_head">
                 <h1>Foreign Students</h1>
                 <span class="divider"></span>
-                {{-- <span class="divider"></span> --}}
             </div>
             <div class="cards_body">
               <div class="d-inline-block mb-3 navbar-search">
