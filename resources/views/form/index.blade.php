@@ -15,12 +15,17 @@
                         <input type="text" name="Nama" class="form-control" placeholder="Nama">
                     </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="NIM" class="form-control" placeholder="No.Pokok">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="NIM" class="form-control" placeholder="No.Pokok">
+                  </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi">
+                  </div>
                 </div>
+                
                 <div class="row mb-3">
                     <div class="col">
                         <input type="text" name="IPK" class="form-control" placeholder="IPK">
@@ -71,10 +76,12 @@
                     <input type="text" name="Negara_Asal" class="form-control" placeholder="Negara Asal">
                   </div>
               </div>
-
-              <div class="col mb-3">
-                <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik">
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik">
+                </div>
               </div>
+              
 
                 <div class="row mb-3">
                     <div class="d-grid">

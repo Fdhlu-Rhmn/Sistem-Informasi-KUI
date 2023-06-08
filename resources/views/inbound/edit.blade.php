@@ -3,8 +3,8 @@
 @section('main')
     <div class="cards">
         <div class="cards_head">
-            <h1>Edit Inbound</h1>
-            <span class="divider"></span>
+            <h1>Lecturer Inbounds</h1>
+            <span class="dividers dividers--width-lecturerInbound"></span>
         </div>
         <div class="card_body">
 
@@ -17,18 +17,26 @@
                             value="{{ $inbound->name }}">
                     </div>
                 </div>
-                <div class="col mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="Email"
-                        value="{{ $inbound->email }}">
+                <div class="row mb-3">
+                    <div class="col ">
+                        <input type="email" name="email" class="form-control" placeholder="Email"
+                            value="{{ $inbound->email }}">
+                    </div>
                 </div>
-                <div class="col mb-3">
-                    <input type="text" name="institusi_asal" class="form-control" placeholder="Institusi Asal"
-                        value="{{ $inbound->institusi_asal }}">
+                
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" name="institusi_asal" class="form-control" placeholder="Institusi Asal"
+                            value="{{ $inbound->institusi_asal }}">
+                    </div>
                 </div>
-                <div class="col mb-3">
-                    <input type="text" name="negara_asal" class="form-control" placeholder="Negara Asal"
-                        value="{{ $inbound->negara_asal }}">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" name="negara_asal" class="form-control" placeholder="Negara Asal"
+                            value="{{ $inbound->negara_asal }}">
+                    </div>
                 </div>
+                
                 <div class="row mb-3">
                     <div class="col">
                         <input type="text" name="fakultas" class="form-control" placeholder="Fakultas Kegiatan di UNHAS"

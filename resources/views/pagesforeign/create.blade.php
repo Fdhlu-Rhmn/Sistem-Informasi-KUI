@@ -1,10 +1,12 @@
 @extends('layouts.sidebar')
 
+
+
 @section('main')
         <div class="cards">
             <div class="cards_head">
-                <h1>Data Pengguna</h1>
-                <span class="divider"></span>
+              <h1>Foreign Students</h1>
+              <span class="divider"></span>
             </div>
             <div class="card_body">
 
@@ -15,11 +17,15 @@
                         <input type="text" name="Nama" class="form-control" placeholder="Nama">
                     </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="NIM" class="form-control" placeholder="No.Pokok">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="NIM" class="form-control" placeholder="No.Pokok">
+                  </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi">
+                  </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
@@ -63,18 +69,22 @@
                 <div class="row mb-3">
                   <div class="col">
                     <input type="text" name="Alamat" class="form-control" placeholder="Alamat di Makassar">
+                  </div>
                 </div>
+                <div class="row mb-3">
                   <div class="col">
                       <input type="text" name="No_Hp" class="form-control" placeholder="No handphone">
                   </div>
                   <div class="col">
                     <input type="text" name="Negara_Asal" class="form-control" placeholder="Negara Asal">
                   </div>
+                </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik">
+                </div>
               </div>
 
-              <div class="col mb-3">
-                <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik">
-              </div>
 
                 <div class="row">
                     <div class="d-grid">

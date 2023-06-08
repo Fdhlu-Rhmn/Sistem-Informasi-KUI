@@ -3,8 +3,8 @@
 @section('main')
     <div class="cards">
         <div class="cards_head">
-            <h1>Tambah Outbound</h1>
-            <span class="divider"></span>
+            <h1>Lecturer Outbounds</h1>
+            <span class="dividers dividers--width-lecturerOutbound"></span>
         </div>
         <div class="card_body">
 
@@ -15,15 +15,22 @@
                         <input type="text" name="name" class="form-control" placeholder="Nama">
                     </div>
                 </div>
-                <div class="col mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="Email">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
                 </div>
-                <div class="col mb-3">
-                    <input type="text" name="institusi_tujuan" class="form-control" placeholder="Institusi Tujuan">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" name="institusi_tujuan" class="form-control" placeholder="Institusi Tujuan">
+                    </div>
                 </div>
-                <div class="col mb-3">
-                    <input type="text" name="negara_tujuan" class="form-control" placeholder="Negara Tujuan">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" name="negara_tujuan" class="form-control" placeholder="Negara Tujuan">
+                    </div>
                 </div>
+                
                 <div class="row mb-3">
                     <div class="col">
                         <input type="text" name="fakultas" class="form-control" placeholder="Fakultas Kegiatan di UNHAS">

@@ -1,8 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('css')
-<link rel="stylesheet" href="/style/mahasiswa.css">
-@endsection
+
 
 @section('main')
         <div class="card p-3">

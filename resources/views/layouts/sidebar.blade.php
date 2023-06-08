@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="/style/mahasiswa.css">
     <link rel="stylesheet" href="{{ asset('/style/sidebar.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     @yield('css')
@@ -99,7 +100,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/dashboard/pending">
                     <i class="fas fa-comments"></i>
                     <span>Pending Request</span></a>
             </li>
