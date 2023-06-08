@@ -23,36 +23,3 @@
     width: 235px;
     height: 2px;
 }
-
-.projek__table {
-    border-collapse: collapse;
-    min-width: 1000px;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.projek__table thead tr {
-    background-color: #2e7fcb;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-}
-
-
-.projek__table th,
-.projek__table td {
-    padding: 12px 15px;
-}
-
-.projek__table tbody tr {
-    border-bottom: 0.6px solid rgba(218, 218, 218, 0.867);
-    width: max-content;
-
-}
-
-
-.projek__table tbody tr:nth-of-type(even) {
-    background-color: #f4f4f4;
-}
