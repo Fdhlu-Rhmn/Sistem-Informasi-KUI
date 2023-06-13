@@ -43,6 +43,11 @@
             <span class="d-inline">Don't have an Account? <a class="d-inline" href="/register">Sign Up
                 Here</a></span>
           </div>
+            @if (Session::has('loginError'))
+              <div class="alert alert-danger mt-2" role="alert">
+                {{Session::get('loginError')}}
+              </div>
+            @endif
         </div>
       </div>
     </div>

@@ -100,9 +100,24 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item active">
-                <a class="nav-link" href="/dashboard/pending">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwos"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-comments"></i>
-                    <span>Pending Request</span></a>
+                    <span>Pending Request</span>
+                </a>
+                <div id="collapseTwos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/dashboard/pending">
+                            <i class="fa-solid fa-caret-right"></i>
+                            Foreign Students</a>
+                        <a class="collapse-item" href="/dashboard/pendingInbound">
+                            <i class="fa-solid fa-caret-right"></i>
+                            Inbound</a>
+                        <a class="collapse-item" href="/dashboard/pendingoutbound">
+                            <i class="fa-solid fa-caret-right"></i>
+                            Outbound</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Tables -->
@@ -116,15 +131,30 @@
 
             @can('non-admin')
             <li class="nav-item active">
-                <a class="nav-link" href="/dashboard/adminProfil">
+                <a class="nav-link" href="/dashboard">
                     <i class="fa-solid fa-list"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/dashboard/form">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Form</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>form</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/dashboard/form">
+                            <i class="fa-solid fa-caret-right"></i>
+                            Foreign Students</a>
+                        <a class="collapse-item" href="/dashboard/forminbound">
+                            <i class="fa-solid fa-caret-right"></i>
+                            Inbound</a>
+                        <a class="collapse-item" href="/dashboard/formoutbound">
+                            <i class="fa-solid fa-caret-right"></i>
+                            Outbound</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item active">

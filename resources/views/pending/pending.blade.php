@@ -111,4 +111,6 @@
               {!! $pendings->appends(Request::except('page'))->render()!!}
             </div>
         </div>
+
+        
  @endsection   

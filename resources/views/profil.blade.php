@@ -3,7 +3,7 @@
 @section('main')
   <div class="cards">
     <div class="cards_head">
-        <h1>Edit Profil Admin</h1>
+        <h1>Edit Profil</h1>
         <span class="divider"></span>
     </div>
     <form action="{{ route('update-profile-admin') }}" method="POST">
