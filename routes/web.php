@@ -11,7 +11,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserFormController;
+use App\Http\Controllers\UserInboundController;
+use App\Http\Controllers\UserOutboundController;
 use App\Http\Controllers\PendingController;
+use App\Http\Controllers\PendingInboundController;
+use App\Http\Controllers\PendingOutboundController;
+
 
 
 /*
@@ -78,8 +83,19 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 Route::resource('/dashboard/mahasiswa', PostController::class);
 Route::resource('/dashboard/pending', PendingController::class);
 
+Route::resource('/dashboard/pendingInbound', PendingInboundController::class);
+Route::resource('/dashboard/pendingOutbound', PendingOutboundController::class);
+
+
+
 Route::post('/dashboard/form', [UserFormController::class, 'store'])->middleware(['auth', 'non-admin'])->name('users');
 Route::get('/dashboard/form', [UserFormController::class, 'index'])->middleware(['auth', 'non-admin'])->name('userDB');
+
+Route::post('/dashboard/forminbound', [UserInboundController::class, 'store'])->middleware(['auth', 'non-admin'])->name('forminbound');
+Route::get('/dashboard/forminbound', [UserInboundController::class, 'index'])->middleware(['auth', 'non-admin'])->name('forminbounds');
+
+Route::post('/dashboard/formoutbound', [UserOutboundController::class, 'store'])->middleware(['auth', 'non-admin'])->name('formoutbound');
+Route::get('/dashboard/formoutbound', [UserOutboundController::class, 'index'])->middleware(['auth', 'non-admin'])->name('formoutbounds');
 
 
 Route::get('/dashboard', DashboardController::class)->middleware('auth');

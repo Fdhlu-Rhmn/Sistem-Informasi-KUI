@@ -113,7 +113,7 @@
                         <a class="collapse-item" href="/dashboard/pendingInbound">
                             <i class="fa-solid fa-caret-right"></i>
                             Inbound</a>
-                        <a class="collapse-item" href="/dashboard/pendingoutbound">
+                        <a class="collapse-item" href="/dashboard/pendingOutbound">
                             <i class="fa-solid fa-caret-right"></i>
                             Outbound</a>
                     </div>
