@@ -48,15 +48,15 @@
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">No</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Institusi Asal</th>
-                    <th scope="col">Fakultas</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Negara Asal</th>
-                    <th scope="col">Nama Program</th>
-                    <th scope="col">Durasi Program</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">PIC</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Origin Institution </th>
+                        <th scope="col">Fakulty</th>
+                        <th scope="col">Departement</th>
+                        <th scope="col">Origin Country</th>
+                        <th scope="col">Program Name</th>
+                        <th scope="col">Program Duration</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">PIC</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -86,7 +86,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
-                                    <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$inbound -> Nama}} </span>?</p>
+                                    <p>Do you want to delete <br/> <span class="fw-bolder"> {{$inbound -> Nama}} </span>?</p>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

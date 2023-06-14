@@ -15,12 +15,15 @@
                         <input type="text" name="Nama" class="form-control" placeholder="Nama" value="{{ $pendings-> Nama }}">
                     </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="NIM" class="form-control" placeholder="No.Pokok" value="{{ $pendings-> NIM }}">
+                <div class="row mb-3">
+                  <div class="col">
+                    <input type="text" name="NIM" class="form-control" placeholder="No.Pokok" value="{{ $pendings-> NIM }}">
+                  </div>
+                  <div class="col">
+                    <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi" value="{{ $pendings-> Fakultas_Prodi }}">
+                  </div>
                 </div>
-                <div class="col mb-3">
-                  <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi" value="{{ $pendings-> Fakultas_Prodi }}">
-                </div>
+                
                 <div class="row mb-3">
                     <div class="col">
                         <input type="text" name="IPK" class="form-control" placeholder="IPK" value="{{ $pendings-> IPK }}">
@@ -74,8 +77,10 @@
                   </div>
               </div>
 
-              <div class="col mb-3">
-                <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik" value="{{ $pendings-> Pendamping_Akademik }}">
+              <div class="row mb-3">
+                <div class="col">
+                  <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik" value="{{ $pendings-> Pendamping_Akademik }}">
+                </div>
               </div>
 
                 <div class="row">

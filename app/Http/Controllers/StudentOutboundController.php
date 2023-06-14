@@ -65,7 +65,7 @@ class StudentOutboundController extends Controller
   {
     // dd($request->all());
     StudentOutbound::create($request->all());
-    return redirect()->route('outbound.index')->with('success', 'Data berhasil di tambahkan');
+    return redirect()->route('outbound.index')->with('success', 'Add data succesfull');
   }
 
   /**
@@ -107,6 +107,6 @@ class StudentOutboundController extends Controller
 
     $outbound->delete();
 
-    return redirect()->route('outbound.index')->with('delete', 'Data Berhasil di hapus');
+    return redirect()->route('outbound.index')->with('delete', 'Delete data succesfull');
   }
 }

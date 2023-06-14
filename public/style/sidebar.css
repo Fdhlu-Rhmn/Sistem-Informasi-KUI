@@ -1,51 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
 }
 
-
-.top_navBar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.top_navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navBar_left{
-  display: flex;
-  /* position: absolute; */
-  padding: 20px;
-  /* right: 10px; */
-  /* top: 10px; */
+.navBar_left {
+    display: flex;
+    /* position: absolute; */
+    padding: 20px;
+    /* right: 10px; */
+    /* top: 10px; */
 }
 
-.navBar img{
-  width: 260px;
-  padding: 20px;
+.navBar img {
+    width: 230px;
+    padding: 20px;
 }
 
-.navBar_left img{
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+.navBar_left img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
 }
 
-.navBar_left p{
-  padding: 10px;
+.navBar_left p {
+    padding: 10px;
 }
 
-.logout{
-  margin-top: 330px;
+.logout {
+    margin-top: 330px;
 }
 
 .dashboard__container {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 
 .cards {
@@ -57,16 +56,16 @@
     width: 100%;
 }
 
-.cards_head{
-  padding-bottom: 20px;
+.cards_head {
+    padding-bottom: 20px;
 }
-.cards_head h1{
-  font-size: 24px;
+.cards_head h1 {
+    font-size: 24px;
 }
 
-.divider{
-  display: flex;
-  width: 210px;
-  height: 2px;
-  background:linear-gradient(to right, #2C74B3, #868282)
+.divider {
+    display: flex;
+    width: 210px;
+    height: 2px;
+    background: linear-gradient(to right, #2c74b3, #868282);
 }

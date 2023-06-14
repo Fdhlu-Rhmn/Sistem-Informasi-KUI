@@ -3,8 +3,8 @@
 @section('main')
         <div class="cards">
             <div class="cards_head">
-                <h1>Data Pengguna</h1>
-                <span class="divider"></span>
+              <h1>Foreign Students</h1>
+              <span class="divider"></span>
             </div>
             <div class="card_body">
 
@@ -12,17 +12,17 @@
                 @csrf
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Nama" class="form-control" placeholder="Nama">
+                        <input type="text" name="Nama" class="form-control" placeholder="Name">
                     </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="NIM" class="form-control" placeholder="No.Pokok">
+                    <input type="text" name="NIM" class="form-control" placeholder="NIM">
                   </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakultas/Prodi">
+                    <input type="text" name="Fakultas_Prodi" class="form-control" placeholder="Fakulty/departement">
                   </div>
                 </div>
                 
@@ -34,7 +34,7 @@
                       <input type="text" name="BIPA" class="form-control" placeholder="BIPA">
                     </div>        
                     <div class="col">
-                      <input type="text" name="Jenjang" class="form-control" placeholder="Jenjang">
+                      <input type="text" name="Jenjang" class="form-control" placeholder="Level">
                     </div>
                     <div class="col">
                       <input type="text" name="Status" class="form-control" placeholder="Status">
@@ -45,14 +45,14 @@
                   <div class="col">
                       <div class="dropdown border rounded">
                         <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="Angkatan">
-                          <option hidden> Angkatan</option>
+                          <option hidden> Wave</option>
                           <option>2018</option>
                           <option>2019</option>
                           <option>2020</option>
                           <option>2021</option>
                           <option>2022</option>
                           <option>2023</option>
-                        </select>
+                        </select> 
                       </div>
                   </div>
                   <div class="col">
@@ -67,18 +67,18 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Alamat" class="form-control" placeholder="Alamat di Makassar">
+                    <input type="text" name="Alamat" class="form-control" placeholder="Address">
                 </div>
                   <div class="col">
-                      <input type="text" name="No_Hp" class="form-control" placeholder="No handphone">
+                      <input type="text" name="No_Hp" class="form-control" placeholder="Phone Number">
                   </div>
                   <div class="col">
-                    <input type="text" name="Negara_Asal" class="form-control" placeholder="Negara Asal">
+                    <input type="text" name="Negara_Asal" class="form-control" placeholder="Country origin">
                   </div>
               </div>
               <div class="row mb-3">
                 <div class="col">
-                  <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Pendamping Akademik">
+                  <input type="text" name="Pendamping_Akademik" class="form-control" placeholder="Academic Assistant">
                 </div>
               </div>
               

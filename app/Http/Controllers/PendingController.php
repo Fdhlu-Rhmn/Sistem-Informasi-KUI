@@ -41,7 +41,7 @@ class PendingController extends Controller
     {
         Post::create($request->all());
 
-        return redirect()->route('pending.index')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('pending.index')->with('success', 'Add data succesfull');
     }
 
     /**
@@ -81,6 +81,6 @@ class PendingController extends Controller
 
         $pendings->delete();
 
-        return redirect()->route('pending.index')->with('success', 'Data Berhasil di hapus');
+        return redirect()->route('pending.index')->with('delete', 'Delete data succesfull');
     }
 }
