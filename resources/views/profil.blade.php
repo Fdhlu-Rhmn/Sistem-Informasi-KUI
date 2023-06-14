@@ -3,7 +3,7 @@
 @section('main')
   <div class="cards">
     <div class="cards_head">
-        <h1>Edit Profil</h1>
+        <h1>Edit Profile</h1>
         <span class="divider"></span>
     </div>
     <form action="{{ route('update-profile-admin') }}" method="POST">
@@ -12,7 +12,7 @@
       <div class="card_body">
           <div class="form-floating mb-3">
               <input type="text" class="form-control" id="name" placeholder="name@example.com" name="name" value="{{ old('name', $user->name) }}">
-              <label for="name">Nama Lengkap</label>
+              <label for="name">Name</label>
           </div>
 
           <div class="form-floating mb-3">
@@ -36,7 +36,7 @@
           </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Ubah Profil</button>
+      <button type="submit" class="btn btn-primary">Change Profile</button>
     </form>
   </div>
 @endsection

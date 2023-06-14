@@ -16,14 +16,14 @@ class InboundController extends Controller
     public function index(Request $request)
     {
         if ($request->has('search')) {
-            $inbounds = Inbound::where('name', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('email', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('institusi_asal', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('negara_asal', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('fakultas', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('prodi', 'LIKE', '%'.$request->search.'%')
+            $inbounds = Inbound::where('name', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('email', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('institusi_asal', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('negara_asal', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('fakultas', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('prodi', 'LIKE', '%' . $request->search . '%')
                 ->paginate(5);
-        }else{
+        } else {
             $inbounds = Inbound::paginate(5);
         }
         // $inbounds = Inbound::paginate(5);
@@ -33,18 +33,18 @@ class InboundController extends Controller
     }
     public function importExportInbound()
     {
-       return view('inbound.index');
+        return view('inbound.index');
     }
-  
-    public function exportInbound() 
+
+    public function exportInbound()
     {
         return 'Excel'::download(new ExportInbound, 'LecturerInbound.xlsx');
     }
-  
-    public function importInbound() 
+
+    public function importInbound()
     {
         'Excel'::import(new ImportInbound, request()->file('file'));
-            
+
         return back();
     }
 
@@ -62,7 +62,7 @@ class InboundController extends Controller
     public function store(Request $request)
     {
         Inbound::create($request->all());
-        return redirect()->route('dosen-inbound.index')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('dosen-inbound.index')->with('success', 'Add data succesfull');
     }
 
     /**
@@ -103,6 +103,6 @@ class InboundController extends Controller
     {
         $inbound = Inbound::findOrFail($inboundId);
         $inbound->delete();
-        return redirect()->route('dosen-inbound.index')->with('delete', 'Data Berhasil di hapus');
+        return redirect()->route('dosen-inbound.index')->with('delete', 'Delete data succesfull');
     }
 }

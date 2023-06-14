@@ -12,6 +12,10 @@ use App\Models\Outbound;
 use App\Models\StudentInbound;
 use App\Models\StudentOutbound;
 use App\Models\Pending;
+use App\Models\PendingInbound;
+use App\Models\PendingOutbound;
+
+
 
 
 class DashboardController extends Controller
@@ -27,6 +31,9 @@ class DashboardController extends Controller
         $inbounds = Inbound::all();
         $outbounds = Outbound::all();
         $pendings = Pending::all();
+        $forminbound = PendingInbound::all();
+        $formoutbound = PendingOutbound::all();
+
 
 
         $postTable = Post::paginate(5);
@@ -46,6 +53,8 @@ class DashboardController extends Controller
             'inbounds' => $inbounds,
             'outbounds' => $outbounds,
             'pendings' => $pendings,
+            'forminbound' => $forminbound,
+            'formoutbound' => $formoutbound,
 
             'postTable' => $postTable,
             'dataInboundTable' => $dataInboundTable,

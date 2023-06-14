@@ -30,7 +30,7 @@ class UserOutboundController extends Controller
     public function store(Request $request)
     {
         PendingOutbound::create($request->all());
-        return redirect()->route('formoutbound')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('formoutbound')->with('success', 'Add data succesfull');
         ;
     }
 

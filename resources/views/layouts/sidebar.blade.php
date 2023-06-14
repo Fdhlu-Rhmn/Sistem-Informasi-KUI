@@ -35,12 +35,12 @@
         <ul class="navbar-nav bg-light-subtle sidebar sidebar-light accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+            {{-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-text m-3">Kantor Urusan Internasional</div>
-            </a>
-            {{-- <div class="navBar">
-                <img src="/assets/intnews.png"  class="logo" alt="">
-            </div> --}}
+            </a> --}}
+            <div class="navBar">
+                <img src="/assets/intnews.png"  class="logo" alt="KUI">
+            </div>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">

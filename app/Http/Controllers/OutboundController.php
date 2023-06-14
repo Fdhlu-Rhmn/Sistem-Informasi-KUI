@@ -16,14 +16,14 @@ class OutboundController extends Controller
     {
         // $outbounds = Outbound::paginate(5);
         if ($request->has('search')) {
-            $outbounds = Outbound::where('name', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('email', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('institusi_tujuan', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('negara_tujuan', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('fakultas', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('prodi', 'LIKE', '%'.$request->search.'%')
+            $outbounds = Outbound::where('name', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('email', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('institusi_tujuan', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('negara_tujuan', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('fakultas', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('prodi', 'LIKE', '%' . $request->search . '%')
                 ->paginate(5);
-        }else{
+        } else {
             $outbounds = Outbound::paginate(5);
         }
         return view('outbound.index', [
@@ -32,18 +32,18 @@ class OutboundController extends Controller
     }
     public function importExportOutbound()
     {
-       return view('Outbound.index');
+        return view('Outbound.index');
     }
-  
-    public function exportOutbound() 
+
+    public function exportOutbound()
     {
         return 'Excel'::download(new ExportOutbound, 'LecturerOutbound.xlsx');
     }
-  
-    public function importOutbound() 
+
+    public function importOutbound()
     {
         'Excel'::import(new ImportOutbound, request()->file('file'));
-            
+
         return back();
     }
 
@@ -101,6 +101,6 @@ class OutboundController extends Controller
 
         $outbound = Outbound::findOrFail($outboundId);
         $outbound->delete();
-        return redirect()->route('dosen-outbound.index')->with('delete', 'Data Berhasil di hapus');
+        return redirect()->route('dosen-outbound.index')->with('delete', 'Delete data succesfull');
     }
 }

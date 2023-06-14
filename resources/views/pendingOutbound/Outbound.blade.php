@@ -10,7 +10,7 @@
             </div>
             <div class="cards_body">
               <div class="d-inline-block mb-3 navbar-search">
-                <form action="/dashboard/outbound" method="GET" >
+                <form action="/dashboard/pendingOutbound" method="GET" >
                   <div class="input-group d-flex">
                       <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for...">
                       <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
@@ -30,21 +30,20 @@
             </div>
             @endif
 
-
             <div class="table-responsive">
               <table id="example" class="projek__table ">
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">No</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Institusi Tujuan</th>
-                    <th scope="col">Fakultas</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Negara Tujuan</th>
-                    <th scope="col">Nama Program</th>
-                    <th scope="col">Durasi Program</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Action</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Origin institution</th>
+                            <th scope="col">Fakulty</th>
+                            <th scope="col">Departement</th>
+                            <th scope="col">Origin Country</th>
+                            <th scope="col">Program name</th>
+                            <th scope="col">Program duration</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">PIC</th>
 
 
                   </tr>
@@ -63,13 +62,37 @@
                     <td class="text-center">{{ $outbound-> Email }}</td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
+                        <a  href="{{ route('pendingOutbound.edit', $outbound-> id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <button  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$outbound -> id}}" class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
+                          <div id="exampleModal-{{$outbound -> id}}" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal" tabindex="-1">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">Delete Data </h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <p>Do you want to delete <br/> <span class="fw-bolder"> {{$outbound -> Nama}} </span>?</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <form action="{{ route('pendingOutbound.destroy', $outbound-> id)}}" method="POST" class="btn btn-danger p-0">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-primary">Delete Data</button>
+                                  </form>             
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      {{-- <div class="btn-group" role="group" aria-label="Basic example">
                       <a  href="{{ route('pendingOutbound.edit', $outbound->id)}}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                      <form action="{{ route('outbound.destroy', $outbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                      <form action="{{ route('pendingOutbound.destroy', $outbound->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
-
-                      </div>
+                      </div> --}}
                   </td>
                   </tr>
                   @endforeach

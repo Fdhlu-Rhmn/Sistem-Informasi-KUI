@@ -36,19 +36,19 @@
                   <tr >
                     <tr >
                       <th scope="col">No</th>
-                      <th scope="col">Nama</th>
+                      <th scope="col">Name</th>
                       <th scope="col">NIM</th>
-                      <th scope="col">Fakultas/Prodi</th>
+                      <th scope="col">Fakulty/Departement</th>
                       <th scope="col">IPK</th>
                       <th scope="col">BIPA</th>
-                      <th scope="col">Jenjang</th>
+                      <th scope="col">Level</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Angkatan</th>
-                      <th scope="col">J/K</th>
-                      <th scope="col">Alamat</th>
-                      <th scope="col">No Hp</th>
-                      <th scope="col">Negara Asal</th>
-                      <th scope="col">Pendamping Akademik</th>
+                      <th scope="col">Wave</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Phone Number</th>
+                      <th scope="col">Origin Country</th>
+                      <th scope="col">Academic Assistant</th>
                       <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -82,7 +82,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
-                                    <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$pending -> Nama}} </span>?</p>
+                                    <p>Do you want to delete <br/> <span class="fw-bolder"> {{$pending -> Nama}} </span>?</p>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -101,7 +101,7 @@
                     @endforeach
                   @else
                   <tr>
-                    <td class ="text-center"colspan="14">Tidak ada data pending</td>
+                    <td class ="text-center"colspan="14">There is no data</td>
                   </tr>
                   @endif
                 </tbody>

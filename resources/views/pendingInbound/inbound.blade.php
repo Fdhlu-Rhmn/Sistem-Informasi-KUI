@@ -10,7 +10,7 @@
             </div>
             <div class="cards_body">
               <div class="d-inline-block mb-3 navbar-search">
-                <form action="/dashboard/inbound" method="GET" >
+                <form action="/dashboard/pendingInbound" method="GET" >
                   <div class="input-group d-flex">
                       <input type="text" class="form-control bg-light border-0 small" name="search" placeholder="Search for...">
                       <button class="btn btn-primary"><i class="fas fa-search fa-sm"></i></button>
@@ -35,13 +35,13 @@
                 <thead class="table-primary">
                   <tr >
                     <th scope="col">No</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Institusi Asal</th>
-                    <th scope="col">Fakultas</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Negara Asal</th>
-                    <th scope="col">Nama Program</th>
-                    <th scope="col">Durasi Program</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Origin Institution </th>
+                    <th scope="col">Fakulty</th>
+                    <th scope="col">Departement</th>
+                    <th scope="col">Origin Country</th>
+                    <th scope="col">Program Name</th>
+                    <th scope="col">Program Duration</th>
                     <th scope="col">Email</th>
                     <th scope="col">PIC</th>
                     <th scope="col">Action</th>
@@ -73,11 +73,11 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
-                                    <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$inbound -> Nama}} </span>?</p>
+                                    <p>Do you want to delete <br/> <span class="fw-bolder"> {{$inbound -> Nama}} </span>?</p>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <form action="{{ route('inbound.destroy', $inbound-> id)}}" method="POST" class="btn btn-danger p-0">
+                                    <form action="{{ route('pendingInbound.destroy', $inbound-> id)}}" method="POST" class="btn btn-danger p-0">
                                       @csrf
                                       @method('DELETE')
                                       <button type="submit" class="btn btn-primary">Delete Data</button>

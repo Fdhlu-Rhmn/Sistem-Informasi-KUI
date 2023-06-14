@@ -30,7 +30,7 @@ class UserInboundController extends Controller
     public function store(Request $request)
     {
         PendingInbound::create($request->all());
-        return redirect()->route('forminbounds')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('forminbounds')->with('success', 'Add data succesfull');
         ;
     }
 

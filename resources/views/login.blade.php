@@ -22,7 +22,7 @@
     <div class="login__right col-lg-6">
       <div class="p-5 vh-100 form-box row justify-content-center login align-items-center">
         <div class="col-lg-6">
-          <h2 class="text-center">Kantor Urusan Internasional</h2>
+          <h2 class="text-center">International Office Students</h2>
           <form id="login" action="/login" method="POST">
             @csrf
             <div class="login__input mb-3">

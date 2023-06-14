@@ -44,7 +44,7 @@ class PendingOutboundController extends Controller
     {
         StudentOutbound::create($request->all());
 
-        return redirect()->route('pendingOutbound.index')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('pendingOutbound.index')->with('success', 'Add data succesfull');
     }
 
     /**
@@ -84,6 +84,6 @@ class PendingOutboundController extends Controller
 
         $formoutbound->delete();
 
-        return redirect()->route('pendingOutbound.outbound')->with('success', 'Data Berhasil di hapus');
+        return redirect()->route('pendingOutbound.index')->with('delete', 'Delete data succesfull');
     }
 }

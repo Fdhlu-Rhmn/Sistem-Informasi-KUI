@@ -53,13 +53,13 @@
                         <thead class="table-primary">
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Institusi Tujuan</th>
-                                <th scope="col">Fakultas</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Destination institution</th>
+                                <th scope="col">Fakulty</th>
                                 <th scope="col">Prodi</th>
-                                <th scope="col">Negara Tujuan</th>
-                                <th scope="col">Nama Program</th>
-                                <th scope="col">Durasi Program</th>
+                                <th scope="col">Destination country</th>
+                                <th scope="col">Program name</th>
+                                <th scope="col">Program duration</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -88,9 +88,8 @@
                                                     @method('DELETE')
                                                     <button class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
                                             </div> --}}
-
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a  href="{{ route('dosen-inbound.edit', $outbound->id) }}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a  href="{{ route('dosen-outbound.edit', $outbound->id) }}" type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 <button  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$outbound->id}}" class="btn btn-danger m-0"><i class="fa-solid fa-trash"></i></button>
                                                   <div id="exampleModal-{{$outbound->id}}" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal" tabindex="-1">
                                                     <div class="modal-dialog">
@@ -100,11 +99,11 @@
                                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                          <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$outbound -> name}} </span>?</p>
+                                                          <p>Do you want to delete <br/> <span class="fw-bolder"> {{$outbound -> name}} </span>?</p>
                                                         </div>
                                                         <div class="modal-footer">
                                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                          <form action="{{ route('mahasiswa.destroy', $outbound->id)}}" method="POST" class="btn btn-danger p-0">
+                                                          <form action="{{ route('dosen-outbound.destroy', $outbound->id)}}" method="POST" class="btn btn-danger p-0">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-primary">Delete Data</button>
@@ -119,7 +118,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td class="text-center" colspan="14">Tidak ada data inbound</td>
+                                    <td class="text-center" colspan="14">There is no data</td>
                                 </tr>
                             @endif
                         </tbody>

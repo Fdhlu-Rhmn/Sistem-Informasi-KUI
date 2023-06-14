@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <div class="font-weight-bold text-primary text-uppercase mb-1">
                                 Foreign Students</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{$posts->count()}}</div>
                         </div>
@@ -41,8 +41,8 @@
                         <div class="col mr-2">
                             <div class="font-weight-bold text-success text-uppercase mb-1">
                                 Students Exchange</div>
-                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$dataInbound->count()}}</div>
-                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$dataOutbound->count()}}</div>
+                            <div class="fs-7 mb-0 ">Inbound   : {{$dataInbound->count()}}</div>
+                            <div class="fs-7  mb-0 ">Outbound    : {{$dataOutbound->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-user-graduate fa-2x"></i>
@@ -60,8 +60,8 @@
                         <div class="col mr-2">
                             <div class="font-weight-bold text-info text-uppercase mb-1">Lecturer
                             </div>
-                            <div class="fs-7 mb-0 font-weight-bold ">Inbound   : {{$inbounds->count()}}</div>
-                            <div class="fs-7  mb-0 font-weight-bold ">Outbound    : {{$outbounds->count()}}</div>
+                            <div class="fs-7 mb-0  ">Inbound   : {{$inbounds->count()}}</div>
+                            <div class="fs-7  mb-0  ">Outbound    : {{$outbounds->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa-solid fa-user-tie fa-2x"></i>
@@ -77,12 +77,14 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            <div class=" font-weight-bold text-warning text-uppercase mb-1">
                                 Pending Requests</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pendings->count()}}</div>
+                                <div class="fs-7 mb-0  ">Foreign Students   : {{$pendings->count()}}</div>
+                                <div class="fs-7 mb-0  ">Inbound   : {{$forminbound->count()}}</div>
+                                <div class="fs-7  mb-0  ">Outbound    : {{$formoutbound->count()}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            <i class="fas fa-comments fa-2x"></i>
                         </div>
                     </div>
                 </div>
@@ -99,7 +101,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
-                                   Angkatan</div>
+                                   Wave</div>
                             </div>
                             <div id="piechart-angkatan"></div>
                         </div>
@@ -129,7 +131,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
-                                    Fakultas</div>
+                                    faculty</div>
                             </div>
                             <div id="piechart-fakultas"></div>
 
@@ -149,21 +151,21 @@
             <div class="table-responsive ">
                 <table id="example" class="projek__table" >
                     <thead class="table-primary">
-                        <tr class="text-xs">
+                        <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama</th>
+                            <th scope="col">Name</th>
                             <th scope="col">NIM</th>
-                            <th scope="col">Fakultas/Prodi</th>
+                            <th scope="col">Fakulty/Departement</th>
                             <th scope="col">IPK</th>
                             <th scope="col">BIPA</th>
-                            <th scope="col">Jenjang</th>
+                            <th scope="col">Level</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Angkatan</th>
-                            <th scope="col">J/K</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">No Hp</th>
-                            <th scope="col">Negara Asal</th>
-                            <th scope="col">Pendamping Akademik</th>
+                            <th scope="col">Wave</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Origin Country</th>
+                            <th scope="col">Academic Assistant</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -208,16 +210,16 @@
                 <table id="example" class="projek__table ">
                     <thead class="table-primary">
                         <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Institusi Asal</th>
-                        <th scope="col">Fakultas</th>
-                        <th scope="col">Prodi</th>
-                        <th scope="col">Negara Asal</th>
-                        <th scope="col">Nama Program</th>
-                        <th scope="col">Durasi Program</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">PIC</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Origin Institution </th>
+                            <th scope="col">Fakulty</th>
+                            <th scope="col">Departement</th>
+                            <th scope="col">Origin Country</th>
+                            <th scope="col">Program Name</th>
+                            <th scope="col">Program Duration</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">PIC</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -256,13 +258,13 @@
                     <thead class="table-primary">
                         <tr >
                             <th scope="col">No</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Institusi Tujuan</th>
-                            <th scope="col">Fakultas</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Destination institution</th>
+                            <th scope="col">Fakulty</th>
                             <th scope="col">Prodi</th>
-                            <th scope="col">Negara Tujuan</th>
-                            <th scope="col">Nama Program</th>
-                            <th scope="col">Durasi Program</th>
+                            <th scope="col">Destination country</th>
+                            <th scope="col">Program name</th>
+                            <th scope="col">Program duration</th>
                             <th scope="col">Email</th>
                         </tr>
                     </thead>
@@ -305,13 +307,13 @@
                     <thead class="table-primary">
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Institusi Asal</th>
-                            <th scope="col">Fakultas</th>
-                            <th scope="col">Prodi</th>
-                            <th scope="col">Negara Asal</th>
-                            <th scope="col">Nama Program</th>
-                            <th scope="col">Durasi Program</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Origin institution</th>
+                            <th scope="col">Fakulty</th>
+                            <th scope="col">Departement</th>
+                            <th scope="col">Origin Country</th>
+                            <th scope="col">Program name</th>
+                            <th scope="col">Program duration</th>
                             <th scope="col">Email</th>
                             <th scope="col">PIC</th>
                         </tr>
@@ -334,7 +336,7 @@
                             @endforeach
                         @else
                             <tr>
-                                <td class="text-center" colspan="14">Tidak ada data inbound</td>
+                                <td class="text-center" colspan="14">There is no data</td>
                             </tr>
                         @endif
                     </tbody>
@@ -351,13 +353,13 @@
                     <thead class="table-primary">
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Institusi Tujuan</th>
-                            <th scope="col">Fakultas</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Destination institution</th>
+                            <th scope="col">Fakulty</th>
                             <th scope="col">Prodi</th>
-                            <th scope="col">Negara Tujuan</th>
-                            <th scope="col">Nama Program</th>
-                            <th scope="col">Durasi Program</th>
+                            <th scope="col">Destination country</th>
+                            <th scope="col">Program name</th>
+                            <th scope="col">Program duration</th>
                             <th scope="col">Email</th>
                         </tr>
                     </thead>
@@ -379,7 +381,7 @@
                             @endforeach
                         @else
                             <tr>
-                                <td class="text-center" colspan="14">Tidak ada data inbound</td>
+                                <td class="text-center" colspan="14">There is no data</td>
                             </tr>
                         @endif
                     </tbody>

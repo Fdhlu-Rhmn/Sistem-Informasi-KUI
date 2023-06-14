@@ -1,34 +1,34 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 .buttons {
-  width: 100%;
-  height: 42px;
-  background: #CFE2FF;
-  color: black;
-  border-radius: 8px;
-  border: 2px solid #CFE2FF;
+    width: 100%;
+    height: 42px;
+    background: #cfe2ff;
+    color: black;
+    border-radius: 8px;
+    border: 2px solid #cfe2ff;
 }
 
 .buttons:hover {
-  background: black;
-  color: white;
+    background: black;
+    color: white;
 }
 
 .login a {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  color: black;
-  margin: 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: black;
+    margin: 20px 0;
 }
 
 .bg-img {
-  background: url('/img/img2.jpg');
-  background-position:center;
-  background-size:cover;
+    background: url("/assets/rektorat.png");
+    background-position: center;
+    background-size: cover;
 }

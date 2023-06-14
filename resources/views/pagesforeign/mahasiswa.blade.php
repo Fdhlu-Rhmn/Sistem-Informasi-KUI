@@ -45,21 +45,21 @@
               <table id="example" class="projek__table">
                 <thead class="table-primary">
                   <tr >
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>NIM</th>
-                    <th>Fakultas/Prodi</th>
-                    <th>IPK</th>
-                    <th>BIPA</th>
-                    <th>Jenjang</th>
-                    <th>Status</th>
-                    <th>Angkatan</th>
-                    <th>J/K</th>
-                    <th>Alamat</th>
-                    <th>No Hp</th>
-                    <th>Negara Asal</th>
-                    <th>Pendamping Akademik</th>
-                    <th>Action</th>
+                    <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">NIM</th>
+                            <th scope="col">Fakulty/Departement</th>
+                            <th scope="col">IPK</th>
+                            <th scope="col">BIPA</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Wave</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Origin Country</th>
+                            <th scope="col">Academic Assistant</th>
+                            <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -92,7 +92,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
-                                    <p>Apakah anda ingin menghapus data <br/> <span class="fw-bolder"> {{$mahasiswa -> Nama}} </span>?</p>
+                                    <p>Do you want to delete <br/> <span class="fw-bolder"> {{$mahasiswa -> Nama}} </span>?</p>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

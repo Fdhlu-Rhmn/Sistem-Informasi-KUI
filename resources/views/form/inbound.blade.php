@@ -14,31 +14,31 @@
                 @csrf
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Nama" class="form-control" placeholder="Nama">
+                        <input type="text" name="Nama" class="form-control" placeholder="Name">
                     </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Institusi_Asal" class="form-control" placeholder="Institusi Asal">
+                    <input type="text" name="Institusi_Asal" class="form-control" placeholder="Origin Institution">
                   </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Fakultas" class="form-control" placeholder="Fakultas">
+                    <input type="text" name="Fakultas" class="form-control" placeholder="Fakulty">
                   </div>
                 </div>  
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Prodi" class="form-control" placeholder="Prodi">
+                        <input type="text" name="Prodi" class="form-control" placeholder="Departement">
                     </div>
                     <div class="col">
-                      <input type="text" name="Negara_Asal" class="form-control" placeholder="Negara Asal">
+                      <input type="text" name="Negara_Asal" class="form-control" placeholder="Origin Country">
                     </div>
                     <div class="col">
-                      <input type="text" name="Nama_Program" class="form-control" placeholder="Nama Program">
+                      <input type="text" name="Nama_Program" class="form-control" placeholder="Program Name">
                     </div>
                     <div class="col">
-                      <input type="text" name="Durasi_Program" class="form-control" placeholder="Durasi Program">
+                      <input type="text" name="Durasi_Program" class="form-control" placeholder="Program Duration">
                     </div>
                 </div>
 

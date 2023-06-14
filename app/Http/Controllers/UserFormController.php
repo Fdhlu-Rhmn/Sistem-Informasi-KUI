@@ -13,7 +13,7 @@ class UserFormController extends Controller
     public function index()
     {
         $pendings = Pending::all();
-        return view('form.index', compact('pendings'));    
+        return view('form.index', compact('pendings'));
     }
 
     /**
@@ -30,7 +30,8 @@ class UserFormController extends Controller
     public function store(Request $request)
     {
         Pending::create($request->all());
-        return redirect()->route('userDB')->with('success', 'Data berhasil di tambahkan');;
+        return redirect()->route('userDB')->with('success', 'Add data succesfull');
+        ;
     }
 
     /**

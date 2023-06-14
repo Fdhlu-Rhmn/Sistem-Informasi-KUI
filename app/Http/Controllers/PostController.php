@@ -69,7 +69,7 @@ class PostController extends Controller
     {
         // dd($request->all());
         Post::create($request->all());
-        return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('mahasiswa.index')->with('success', 'Add data succesfull');
     }
 
     /**
@@ -111,6 +111,6 @@ class PostController extends Controller
 
         $mahasiswa->delete();
 
-        return redirect()->route('mahasiswa.index')->with('delete', 'Data Berhasil di hapus');
+        return redirect()->route('mahasiswa.index')->with('delete', 'Delete data succesfull');
     }
 }
