@@ -50,12 +50,12 @@
                   <tr >
                     <th scope="col">No</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Destination institution</th>
+                    <th scope="col">Destination Institution</th>
                     <th scope="col">Fakulty</th>
-                    <th scope="col">Prodi</th>
-                    <th scope="col">Destination country</th>
-                    <th scope="col">Program name</th>
-                    <th scope="col">Program duration</th>
+                    <th scope="col">Departement</th>
+                    <th scope="col">Destination Country</th>
+                    <th scope="col">Program Name</th>
+                    <th scope="col">Program Duration</th>
                     <th scope="col">Email</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -92,7 +92,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-primary">Delete Data</button>
-                                  </form>             
+                                  </form>
                                 </div>
                               </div>
                             </div>
@@ -116,12 +116,12 @@
                 </tbody>
               </table>
             </div>
-            
+
             <div>
-                  <a class="btn btn-primary" href="{{route('outbound.create')}}" role="button">Tambah Student Outbounds</a>
+                  <a class="btn btn-primary" href="{{route('outbound.create')}}" role="button">Add Student Outbounds</a>
                   {{-- {{$dataOutbound->links()}} --}}
                   {!! $dataOutbound->appends(Request::except('page'))->render()!!}
 
             </div>
         </div>
- @endsection   
+ @endsection

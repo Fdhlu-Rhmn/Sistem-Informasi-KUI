@@ -53,12 +53,12 @@
                             <tr>
                               <th scope="col">No</th>
                               <th scope="col">Name</th>
-                              <th scope="col">Origin institution</th>
+                              <th scope="col">Origin Institution</th>
                               <th scope="col">Fakulty</th>
                               <th scope="col">Departement</th>
                               <th scope="col">Origin Country</th>
-                              <th scope="col">Program name</th>
-                              <th scope="col">Program duration</th>
+                              <th scope="col">Program Name</th>
+                              <th scope="col">Program Duration</th>
                               <th scope="col">Email</th>
                               <th scope="col">PIC</th>
                                 <th scope="col">Action</th>
@@ -98,7 +98,7 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-primary">Delete Data</button>
-                                                          </form>             
+                                                          </form>
                                                         </div>
                                                       </div>
                                                     </div>
@@ -109,13 +109,13 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td class="text-center" colspan="14">Tidak ada data inbound</td>
+                                    <td class="text-center" colspan="14">There is no data</td>
                                 </tr>
                             @endif
                         </tbody>
                     </table>
                 </div>
-                <a class="btn btn-primary" href="{{ route('dosen-inbound.create') }}" role="button">Tambah Inbound Dosen</a>
+                <a class="btn btn-primary" href="{{ route('dosen-inbound.create') }}" role="button">Add Inbound Lecturer</a>
                 {{-- {{$inbounds->links()}} --}}
                 {!! $inbounds->appends(Request::except('page'))->render()!!}
             </div>

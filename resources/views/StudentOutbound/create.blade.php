@@ -12,32 +12,32 @@
                 @csrf
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Nama" class="form-control" placeholder="Nama">
+                        <input type="text" name="Nama" class="form-control" placeholder="Name">
                     </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Negara_Tujuan" class="form-control" placeholder="Negara Tujuan">
+                    <input type="text" name="Negara_Tujuan" class="form-control" placeholder="Destination Country">
                   </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Institusi_Tujuan" class="form-control" placeholder="Institusi Tujuan">
+                    <input type="text" name="Institusi_Tujuan" class="form-control" placeholder="Destination Institution">
                   </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Nama_Program" class="form-control" placeholder="Nama Program">
+                        <input type="text" name="Nama_Program" class="form-control" placeholder="Program Name">
                     </div>
                     <div class="col">
-                      <input type="text" name="Durasi" class="form-control" placeholder="Durasi Program">
+                      <input type="text" name="Durasi" class="form-control" placeholder="Program Duration">
                     </div>
                     <div class="col">
-                      <input type="text" name="Prodi" class="form-control" placeholder="Prodi">
+                      <input type="text" name="Prodi" class="form-control" placeholder="Departement">
                     </div>
                     <div class="col">
-                      <input type="text" name="Fakultas" class="form-control" placeholder="Fakultas">
+                      <input type="text" name="Fakultas" class="form-control" placeholder="Fakulty">
                     </div>
                 </div>
 
