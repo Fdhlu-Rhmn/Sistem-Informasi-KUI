@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-        
+
         @can('admin')
         <div class="card border-left-primary shadow h-100 py-2 mx-2 mb-5">
             <div class="cards_head">
@@ -259,12 +259,12 @@
                         <tr >
                             <th scope="col">No</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Destination institution</th>
+                            <th scope="col">Destination Institution</th>
                             <th scope="col">Fakulty</th>
                             <th scope="col">Prodi</th>
-                            <th scope="col">Destination country</th>
-                            <th scope="col">Program name</th>
-                            <th scope="col">Program duration</th>
+                            <th scope="col">Destination Country</th>
+                            <th scope="col">Program Name</th>
+                            <th scope="col">Program Duration</th>
                             <th scope="col">Email</th>
                         </tr>
                     </thead>
@@ -308,12 +308,12 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Origin institution</th>
+                            <th scope="col">Origin Institution</th>
                             <th scope="col">Fakulty</th>
                             <th scope="col">Departement</th>
                             <th scope="col">Origin Country</th>
-                            <th scope="col">Program name</th>
-                            <th scope="col">Program duration</th>
+                            <th scope="col">Program Name</th>
+                            <th scope="col">Program Duration</th>
                             <th scope="col">Email</th>
                             <th scope="col">PIC</th>
                         </tr>
@@ -354,12 +354,12 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Destination institution</th>
+                            <th scope="col">Destination Institution</th>
                             <th scope="col">Fakulty</th>
                             <th scope="col">Prodi</th>
-                            <th scope="col">Destination country</th>
-                            <th scope="col">Program name</th>
-                            <th scope="col">Program duration</th>
+                            <th scope="col">Destination Country</th>
+                            <th scope="col">Program Name</th>
+                            <th scope="col">Program Duration</th>
                             <th scope="col">Email</th>
                         </tr>
                     </thead>
@@ -387,7 +387,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>  
+        </div>
         @endcan
         </div>
 @endsection
