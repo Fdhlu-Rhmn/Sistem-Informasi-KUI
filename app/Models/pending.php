@@ -24,4 +24,6 @@ class Pending extends Model
         'Negara_Asal',
         'Pendamping_Akademik',
     ];
+    protected $table = 'Pending_Inbounds';
+
 }
