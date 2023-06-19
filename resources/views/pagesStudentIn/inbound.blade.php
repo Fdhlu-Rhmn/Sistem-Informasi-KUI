@@ -37,7 +37,7 @@
               {{Session::get('success')}}
             </div>
             @endif
-            
+
             @if (Session::has('delete'))
             <div class="alert alert-danger" role="alert">
               {{Session::get('delete')}}
@@ -94,7 +94,7 @@
                                       @csrf
                                       @method('DELETE')
                                       <button type="submit" class="btn btn-primary">Delete Data</button>
-                                    </form>             
+                                    </form>
                                   </div>
                                 </div>
                               </div>
@@ -111,10 +111,10 @@
                 </tbody>
               </table>
             </div>
-                  <a class="btn btn-primary" href="{{route('inbound.create')}}" role="button">Tambah Student Inbounds</a>
+                  <a class="btn btn-primary" href="{{route('inbound.create')}}" role="button">Add Student Inbounds</a>
                   {{-- {{$dataInbound->links()}} --}}
                   {!! $dataInbound->appends(Request::except('page'))->render()!!}
 
             </div>
         </div>
- @endsection   
+ @endsection

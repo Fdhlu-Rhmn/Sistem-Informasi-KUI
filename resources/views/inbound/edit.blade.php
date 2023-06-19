@@ -13,7 +13,7 @@
                 @csrf
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="name" class="form-control" placeholder="Nama"
+                        <input type="text" name="name" class="form-control" placeholder="Name"
                             value="{{ $inbound->name }}">
                     </div>
                 </div>
@@ -23,38 +23,38 @@
                             value="{{ $inbound->email }}">
                     </div>
                 </div>
-                
+
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="institusi_asal" class="form-control" placeholder="Institusi Asal"
+                        <input type="text" name="institusi_asal" class="form-control" placeholder="Origin Institution"
                             value="{{ $inbound->institusi_asal }}">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="negara_asal" class="form-control" placeholder="Negara Asal"
+                        <input type="text" name="negara_asal" class="form-control" placeholder="Origin Country"
                             value="{{ $inbound->negara_asal }}">
                     </div>
                 </div>
-                
+
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="fakultas" class="form-control" placeholder="Fakultas Kegiatan di UNHAS"
+                        <input type="text" name="fakultas" class="form-control" placeholder="Fakulty"
                             value="{{ $inbound->fakultas }}">
                     </div>
                     <div class="col">
-                        <input type="text" name="prodi" class="form-control" placeholder="Prodi Kegiatan di UNHAS"
+                        <input type="text" name="prodi" class="form-control" placeholder="Departement"
                             value="{{ $inbound->prodi }}">
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="program" class="form-control" placeholder="Nama Program yang dijalani"
+                        <input type="text" name="program" class="form-control" placeholder="Program Name"
                             value="{{ $inbound->program }}">
                     </div>
                     <div class="col">
-                        <input type="text" name="durasi_program" class="form-control" placeholder="Durasi Program"
+                        <input type="text" name="durasi_program" class="form-control" placeholder="Program Duration"
                             value="{{ $inbound->durasi_program }}">
                     </div>
                     <div class="col">

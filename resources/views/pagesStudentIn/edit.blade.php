@@ -13,31 +13,31 @@
                 @csrf
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Nama" class="form-control" placeholder="Nama" value="{{ $inbound-> Nama }}">
+                        <input type="text" name="Nama" class="form-control" placeholder="Name" value="{{ $inbound-> Nama }}">
                     </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Institusi_Asal" class="form-control" placeholder="Institusi Asal" value="{{ $inbound-> Institusi_Asal }}">
+                    <input type="text" name="Institusi_Asal" class="form-control" placeholder="Origin Institution" value="{{ $inbound-> Institusi_Asal }}">
                   </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col">
-                    <input type="text" name="Fakultas" class="form-control" placeholder="Fakultas" value="{{ $inbound-> Fakultas }}">
+                    <input type="text" name="Fakultas" class="form-control" placeholder="Fakulty" value="{{ $inbound-> Fakultas }}">
                   </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" name="Prodi" class="form-control" placeholder="Prodi" value="{{ $inbound-> Prodi }}">
+                        <input type="text" name="Prodi" class="form-control" placeholder="Departement" value="{{ $inbound-> Prodi }}">
                     </div>
                     <div class="col">
-                      <input type="text" name="Negara_Asal" class="form-control" placeholder="Negara Asal" value="{{ $inbound-> Negara_Asal }}">
+                      <input type="text" name="Negara_Asal" class="form-control" placeholder="Origin Country" value="{{ $inbound-> Negara_Asal }}">
                     </div>
                     <div class="col">
-                      <input type="text" name="Nama_Program" class="form-control" placeholder="Nama Program" value="{{ $inbound-> Nama_Program }}">
+                      <input type="text" name="Nama_Program" class="form-control" placeholder="Program Name" value="{{ $inbound-> Nama_Program }}">
                     </div>
                     <div class="col">
-                      <input type="text" name="Durasi_Program" class="form-control" placeholder="Durasi Program" value="{{ $inbound-> Durasi_Program }}">
+                      <input type="text" name="Durasi_Program" class="form-control" placeholder="Program Duration" value="{{ $inbound-> Durasi_Program }}">
                     </div>
                 </div>
 

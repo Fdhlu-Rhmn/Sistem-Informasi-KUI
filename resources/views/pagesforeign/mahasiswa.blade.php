@@ -100,7 +100,7 @@
                                       @csrf
                                       @method('DELETE')
                                       <button type="submit" class="btn btn-primary">Delete Data</button>
-                                    </form>             
+                                    </form>
                                   </div>
                                 </div>
                               </div>
@@ -118,12 +118,12 @@
               </table>
             </div>
             <div class="p-3">
-              <a class="btn btn-primary" href="{{route('mahasiswa.create')}}" role="button">Tambah Foreign Students </a>
+              <a class="btn btn-primary" href="{{route('mahasiswa.create')}}" role="button">Add Foreign Students </a>
               {!! $posts->appends(Request::except('page'))->render()!!}
             </div>
         </div>
  @endsection
- 
+
 @section('js')
 <link rel="script" href="/js/modal.js">
 @endsection
