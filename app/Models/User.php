@@ -19,6 +19,7 @@ class User extends Authenticatable
         'name',
         'username',
         'password',
+        'profile_picture',
     ];
     // protected $guarded = ['user_id'];
 }

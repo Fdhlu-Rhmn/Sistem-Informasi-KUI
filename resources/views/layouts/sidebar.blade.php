@@ -126,7 +126,7 @@
                     <i class="fa-solid fa-user"></i>
                     <span>Admin Profile</span></a>
             </li>
-            
+
             @endcan
 
             @can('non-admin')
@@ -197,8 +197,15 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
-                                <img class="img-profile rounded-circle"
-                                    src="{{ asset('assets/akmal.jpg') }}">
+
+                                @if (auth()->user()->profile_picture != null)
+                                    <img class="img-profile rounded-circle"
+                                    src="{{ asset(auth()->user()->profile_picture) }}">
+                                @else
+                                    <img class="img-profile rounded-circle"
+                                        src="{{ asset('img/img2.jpg') }}">
+                                @endif
+
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
