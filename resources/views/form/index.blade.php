@@ -59,8 +59,8 @@
                     <div class="dropdown border rounded">
                       <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="Gender">
                         <option hidden> Gender</option>
-                        <option>L</option>
-                        <option>P</option>
+                        <option>Female</option>
+                        <option>Male</option>
                       </select>
                     </div>
                   </div>
