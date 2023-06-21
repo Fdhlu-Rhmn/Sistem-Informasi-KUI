@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('Jenjang')->nullable();
             $table->string('Status')->nullable();
             $table->string('Angkatan')->nullable();
-            $table->enum('Gender', ['L', 'P'])->nullable();
+            $table->string('Gender')->nullable();
             $table->string('Alamat')->nullable();
             $table->string('No_Hp')->nullable();
             $table->string('Negara_Asal')->nullable();

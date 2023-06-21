@@ -14,7 +14,7 @@
           @if ($user->profile_picture != null)
           <img src="{{ asset($user->profile_picture) }}" class="img-preview rounded-circle mb-3 col-sm-3" >
           @else
-              <img class="img-preview rounded-circle mb-3 col-sm-1">
+              <img class="img-preview rounded-circle mb-3 col-sm-3">
           @endif
         </div>
 

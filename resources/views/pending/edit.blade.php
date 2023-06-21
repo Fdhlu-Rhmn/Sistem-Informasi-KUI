@@ -58,8 +58,8 @@
                     <div class="dropdown border rounded">
                       <select class="form-control btn  dropdown-toggle btn-s" name="Gender">
                         <option hidden>{{ $pendings-> Gender }}</option>
-                        <option>L</option>
-                        <option>P</option>
+                        <option>Female</option>
+                        <option>Male</option>
                       </select>
                     </div>                  
                   </div>
