@@ -47,7 +47,10 @@
                 <div class="row mb-3">
                   <div class="col">
                     <div class="dropdown border rounded">
-                      <select class="form-control btn  dropdown-toggle btn-s" name="Wave">
+                      <select class="form-control btn  dropdown-toggle btn-s" name="College Class
+
+
+">
                         <option hidden> {{ $mahasiswa-> Angkatan }}</option>
                         <option>2018</option>
                         <option>2019</option>

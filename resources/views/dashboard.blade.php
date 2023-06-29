@@ -101,7 +101,10 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
-                                   Wave</div>
+                                   College Class
+
+
+</div>
                             </div>
                             <div id="piechart-angkatan"></div>
                         </div>
@@ -160,7 +163,10 @@
                             <th scope="col">BIPA</th>
                             <th scope="col">Level</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Wave</th>
+                            <th scope="col">College Class
+
+
+</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Address</th>
                             <th scope="col">Phone Number</th>
