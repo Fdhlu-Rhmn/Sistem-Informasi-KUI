@@ -46,7 +46,10 @@
                   <div class="col">
                       <div class="dropdown border rounded">
                         <select class="text-secondary form-control btn  dropdown-toggle btn-s" name="Angkatan">
-                          <option hidden> Wave</option>
+                          <option hidden> College Class
+
+
+</option>
                           <option>2018</option>
                           <option>2019</option>
                           <option>2020</option>
