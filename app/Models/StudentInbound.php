@@ -24,5 +24,5 @@ class StudentInbound extends Model
     'Email',
     'PIC',
   ];
-  protected $table = 'StudentInbounds';
+  protected $table = 'studentinbounds';
 }

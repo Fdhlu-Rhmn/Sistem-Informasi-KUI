@@ -19,5 +19,5 @@ class PendingInbound extends Model
         'Email',
         'PIC',
       ];
-      protected $table = 'Pending_Inbounds';
+      protected $table = 'pending_inbounds';
 }
