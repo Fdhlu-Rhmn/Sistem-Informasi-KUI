@@ -23,6 +23,5 @@ class StudentOutbound extends Model
     'Durasi',
     'Email',
   ];
-  protected $table = 'StudentOutbounds';
-
+  protected $table = 'studentoutbounds';
 }

@@ -18,5 +18,5 @@ class PendingOutbound extends Model
         'Durasi',
         'Email',
       ];
-      protected $table = 'Pending_Outbounds';
+      protected $table = 'pending_outbounds';
 }
